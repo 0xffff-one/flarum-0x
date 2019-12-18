@@ -1,0 +1,12 @@
+[submodule "packages/core"]
+	path = packages/core
+	url = git@github.com:0xffff-one/core.git
+[submodule "packages/lang-simplified-chinese"]
+	path = packages/lang-simplified-chinese
+	url = git@github.com:0xffff-one/lang-simplified-chinese.git
+[submodule "packages/user-bio"]
+	path = packages/user-bio
+	url = git@github.com:0xffff-one/user-bio.git
+[submodule "packages/flarum-ext-syndication"]
+	path = packages/flarum-ext-syndication
+	url = git@github.com:0xffff-one/flarum-ext-syndication.git
