@@ -7,9 +7,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: Execute SSH commmands
       uses: JimCronqvist/action-ssh@0.1.1
@@ -22,4 +20,5 @@ jobs:
           git submodule update --init --recursive
           docker run --rm -v $(pwd):/var/www geshan/php-composer-alpine "composer i --ignore-platform-reqs -vvv"
           docker run --rm -v $(pwd):/var/www geshan/php-composer-alpine "composer dump-autoload -o"
+          echo "clear cache..."
           rm -f public/assets/admin-* public/assets/forum-* public/assets/rev-manifest.json
