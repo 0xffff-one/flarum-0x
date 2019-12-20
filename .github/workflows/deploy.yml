@@ -14,7 +14,7 @@ jobs:
     - name: Execute SSH commmands
       uses: JimCronqvist/action-ssh@0.1.1
       with:
-        hosts: ${{ secrets.PRIVATE_KEY }}
+        hosts: ${{ secrets.SSH_HOST }}
         privateKey: ${{ secrets.PRIVATE_KEY }}
         command: |
           cd /var/www/0xffff-env/wwwroot
