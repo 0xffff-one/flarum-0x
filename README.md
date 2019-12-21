@@ -1,45 +1,65 @@
-<p align="center"><img src="https://flarum.org/img/logo.png"></p>
+# 0xFFFF Flarum
 
-<p align="center">
-<a href="https://travis-ci.org/flarum/core"><img src="https://travis-ci.org/flarum/core.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/license.svg" alt="License"></a>
-</p>
+根据 0xFFFF 网站实际需要，定制的 [Flarum](https://flarum.org) 脚手架配置。
 
-## About Flarum
+## 本地开发
 
-**[Flarum](https://flarum.org/) is a delightfully simple discussion platform for your website.** It's fast and easy to use, with all the features you need to run a successful community. It is designed to be:
+需要 Composer 管理依赖包，[Composer 安装教程参考](https://docs.phpcomposer.com/00-intro.html#Installation-*nix)。
 
-* **Fast and simple.** No clutter, no bloat, no complex dependencies. Flarum is built with PHP so it’s quick and easy to deploy. The interface is powered by Mithril, a performant JavaScript framework with a tiny footprint.
+所有自定义更新通过 [Git submodule](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97) 来加载，需要留意，参考以下命令：
 
-* **Beautiful and responsive.** This is forum software for humans. Flarum is carefully designed to be consistent and intuitive across platforms, out-of-the-box.
+Commit message 规范：[Angular 规范](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.greljkmo14y0)，参考：  
+[Commit message 和 Change log 编写指南 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html) 
 
-* **Powerful and extensible.** Customize, extend, and integrate Flarum to suit your community. Flarum’s architecture is amazingly flexible, with a powerful Extension API.
 
-![screenshot](https://flarum.org/img/screenshot.png)
+### 初始化环境
 
-## Installation
-
-You must have SSH access to a server with **PHP 7.1+** and **MySQL 5.6+**, and install [Composer](https://getcomposer.org/).
-
+1. clone 本仓库
 ```
-composer create-project flarum/flarum . --stability=beta
+git clone https://github.com/0xffff-one/0xffff-flarum.git
+cd 0xffff-flarum
+git submodule update --init --recursive
 ```
 
-Read the **[Installation guide](https://flarum.org/docs/install.html)** for more information. For support, refer to the [documentation](https://flarum.org/docs/), and ask questions on the [community forum](https://discuss.flarum.org/) or [Discord chat](https://flarum.org/discord/).
+2. composer 安装依赖
+```
+composer install
+```
 
-## Contributing
+3. 配置 PHP 环境，根目录指向 `public`，参考 [0xffff-one/0xffff-env](https://github.com/0xffff-one/0xffff-env)
 
-Thank you for considering contributing to Flarum! Please read the **[Contributing guide](https://flarum.org/docs/contributing.html)** to learn how you can help.
 
-This repository only holds the Flarum skeleton application. Most development happens in [flarum/core](https://github.com/flarum/core).
+### 拉取更新
 
-## Security Vulnerabilities
+```
+git pull --recurse-submodules
+git submodule update --init --recursive
+```
 
-If you discover a security vulnerability within Flarum, please send an e-mail to [security@flarum.org](mailto:security@flarum.org). All security vulnerabilities will be promptly addressed.
+### 提交更新
+
+与一般的项目类似，若 submodule 有更新，则需要先提交 submodule 里的代码，再提交本仓库的代码。
+
+以修改 `packages/core` 为例：
+1. 首先提交 `package/core` 的更新
+```
+cd package/core
+git commit -m "feat: detail"
+git push origin HEAD:0xffff
+```
+
+2. 在 `0xffff-flarum` 更新引用
+```
+cd path/to/0xffff-flarum
+git add .
+git commit -m "feat: xxxxx"
+git push
+```
+
+## 部署
+
+已通过 Github Actions 实现自动化部署，提交到 master 的更新会自动同步至生产环境。
 
 ## License
 
-Flarum is open-source software licensed under the [MIT License](https://github.com/flarum/flarum/blob/master/LICENSE).
-
+[MIT License](https://github.com/0xffff-one/0xffff-flarum/blob/master/LICENSE).
