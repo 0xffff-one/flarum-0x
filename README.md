@@ -56,6 +56,13 @@ git commit -m "feat: xxxxx"
 git push
 ```
 
+### 加入自定义插件
+以 `flarum/sticky` 插件为例，大致为以下步骤：
+1. fork 插件
+2. 添加子模块：`git submodule add git@github.com:0xffff-one/sticky.git packages/sticky`
+3. 将 `composer.json` 中的版本号改为 `dev-master`
+4. 更新依赖：`composer update flarum/sticky -vvv --ignore-platform-reqs`
+
 ## 部署
 
 已通过 Github Actions 实现自动化部署，提交到 master 的更新会自动同步至生产环境。
