@@ -56,12 +56,13 @@ git commit -m "feat: xxxxx"
 git push
 ```
 
-### 加入自定义插件
+### 加入插件自定义修改
 以 `flarum/sticky` 插件为例，大致为以下步骤：
 1. fork 插件
 2. 添加子模块：`git submodule add git@github.com:0xffff-one/sticky.git packages/sticky`
-3. 将 `composer.json` 中的版本号改为 `dev-master`
-4. 更新依赖：`composer update flarum/sticky -vvv --ignore-platform-reqs`
+3. `git checkout -b 0xffff` (避免 composer [依赖加载问题](https://github.com/composer/composer/issues/7047))
+4. 将 `composer.json` 中的版本号改为 `dev-0xffff`
+5. 更新依赖：`composer update flarum/sticky -vvv --ignore-platform-reqs`
 
 ## 部署
 
