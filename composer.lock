@@ -1,20 +1,30 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "2a39b3f7542caf0bf541aff946614983",
-    "content-hash": "3ca69fd67faf5cc83318358da9f382da",
+    "content-hash": "adfa05716b8cf9e5ef9242b9d616e456",
     "packages": [
         {
             "name": "amaurycarrade/flarum-ext-syndication",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AmauryCarrade/flarum-ext-syndication.git",
+                "reference": "829c0752675119931b3574fa7cf6b8d7e398f793"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/flarum-ext-syndication",
-                "reference": "be1a11f5c127a29dbe2796937d802f1c3db2aa4a",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/AmauryCarrade/flarum-ext-syndication/zipball/829c0752675119931b3574fa7cf6b8d7e398f793",
+                "reference": "829c0752675119931b3574fa7cf6b8d7e398f793",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "flarum/core": "^0.1.0-beta.10"
@@ -102,7 +112,7 @@
                 "exception",
                 "trace"
             ],
-            "time": "2019-02-02 15:52:44"
+            "time": "2019-02-02T15:52:44+00:00"
         },
         {
             "name": "axy/codecs-base64vlq",
@@ -153,7 +163,7 @@
                 "base64",
                 "codec"
             ],
-            "time": "2015-11-23 07:08:52"
+            "time": "2015-11-23T07:08:52+00:00"
         },
         {
             "name": "axy/errors",
@@ -201,7 +211,7 @@
                 "error",
                 "exception"
             ],
-            "time": "2019-02-02 18:26:18"
+            "time": "2019-02-02T18:26:18+00:00"
         },
         {
             "name": "axy/sourcemap",
@@ -253,7 +263,7 @@
                 "javascript",
                 "sourcemap"
             ],
-            "time": "2018-04-16 13:23:46"
+            "time": "2018-04-16T13:23:46+00:00"
         },
         {
             "name": "components/font-awesome",
@@ -294,16 +304,27 @@
                 "OFL-1.1"
             ],
             "description": "Font Awesome, the iconic SVG, font, and CSS framework.",
-            "time": "2019-06-07 02:02:10"
+            "time": "2019-06-07T02:02:10+00:00"
         },
         {
             "name": "csineneo/lang-simplified-chinese",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Csineneo/lang-simplified-chinese.git",
+                "reference": "0a4f4f83e1b17843848312875e5bee8447ee3c2c"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/lang-simplified-chinese",
-                "reference": "7703fdf1ee91db5820d295b61c67b61c9c09d0ed",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/Csineneo/lang-simplified-chinese/zipball/0a4f4f83e1b17843848312875e5bee8447ee3c2c",
+                "reference": "0a4f4f83e1b17843848312875e5bee8447ee3c2c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "flarum/core": "^0.1.0-beta.9"
@@ -402,7 +423,7 @@
                 "psr-7",
                 "psr7"
             ],
-            "time": "2016-03-28 09:10:18"
+            "time": "2016-03-28T09:10:18+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -491,7 +512,7 @@
                 "riak",
                 "xcache"
             ],
-            "time": "2019-11-15 14:31:57"
+            "time": "2019-11-15T14:31:57+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -589,7 +610,7 @@
                 "sqlserver",
                 "sqlsrv"
             ],
-            "time": "2019-11-03 16:50:43"
+            "time": "2019-11-03T16:50:43+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -671,7 +692,7 @@
                 "event system",
                 "events"
             ],
-            "time": "2019-11-10 09:48:07"
+            "time": "2019-11-10T09:48:07+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -744,7 +765,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2019-10-30 19:59:35"
+            "time": "2019-10-30T19:59:35+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -812,7 +833,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-10-30 14:39:59"
+            "time": "2019-10-30T14:39:59+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -876,7 +897,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2019-08-13 17:33:27"
+            "time": "2019-08-13T17:33:27+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -928,7 +949,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2019-03-17 18:48:37"
+            "time": "2019-03-17T18:48:37+00:00"
         },
         {
             "name": "fig/http-message-util",
@@ -984,7 +1005,7 @@
                 "request",
                 "response"
             ],
-            "time": "2018-11-19 16:19:58"
+            "time": "2018-11-19T16:19:58+00:00"
         },
         {
             "name": "filp/whoops",
@@ -1051,7 +1072,7 @@
                 "throwable",
                 "whoops"
             ],
-            "time": "2019-08-07 09:00:00"
+            "time": "2019-08-07T09:00:00+00:00"
         },
         {
             "name": "flagrow/upload",
@@ -1129,7 +1150,7 @@
                 "flarum",
                 "upload"
             ],
-            "time": "2018-12-18 15:22:53"
+            "time": "2018-12-18T15:22:53+00:00"
         },
         {
             "name": "flarum/approval",
@@ -1188,7 +1209,7 @@
             "keywords": [
                 "moderation"
             ],
-            "time": "2018-11-21 08:27:14"
+            "time": "2018-11-21T08:27:14+00:00"
         },
         {
             "name": "flarum/auth-facebook",
@@ -1247,7 +1268,7 @@
             "keywords": [
                 "Authentication"
             ],
-            "time": "2019-06-24 10:03:41"
+            "time": "2019-06-24T10:03:41+00:00"
         },
         {
             "name": "flarum/auth-github",
@@ -1306,7 +1327,7 @@
             "keywords": [
                 "Authentication"
             ],
-            "time": "2019-06-24 10:03:32"
+            "time": "2019-06-24T10:03:32+00:00"
         },
         {
             "name": "flarum/auth-twitter",
@@ -1365,7 +1386,7 @@
             "keywords": [
                 "Authentication"
             ],
-            "time": "2019-06-24 10:03:21"
+            "time": "2019-06-24T10:03:21+00:00"
         },
         {
             "name": "flarum/bbcode",
@@ -1418,7 +1439,7 @@
             "keywords": [
                 "formatting"
             ],
-            "time": "2018-11-21 08:07:20"
+            "time": "2018-11-21T08:07:20+00:00"
         },
         {
             "name": "flarum/core",
@@ -1426,8 +1447,7 @@
             "dist": {
                 "type": "path",
                 "url": "packages/core",
-                "reference": "1666918320d708708b580fade9afd0dda2e472cb",
-                "shasum": null
+                "reference": "1666918320d708708b580fade9afd0dda2e472cb"
             },
             "require": {
                 "axy/sourcemap": "^0.1.4",
@@ -1585,7 +1605,7 @@
             "keywords": [
                 "formatting"
             ],
-            "time": "2019-09-16 08:18:36"
+            "time": "2019-09-16T08:18:36+00:00"
         },
         {
             "name": "flarum/flags",
@@ -1643,7 +1663,7 @@
             "keywords": [
                 "moderation"
             ],
-            "time": "2019-06-24 10:02:29"
+            "time": "2019-06-24T10:02:29+00:00"
         },
         {
             "name": "flarum/lang-english",
@@ -1695,7 +1715,7 @@
             "keywords": [
                 "locale"
             ],
-            "time": "2019-09-13 16:02:47"
+            "time": "2019-09-13T16:02:47+00:00"
         },
         {
             "name": "flarum/likes",
@@ -1753,7 +1773,7 @@
             "keywords": [
                 "discussion"
             ],
-            "time": "2019-06-24 10:07:38"
+            "time": "2019-06-24T10:07:38+00:00"
         },
         {
             "name": "flarum/lock",
@@ -1811,7 +1831,7 @@
             "keywords": [
                 "moderation"
             ],
-            "time": "2019-06-24 10:05:54"
+            "time": "2019-06-24T10:05:54+00:00"
         },
         {
             "name": "flarum/markdown",
@@ -1867,7 +1887,7 @@
             "keywords": [
                 "formatting"
             ],
-            "time": "2019-09-16 07:50:11"
+            "time": "2019-09-16T07:50:11+00:00"
         },
         {
             "name": "flarum/mentions",
@@ -1925,7 +1945,7 @@
             "keywords": [
                 "discussion"
             ],
-            "time": "2019-09-16 07:34:22"
+            "time": "2019-09-16T07:34:22+00:00"
         },
         {
             "name": "flarum/pusher",
@@ -1987,7 +2007,7 @@
             "keywords": [
                 "discussion"
             ],
-            "time": "2019-06-24 10:04:40"
+            "time": "2019-06-24T10:04:40+00:00"
         },
         {
             "name": "flarum/statistics",
@@ -2045,27 +2065,15 @@
             "keywords": [
                 "administration"
             ],
-            "time": "2019-06-24 10:04:33"
+            "time": "2019-06-24T10:04:33+00:00"
         },
         {
             "name": "flarum/sticky",
-            "version": "v0.1.0-beta.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/flarum/sticky.git",
-                "reference": "5890a1ad372bd9ef23e2ac7bd6d3639e37be1b81"
-            },
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/flarum/sticky/zipball/5890a1ad372bd9ef23e2ac7bd6d3639e37be1b81",
-                "reference": "5890a1ad372bd9ef23e2ac7bd6d3639e37be1b81",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "type": "path",
+                "url": "packages/sticky",
+                "reference": "1050141665342246a2ad32af5c68851d234b12b1"
             },
             "require": {
                 "flarum/core": "^0.1.0-beta.9"
@@ -2089,7 +2097,6 @@
                     "Flarum\\Sticky\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2103,7 +2110,10 @@
             "keywords": [
                 "discussion"
             ],
-            "time": "2019-06-24 10:04:24"
+            "support": {
+                "issues": "https://github.com/flarum/core/issues",
+                "source": "https://github.com/flarum/sticky"
+            }
         },
         {
             "name": "flarum/subscriptions",
@@ -2161,7 +2171,7 @@
             "keywords": [
                 "discussion"
             ],
-            "time": "2019-06-24 10:04:17"
+            "time": "2019-06-24T10:04:17+00:00"
         },
         {
             "name": "flarum/suspend",
@@ -2219,7 +2229,7 @@
             "keywords": [
                 "moderation"
             ],
-            "time": "2019-06-24 10:03:49"
+            "time": "2019-06-24T10:03:49+00:00"
         },
         {
             "name": "flarum/tags",
@@ -2277,7 +2287,7 @@
             "keywords": [
                 "discussion"
             ],
-            "time": "2019-09-16 07:30:46"
+            "time": "2019-09-16T07:30:46+00:00"
         },
         {
             "name": "fof/links",
@@ -2343,7 +2353,7 @@
             "keywords": [
                 "flarum"
             ],
-            "time": "2019-07-09 18:40:35"
+            "time": "2019-07-09T18:40:35+00:00"
         },
         {
             "name": "fof/socialprofile",
@@ -2409,7 +2419,7 @@
             "keywords": [
                 "flarum"
             ],
-            "time": "2019-02-18 00:46:01"
+            "time": "2019-02-18T00:46:01+00:00"
         },
         {
             "name": "fof/split",
@@ -2480,16 +2490,27 @@
                 "flarum",
                 "split"
             ],
-            "time": "2019-07-09 17:59:06"
+            "time": "2019-07-09T17:59:06+00:00"
         },
         {
             "name": "fof/user-bio",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/user-bio.git",
+                "reference": "19cb1a303afced8fb1b9c22bf19c4f43cc7da40e"
+            },
             "dist": {
-                "type": "path",
-                "url": "packages/user-bio",
-                "reference": "91e584bb038caea4b92b6e0996bf167376681c8e",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/user-bio/zipball/19cb1a303afced8fb1b9c22bf19c4f43cc7da40e",
+                "reference": "19cb1a303afced8fb1b9c22bf19c4f43cc7da40e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "flarum/core": "^0.1.0-beta.8"
@@ -2564,7 +2585,7 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2016-04-27 14:08:29"
+            "time": "2016-04-27T14:08:29+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2636,7 +2657,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-10-23 15:58:00"
+            "time": "2019-10-23T15:58:00+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -2693,7 +2714,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2016-12-20 10:07:11"
+            "time": "2016-12-20T10:07:11+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -2770,7 +2791,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2019-07-01 23:21:34"
+            "time": "2019-07-01T23:21:34+00:00"
         },
         {
             "name": "hightman/xunsearch",
@@ -2834,7 +2855,7 @@
                 "yii",
                 "yii2"
             ],
-            "time": "2019-11-01 02:17:32"
+            "time": "2019-11-01T02:17:32+00:00"
         },
         {
             "name": "illuminate/bus",
@@ -2885,7 +2906,7 @@
             ],
             "description": "The Illuminate Bus package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/cache",
@@ -2940,7 +2961,7 @@
             ],
             "description": "The Illuminate Cache package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/config",
@@ -2990,7 +3011,7 @@
             ],
             "description": "The Illuminate Config package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/container",
@@ -3041,7 +3062,7 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/contracts",
@@ -3091,7 +3112,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-12 07:46:48"
+            "time": "2019-02-12T07:46:48+00:00"
         },
         {
             "name": "illuminate/database",
@@ -3156,7 +3177,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2019-02-20 03:55:15"
+            "time": "2019-02-20T03:55:15+00:00"
         },
         {
             "name": "illuminate/events",
@@ -3207,7 +3228,7 @@
             ],
             "description": "The Illuminate Events package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/filesystem",
@@ -3265,7 +3286,7 @@
             ],
             "description": "The Illuminate Filesystem package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/hashing",
@@ -3315,7 +3336,7 @@
             ],
             "description": "The Illuminate Hashing package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/mail",
@@ -3374,7 +3395,7 @@
             ],
             "description": "The Illuminate Mail package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-22 15:28:19"
+            "time": "2019-02-22T15:28:19+00:00"
         },
         {
             "name": "illuminate/pipeline",
@@ -3424,7 +3445,7 @@
             ],
             "description": "The Illuminate Pipeline package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-24 18:58:51"
+            "time": "2019-02-24T18:58:51+00:00"
         },
         {
             "name": "illuminate/session",
@@ -3480,7 +3501,7 @@
             ],
             "description": "The Illuminate Session package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/support",
@@ -3545,7 +3566,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-12 07:57:07"
+            "time": "2019-02-12T07:57:07+00:00"
         },
         {
             "name": "illuminate/translation",
@@ -3596,7 +3617,7 @@
             ],
             "description": "The Illuminate Translation package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/validation",
@@ -3652,7 +3673,7 @@
             ],
             "description": "The Illuminate Validation package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "illuminate/view",
@@ -3706,7 +3727,7 @@
             ],
             "description": "The Illuminate View package.",
             "homepage": "https://laravel.com",
-            "time": "2019-02-11 13:48:57"
+            "time": "2019-02-11T13:48:57+00:00"
         },
         {
             "name": "intervention/image",
@@ -3782,7 +3803,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2019-11-02 09:15:47"
+            "time": "2019-11-02T09:15:47+00:00"
         },
         {
             "name": "jjandxa/flarum-ext-chinese-search",
@@ -3834,7 +3855,7 @@
                 }
             ],
             "description": "chinese search",
-            "time": "2019-01-22 16:11:06"
+            "time": "2019-01-22T16:11:06+00:00"
         },
         {
             "name": "kylekatarnls/update-helper",
@@ -3885,7 +3906,7 @@
                 }
             ],
             "description": "Update helper",
-            "time": "2019-07-29 11:03:54"
+            "time": "2019-07-29T11:03:54+00:00"
         },
         {
             "name": "league/flysystem",
@@ -3975,7 +3996,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-10-16 21:01:05"
+            "time": "2019-10-16T21:01:05+00:00"
         },
         {
             "name": "league/oauth1-client",
@@ -4044,7 +4065,7 @@
                 "tumblr",
                 "twitter"
             ],
-            "time": "2016-08-17 00:36:58"
+            "time": "2016-08-17T00:36:58+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -4117,7 +4138,7 @@
                 "oauth2",
                 "single sign on"
             ],
-            "time": "2018-11-22 18:33:57"
+            "time": "2018-11-22T18:33:57+00:00"
         },
         {
             "name": "league/oauth2-facebook",
@@ -4174,7 +4195,7 @@
                 "oauth",
                 "oauth2"
             ],
-            "time": "2017-07-22 01:25:00"
+            "time": "2017-07-22T01:25:00+00:00"
         },
         {
             "name": "league/oauth2-github",
@@ -4235,7 +4256,7 @@
                 "oauth",
                 "oauth2"
             ],
-            "time": "2017-01-26 01:14:51"
+            "time": "2017-01-26T01:14:51+00:00"
         },
         {
             "name": "matthiasmullie/minify",
@@ -4301,7 +4322,7 @@
                 "minifier",
                 "minify"
             ],
-            "time": "2018-11-26 23:10:39"
+            "time": "2018-11-26T23:10:39+00:00"
         },
         {
             "name": "matthiasmullie/path-converter",
@@ -4356,7 +4377,7 @@
                 "paths",
                 "relative"
             ],
-            "time": "2018-10-25 15:19:41"
+            "time": "2018-10-25T15:19:41+00:00"
         },
         {
             "name": "middlewares/base-path",
@@ -4408,7 +4429,7 @@
                 "psr-7",
                 "server"
             ],
-            "time": "2018-08-04 10:41:46"
+            "time": "2018-08-04T10:41:46+00:00"
         },
         {
             "name": "middlewares/base-path-router",
@@ -4461,7 +4482,7 @@
                 "routing",
                 "server"
             ],
-            "time": "2018-08-22 06:53:04"
+            "time": "2018-08-22T06:53:04+00:00"
         },
         {
             "name": "middlewares/request-handler",
@@ -4522,7 +4543,7 @@
                 "request",
                 "server"
             ],
-            "time": "2018-10-25 22:59:24"
+            "time": "2018-10-25T22:59:24+00:00"
         },
         {
             "name": "middlewares/utils",
@@ -4579,7 +4600,7 @@
                 "psr-17",
                 "psr-7"
             ],
-            "time": "2019-03-05 22:06:37"
+            "time": "2019-03-05T22:06:37+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4663,7 +4684,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2019-11-13 10:00:05"
+            "time": "2019-11-13T10:00:05+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -4730,7 +4751,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2019-10-14 05:51:36"
+            "time": "2019-10-14T05:51:36+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -4779,7 +4800,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2015-06-18 19:15:47"
+            "time": "2015-06-18T19:15:47+00:00"
         },
         {
             "name": "oyejorge/less.php",
@@ -4847,7 +4868,7 @@
                 "php",
                 "stylesheet"
             ],
-            "time": "2017-03-28 22:19:25"
+            "time": "2017-03-28T22:19:25+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -4898,7 +4919,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2018-07-02 15:55:56"
+            "time": "2018-07-02T15:55:56+00:00"
         },
         {
             "name": "psr/container",
@@ -4953,7 +4974,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14 16:28:37"
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/http-factory",
@@ -5011,7 +5032,7 @@
                 "request",
                 "response"
             ],
-            "time": "2019-04-30 12:38:16"
+            "time": "2019-04-30T12:38:16+00:00"
         },
         {
             "name": "psr/http-message",
@@ -5067,7 +5088,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/http-server-handler",
@@ -5126,7 +5147,7 @@
                 "response",
                 "server"
             ],
-            "time": "2018-10-30 16:46:14"
+            "time": "2018-10-30T16:46:14+00:00"
         },
         {
             "name": "psr/http-server-middleware",
@@ -5185,7 +5206,7 @@
                 "request",
                 "response"
             ],
-            "time": "2018-10-30 17:12:04"
+            "time": "2018-10-30T17:12:04+00:00"
         },
         {
             "name": "psr/log",
@@ -5238,7 +5259,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2019-11-01 11:05:21"
+            "time": "2019-11-01T11:05:21+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -5292,7 +5313,7 @@
                 "psr-16",
                 "simple-cache"
             ],
-            "time": "2017-10-23 01:57:42"
+            "time": "2017-10-23T01:57:42+00:00"
         },
         {
             "name": "pusher/pusher-php-server",
@@ -5342,7 +5363,7 @@
                 "rest",
                 "trigger"
             ],
-            "time": "2017-06-06 16:41:17"
+            "time": "2017-06-06T16:41:17+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -5388,7 +5409,7 @@
                 }
             ],
             "description": "A polyfill for getallheaders.",
-            "time": "2019-03-08 08:55:37"
+            "time": "2019-03-08T08:55:37+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -5476,7 +5497,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-07-19 23:38:55"
+            "time": "2018-07-19T23:38:55+00:00"
         },
         {
             "name": "s9e/text-formatter",
@@ -5548,7 +5569,7 @@
                 "parser",
                 "shortcodes"
             ],
-            "time": "2019-06-04 15:47:55"
+            "time": "2019-06-04T15:47:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5616,7 +5637,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2019-11-12 09:31:26"
+            "time": "2019-11-12T09:31:26+00:00"
         },
         {
             "name": "symfony/config",
@@ -5686,7 +5707,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-08 08:28:59"
+            "time": "2019-11-08T08:28:59+00:00"
         },
         {
             "name": "symfony/console",
@@ -5767,7 +5788,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-13 07:29:07"
+            "time": "2019-11-13T07:29:07+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -5826,7 +5847,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-02 08:36:26"
+            "time": "2019-10-02T08:36:26+00:00"
         },
         {
             "name": "symfony/debug",
@@ -5888,7 +5909,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-28 17:07:32"
+            "time": "2019-10-28T17:07:32+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -5944,7 +5965,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20 14:07:54"
+            "time": "2019-08-20T14:07:54+00:00"
         },
         {
             "name": "symfony/finder",
@@ -5999,7 +6020,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-30 12:53:54"
+            "time": "2019-10-30T12:53:54+00:00"
         },
         {
             "name": "symfony/http-foundation",
@@ -6060,7 +6081,7 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-12 13:07:20"
+            "time": "2019-11-12T13:07:20+00:00"
         },
         {
             "name": "symfony/mime",
@@ -6125,7 +6146,7 @@
                 "mime",
                 "mime-type"
             ],
-            "time": "2019-11-12 13:10:02"
+            "time": "2019-11-12T13:10:02+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -6189,7 +6210,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2019-08-06 08:03:45"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/polyfill-iconv",
@@ -6254,7 +6275,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-08-06 08:03:45"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/polyfill-intl-idn",
@@ -6322,7 +6343,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-08-06 08:03:45"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -6387,7 +6408,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-08-06 08:03:45"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/polyfill-php72",
@@ -6448,7 +6469,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-08-06 08:03:45"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/polyfill-php73",
@@ -6512,7 +6533,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2019-08-06 08:03:45"
+            "time": "2019-08-06T08:03:45+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -6576,7 +6597,7 @@
                 "interoperability",
                 "standards"
             ],
-            "time": "2019-10-14 12:27:06"
+            "time": "2019-10-14T12:27:06+00:00"
         },
         {
             "name": "symfony/translation",
@@ -6652,7 +6673,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-30 12:43:22"
+            "time": "2019-10-30T12:43:22+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -6717,7 +6738,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-24 15:33:53"
+            "time": "2019-10-24T15:33:53+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -6772,7 +6793,7 @@
             ],
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
-            "time": "2019-10-24 08:53:34"
+            "time": "2019-10-24T08:53:34+00:00"
         },
         {
             "name": "tobscure/json-api",
@@ -6828,7 +6849,7 @@
                 "jsonapi",
                 "standard"
             ],
-            "time": "2016-03-31 09:25:28"
+            "time": "2016-03-31T09:25:28+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -6896,7 +6917,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2019-08-06 17:53:53"
+            "time": "2019-08-06T17:53:53+00:00"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -6947,7 +6968,7 @@
                 "escaper",
                 "zf"
             ],
-            "time": "2019-09-05 20:03:20"
+            "time": "2019-09-05T20:03:20+00:00"
         },
         {
             "name": "zendframework/zend-httphandlerrunner",
@@ -7008,7 +7029,7 @@
                 "psr-7",
                 "zf"
             ],
-            "time": "2019-02-19 18:20:34"
+            "time": "2019-02-19T18:20:34+00:00"
         },
         {
             "name": "zendframework/zend-stratigility",
@@ -7080,7 +7101,7 @@
                 "psr-7",
                 "zf"
             ],
-            "time": "2019-06-12 15:22:39"
+            "time": "2019-06-12T15:22:39+00:00"
         }
     ],
     "packages-dev": [],
@@ -7109,6 +7130,7 @@
         "amaurycarrade/flarum-ext-syndication": 20,
         "csineneo/lang-simplified-chinese": 20,
         "flarum/core": 20,
+        "flarum/sticky": 20,
         "fof/user-bio": 20
     },
     "prefer-stable": true,

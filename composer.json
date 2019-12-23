@@ -42,7 +42,7 @@
         "flarum/mentions": "^0.1.0",
         "flarum/pusher": "^0.1.0",
         "flarum/statistics": "^0.1.0",
-        "flarum/sticky": "^0.1.0",
+        "flarum/sticky": "dev-master",
         "flarum/subscriptions": "^0.1.0",
         "flarum/suspend": "^0.1.0",
         "flarum/tags": "^0.1.0",
