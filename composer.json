@@ -26,13 +26,12 @@
     "require": {
         "amaurycarrade/flarum-ext-syndication": "dev-0xffff",
         "csineneo/lang-simplified-chinese": "dev-0xffff",
-        "flagrow/upload": "*",
         "flarum/approval": "^0.1.0",
         "flarum/auth-facebook": "^0.1.0",
         "flarum/auth-github": "^0.1.0",
         "flarum/auth-twitter": "^0.1.0",
         "flarum/bbcode": "^0.1.0",
-        "flarum/core": "dev-0xffff as 0.1",
+        "flarum/core": "dev-0xffff-beta.12 as v0.1.0-beta.12",
         "flarum/emoji": "^0.1.0",
         "flarum/flags": "^0.1.0",
         "flarum/lang-english": "^0.1.0",
@@ -49,8 +48,10 @@
         "fof/links": "^0.2.1",
         "fof/socialprofile": "^0.1.1",
         "fof/split": "^0.4.3",
+        "fof/upload": "dev-0xffff",
         "fof/user-bio": "dev-0xffff",
-        "jjandxa/flarum-ext-chinese-search": "^0.0.8"
+        "jjandxa/flarum-ext-chinese-search": "^0.0.8",
+        "league/flysystem-aws-s3-v3": "^1.0"
     },
     "config": {
         "preferred-install": "dist",

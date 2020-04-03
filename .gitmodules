@@ -13,3 +13,6 @@
 [submodule "packages/sticky"]
 	path = packages/sticky
 	url = git@github.com:0xffff-one/sticky.git
+[submodule "packages/upload"]
+	path = packages/upload
+	url = git@github.com:0xffff-one/upload.git
