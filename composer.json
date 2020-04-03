@@ -39,7 +39,7 @@
         "flarum/lock": "^0.1.0",
         "flarum/markdown": "^0.1.0",
         "flarum/mentions": "^0.1.0",
-        "flarum/pusher": "^0.1.0",
+        "flarum/pusher": "dev-0xffff",
         "flarum/statistics": "^0.1.0",
         "flarum/sticky": "dev-0xffff as 0.1",
         "flarum/subscriptions": "^0.1.0",

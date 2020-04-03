@@ -16,3 +16,6 @@
 [submodule "packages/upload"]
 	path = packages/upload
 	url = git@github.com:0xffff-one/upload.git
+[submodule "packages/pusher"]
+	path = packages/pusher
+	url = git@github.com:0xffff-one/pusher.git

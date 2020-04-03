@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80d85f9c02f1fa390ce3def4495baa8f",
+    "content-hash": "08135ff45be5cb309c41c381975e0614",
     "packages": [
         {
             "name": "amaurycarrade/flarum-ext-syndication",
@@ -2061,23 +2061,11 @@
         },
         {
             "name": "flarum/pusher",
-            "version": "v0.1.0-beta.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/flarum/pusher.git",
-                "reference": "ab25baa8ee082047478c1bc25d01c6f0be9e8604"
-            },
+            "version": "dev-0xffff",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/flarum/pusher/zipball/ab25baa8ee082047478c1bc25d01c6f0be9e8604",
-                "reference": "ab25baa8ee082047478c1bc25d01c6f0be9e8604",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "type": "path",
+                "url": "packages/pusher",
+                "reference": "fa134b9254e88360499882d40a3c016cbb0d2586"
             },
             "require": {
                 "flarum/core": "^0.1.0-beta.12",
@@ -2105,7 +2093,6 @@
                     "Flarum\\Pusher\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2113,21 +2100,13 @@
             "keywords": [
                 "discussion"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-03-03T13:31:34+00:00"
+            "support": {
+                "issues": "https://github.com/flarum/core/issues",
+                "source": "https://github.com/flarum/pusher"
+            },
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "flarum/statistics",
@@ -8291,6 +8270,7 @@
         "amaurycarrade/flarum-ext-syndication": 20,
         "csineneo/lang-simplified-chinese": 20,
         "flarum/core": 20,
+        "flarum/pusher": 20,
         "flarum/sticky": 20,
         "fof/upload": 20,
         "fof/user-bio": 20
