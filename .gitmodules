@@ -19,3 +19,6 @@
 [submodule "packages/pusher"]
 	path = packages/pusher
 	url = git@github.com:0xffff-one/pusher.git
+[submodule "packages/flarum-mathren"]
+	path = packages/flarum-mathren
+	url = git@github.com:0xffff-one/flarum-mathren.git

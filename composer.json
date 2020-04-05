@@ -51,7 +51,8 @@
         "fof/upload": "dev-0xffff",
         "fof/user-bio": "dev-0xffff",
         "jjandxa/flarum-ext-chinese-search": "^0.0.8",
-        "league/flysystem-aws-s3-v3": "^1.0"
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "the-turk/flarum-mathren": "dev-0xffff"
     },
     "config": {
         "preferred-install": "dist",
