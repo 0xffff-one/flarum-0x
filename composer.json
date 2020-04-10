@@ -46,12 +46,14 @@
         "flarum/suspend": "^0.1.0",
         "flarum/tags": "^0.1.0",
         "fof/links": "^0.2.1",
+        "fof/sentry": "^0.4.8",
         "fof/socialprofile": "^0.1.1",
         "fof/split": "^0.4.3",
         "fof/upload": "dev-0xffff",
         "fof/user-bio": "dev-0xffff",
         "jjandxa/flarum-ext-chinese-search": "^0.0.8",
         "league/flysystem-aws-s3-v3": "^1.0",
+        "ocramius/package-versions": "1.5.0",
         "the-turk/flarum-mathren": "dev-0xffff"
     },
     "config": {
