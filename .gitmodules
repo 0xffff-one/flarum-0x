@@ -22,3 +22,6 @@
 [submodule "packages/flarum-mathren"]
 	path = packages/flarum-mathren
 	url = git@github.com:0xffff-one/flarum-mathren.git
+[submodule "packages/sitemap"]
+	path = packages/sitemap
+	url = git@github.com:0xffff-one/sitemap.git

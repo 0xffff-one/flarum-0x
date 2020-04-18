@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6a80e63586bd0f27daedcfb22388656",
+    "content-hash": "a1948a924ba9688475307be013f5055a",
     "packages": [
         {
             "name": "amaurycarrade/flarum-ext-syndication",
@@ -1268,23 +1268,11 @@
         },
         {
             "name": "flagrow/sitemap",
-            "version": "0.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/flagrow/sitemap.git",
-                "reference": "de156748aa0d4371fdbaccd6b9160fe293e518f2"
-            },
+            "version": "dev-0xffff",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/flagrow/sitemap/zipball/de156748aa0d4371fdbaccd6b9160fe293e518f2",
-                "reference": "de156748aa0d4371fdbaccd6b9160fe293e518f2",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
+                "type": "path",
+                "url": "packages/sitemap",
+                "reference": "c6b97513a68edca94d9309b5ef962c41359071ed"
             },
             "require": {
                 "flarum/core": "^0.1.0-beta.8"
@@ -1308,7 +1296,6 @@
                     "Flagrow\\Sitemap\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1321,12 +1308,15 @@
             ],
             "description": "Generate a sitemap",
             "keywords": [
-                "Sitemap",
                 "extension",
                 "flagrow",
-                "flarum"
+                "flarum",
+                "sitemap"
             ],
-            "time": "2018-12-09T20:53:04+00:00"
+            "support": {
+                "issues": "https://github.com/flagrow/sitemap/issues",
+                "source": "https://github.com/flagrow/sitemap"
+            }
         },
         {
             "name": "flarum/approval",
@@ -9073,6 +9063,7 @@
     "stability-flags": {
         "amaurycarrade/flarum-ext-syndication": 20,
         "csineneo/lang-simplified-chinese": 20,
+        "flagrow/sitemap": 20,
         "flarum/core": 20,
         "flarum/pusher": 20,
         "flarum/sticky": 20,
