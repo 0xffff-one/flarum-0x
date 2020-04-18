@@ -27,6 +27,7 @@
         "amaurycarrade/flarum-ext-syndication": "dev-0xffff",
         "csineneo/lang-simplified-chinese": "dev-0xffff",
         "flagrow/ads": "^0.2.4",
+        "flagrow/sitemap": "^0.2.0",
         "flarum/approval": "^0.1.0",
         "flarum/auth-facebook": "^0.1.0",
         "flarum/auth-github": "^0.1.0",

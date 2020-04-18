@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed5972266ca8daa4928e3bb39e578b67",
+    "content-hash": "c6a80e63586bd0f27daedcfb22388656",
     "packages": [
         {
             "name": "amaurycarrade/flarum-ext-syndication",
@@ -51,10 +51,7 @@
             "description": "Brings RSS and Atom feeds to Flarum",
             "keywords": [
                 "flarum"
-            ],
-            "transport-options": {
-                "relative": true
-            }
+            ]
         },
         {
             "name": "aws/aws-sdk-php",
@@ -1270,6 +1267,68 @@
             "time": "2019-08-13T02:34:01+00:00"
         },
         {
+            "name": "flagrow/sitemap",
+            "version": "0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flagrow/sitemap.git",
+                "reference": "de156748aa0d4371fdbaccd6b9160fe293e518f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/flagrow/sitemap/zipball/de156748aa0d4371fdbaccd6b9160fe293e518f2",
+                "reference": "de156748aa0d4371fdbaccd6b9160fe293e518f2",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^0.1.0-beta.8"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "Flagrow Sitemap",
+                    "icon": {
+                        "name": "fas fa-sitemap",
+                        "backgroundColor": "#f4f4f4",
+                        "color": "#5f4bb6"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/14941"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flagrow\\Sitemap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clark Winkelmann",
+                    "email": "clark.winkelmann@gmail.com",
+                    "homepage": "https://clarkwinkelmann.com/"
+                }
+            ],
+            "description": "Generate a sitemap",
+            "keywords": [
+                "Sitemap",
+                "extension",
+                "flagrow",
+                "flarum"
+            ],
+            "time": "2018-12-09T20:53:04+00:00"
+        },
+        {
             "name": "flarum/approval",
             "version": "v0.1.0-beta.12",
             "source": {
@@ -1319,20 +1378,6 @@
             "description": "Make discussions and posts require moderator approval.",
             "keywords": [
                 "moderation"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-03T12:15:01+00:00"
         },
@@ -1387,20 +1432,6 @@
             "keywords": [
                 "Authentication"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-03T12:22:43+00:00"
         },
         {
@@ -1453,20 +1484,6 @@
             "description": "Allow users to log in with GitHub.",
             "keywords": [
                 "Authentication"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-03T12:23:55+00:00"
         },
@@ -1521,20 +1538,6 @@
             "keywords": [
                 "Authentication"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-03T12:25:30+00:00"
         },
         {
@@ -1581,20 +1584,6 @@
             "description": "Allow posts to be formatted with BBCode.",
             "keywords": [
                 "formatting"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-04T11:08:08+00:00"
         },
@@ -1777,20 +1766,6 @@
             "keywords": [
                 "formatting"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-03T12:27:43+00:00"
         },
         {
@@ -1842,20 +1817,6 @@
             "description": "Allow users to flag posts for moderator review.",
             "keywords": [
                 "moderation"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-03T12:53:12+00:00"
         },
@@ -1961,20 +1922,6 @@
             "keywords": [
                 "discussion"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-03T12:59:55+00:00"
         },
         {
@@ -2027,20 +1974,6 @@
             "keywords": [
                 "moderation"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-03T13:07:06+00:00"
         },
         {
@@ -2090,20 +2023,6 @@
             "description": "Allow posts to be formatted with Markdown.",
             "keywords": [
                 "formatting"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-03T13:21:27+00:00"
         },
@@ -2156,20 +2075,6 @@
             "description": "Mention and reply to specific posts and users.",
             "keywords": [
                 "discussion"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-03T13:29:50+00:00"
         },
@@ -2272,20 +2177,6 @@
             "keywords": [
                 "administration"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-03T13:33:22+00:00"
         },
         {
@@ -2383,20 +2274,6 @@
             "keywords": [
                 "discussion"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-03T13:49:56+00:00"
         },
         {
@@ -2449,20 +2326,6 @@
             "keywords": [
                 "moderation"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-03T13:51:42+00:00"
         },
         {
@@ -2514,20 +2377,6 @@
             "description": "Organize discussions into a hierarchy of tags and categories.",
             "keywords": [
                 "discussion"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/flarum",
-                    "type": "github"
-                },
-                {
-                    "url": "https://opencollective.com/flarum",
-                    "type": "open_collective"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/flarum/core",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-03T13:59:14+00:00"
         },
@@ -2702,12 +2551,6 @@
             "description": "Flarum integration for Sentry",
             "keywords": [
                 "flarum"
-            ],
-            "funding": [
-                {
-                    "url": "https://opencollective.com/fof",
-                    "type": "open_collective"
-                }
             ],
             "time": "2020-03-20T13:02:03+00:00"
         },
@@ -7430,15 +7273,6 @@
                 "logging",
                 "sentry"
             ],
-            "funding": [
-                {
-                    "type": "custom"
-                },
-                {
-                    "url": "https://sentry.io/pricing/",
-                    "type": "custom"
-                }
-            ],
             "time": "2020-03-06T09:24:53+00:00"
         },
         {
@@ -7773,20 +7607,6 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-27T16:56:45+00:00"
         },
         {
@@ -7849,20 +7669,6 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-27T16:54:36+00:00"
         },
         {
@@ -7939,20 +7745,6 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-27T16:54:36+00:00"
         },
         {
@@ -8128,20 +7920,6 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-27T16:54:36+00:00"
         },
         {
@@ -8331,20 +8109,6 @@
                 "configuration",
                 "options"
             ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-27T16:56:45+00:00"
         },
         {
@@ -8408,20 +8172,6 @@
                 "ctype",
                 "polyfill",
                 "portable"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-02-27T09:26:54+00:00"
         },
@@ -8487,20 +8237,6 @@
                 "polyfill",
                 "portable",
                 "shim"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-09T19:04:49+00:00"
         },
@@ -8570,20 +8306,6 @@
                 "portable",
                 "shim"
             ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-09T19:04:49+00:00"
         },
         {
@@ -8649,20 +8371,6 @@
                 "portable",
                 "shim"
             ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-03-09T19:04:49+00:00"
         },
         {
@@ -8723,20 +8431,6 @@
                 "polyfill",
                 "portable",
                 "shim"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-02-27T09:26:54+00:00"
         },
@@ -8802,20 +8496,6 @@
                 "portable",
                 "shim"
             ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
             "time": "2020-02-27T09:26:54+00:00"
         },
         {
@@ -8880,20 +8560,6 @@
                 "polyfill",
                 "portable",
                 "uuid"
-            ],
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
             ],
             "time": "2020-03-23T13:44:10+00:00"
         },
@@ -9207,9 +8873,6 @@
             "support": {
                 "issues": "https://github.com/the-turk/flarum-mathren/issues",
                 "source": "https://github.com/the-turk/flarum-mathren"
-            },
-            "transport-options": {
-                "relative": true
             }
         },
         {
@@ -9420,6 +9083,5 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "platform-dev": []
 }
