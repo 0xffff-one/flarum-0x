@@ -48,6 +48,7 @@
         "flarum/suspend": "^0.1.0",
         "flarum/tags": "^0.1.0",
         "fof/links": "^0.2.1",
+        "fof/nightmode": "^0.4.0",
         "fof/sentry": "^0.4.8",
         "fof/socialprofile": "^0.1.1",
         "fof/split": "^0.4.3",

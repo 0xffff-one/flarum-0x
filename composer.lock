@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1948a924ba9688475307be013f5055a",
+    "content-hash": "fa2c8e9541f1e2f039f647bda5d10495",
     "packages": [
         {
             "name": "amaurycarrade/flarum-ext-syndication",
@@ -2482,6 +2482,76 @@
                 "flarum"
             ],
             "time": "2019-07-09T18:40:35+00:00"
+        },
+        {
+            "name": "fof/nightmode",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/nightmode.git",
+                "reference": "099513d6366b2fc20e9c89cd3bdfd853a082613a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/nightmode/zipball/099513d6366b2fc20e9c89cd3bdfd853a082613a",
+                "reference": "099513d6366b2fc20e9c89cd3bdfd853a082613a",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^0.1.0-beta.8"
+            },
+            "replace": {
+                "reflar/nightmode": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF Night Mode",
+                    "icon": {
+                        "name": "far fa-moon",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/11134"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\NightMode\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shahiem Seymor"
+                },
+                {
+                    "name": "Christian Lopez",
+                    "email": "Lopez.T.Christian@gmail.com"
+                }
+            ],
+            "description": "Add a Night Mode option for your users to use on your Flarum forum",
+            "keywords": [
+                "extension",
+                "flarum",
+                "friendsoflarum",
+                "mode",
+                "night",
+                "nightmode",
+                "option"
+            ],
+            "time": "2020-01-29T21:58:03+00:00"
         },
         {
             "name": "fof/sentry",
