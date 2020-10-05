@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa2c8e9541f1e2f039f647bda5d10495",
+    "content-hash": "26bf5686bbe51fdadf15a35240c4ff50",
     "packages": [
         {
             "name": "amaurycarrade/flarum-ext-syndication",
@@ -9112,6 +9112,38 @@
                 "stylesheet"
             ],
             "time": "2020-02-04T22:36:29+00:00"
+        },
+        {
+            "name": "zgq354/app-shell",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "packages/app-shell",
+                "reference": "a8663c33cf402a4381318bc58e448e1da8321db4"
+            },
+            "require": {
+                "flarum/core": ">=0.1.0-beta.12 <0.1.0-beta.14"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "App Shell",
+                    "icon": {
+                        "name": "fas fa-smile",
+                        "backgroundColor": "#238c59",
+                        "color": "#fff"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zgq354\\AppShell\\": "src/"
+                }
+            },
+            "description": "PWA App Shell!",
+            "transport-options": {
+                "relative": true
+            }
         }
     ],
     "packages-dev": [],
@@ -9139,10 +9171,12 @@
         "flarum/sticky": 20,
         "fof/upload": 20,
         "fof/user-bio": 20,
-        "the-turk/flarum-mathren": 20
+        "the-turk/flarum-mathren": 20,
+        "zgq354/app-shell": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
