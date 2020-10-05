@@ -5,35 +5,31 @@ if (workbox) {
   console.log(`Workbox didn't load`);
 }
 
+// workbox.setConfig({ debug: true });
+
 workbox.routing.registerRoute(
-  // Cache Index
   '/',
-  // Use cache but update in the background.
-  new workbox.strategies.NetworkFirst({
-    // Use a custom cache name.
+  async args => {
+    return await new workbox.strategies.StaleWhileRevalidate({
+      cacheName: 'index-cache',
+    }).handle({
+      request: new Request('/app-shell')
+    });
+  }
+);
+
+workbox.routing.registerRoute(
+  '/app-shell',
+  new workbox.strategies.StaleWhileRevalidate({
     cacheName: 'index-cache',
   })
 );
 
 workbox.routing.registerRoute(
-  /^(?:https:\/\/static\.0xffff\.one|https:\/\/0xffff-cdn\.iscnu\.net)\/.*\.(?:css|js|woff|woff2|eot|ttf)$/,
+  /^(?:https:\/\/0xffff-cdn\.iscnu\.net)\/.*\.(?:css|js|woff|woff2|eot|ttf)$/,
   new workbox.strategies.CacheFirst({
     // Use a custom cache name.
     cacheName: 'cdn-cache',
-  })
-);
-
-workbox.routing.registerRoute(
-  /^(?:https:\/\/static\.0xffff\.one|https:\/\/0xffff-cdn\.iscnu\.net)\/.*\.(?:png|jpg|jpeg|svg|gif)$/,
-  new workbox.strategies.CacheFirst({
-    // Use a custom cache name.
-    cacheName: 'cdn-img-cache',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 100,
-        maxAgeSeconds: 7 * 24 * 60 * 60,
-      })
-    ],
   })
 );
 

@@ -6,7 +6,7 @@
   "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
-  "start_url": "/",
+  "start_url": "/app-shell",
   "icons": [
     {
       "src": "icons/icon-72x72.png",
