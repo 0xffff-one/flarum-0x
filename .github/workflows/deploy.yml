@@ -15,7 +15,7 @@ jobs:
         hosts: ${{ secrets.SSH_HOST }}
         privateKey: ${{ secrets.PRIVATE_KEY }}
         command: |
-          cd /var/www/0xffff-env/wwwroot
+          cd /data/0xffff-env/wwwroot
           git pull --recurse-submodules
           git submodule update --init --recursive
           docker run --rm --volume $PWD:/app --user $(id -u):$(id -g) composer i --ignore-platform-reqs -vvv

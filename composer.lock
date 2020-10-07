@@ -2674,16 +2674,68 @@
             "time": "2020-10-05T18:25:27+00:00"
         },
         {
+            "name": "flarumchina/flysystem-upyun",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://gitee.com/FlarumChina/flysystem-upyun.git",
+                "reference": "553b0d31e9758a4ac7c8ee184b9d98cc4d277efd"
+            },
+            "require": {
+                "league/flysystem": "^1.0",
+                "php": ">=5.5.9",
+                "upyun/sdk": "^3.0"
+            },
+            "require-dev": {
+                "php": ">=5.6.0",
+                "phpunit/phpunit": "~5.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "FlarumChina\\Flysystem\\Upyun\\UpyunServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FlarumChina\\Flysystem\\Upyun\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "skywalker512",
+                    "email": "houzhenhong@outlook.com"
+                }
+            ],
+            "description": "Flysystem and Laravel adapter for the Upyun storage.",
+            "keywords": [
+                "laravel",
+                "upyun",
+                "又拍",
+                "又拍云"
+            ],
+            "time": "2020-02-21T08:53:51+00:00"
+        },
+        {
             "name": "fof-0xffff/upload",
             "version": "dev-0xffff",
             "dist": {
                 "type": "path",
                 "url": "packages/upload",
-                "reference": "9b2135621c38c6163a47dadb8696dd96480c9eb7"
+                "reference": "072387e6c471d9d43ea700dbb2ffda4e5258ad94"
             },
             "require": {
                 "flarum/core": ">=0.1.0-beta.10 <0.1.0-beta.14",
+                "flarumchina/flysystem-upyun": "1.0.6",
                 "guzzlehttp/guzzle": "^6.0",
+                "league/flysystem-aws-s3-v3": "^1.0",
+                "overtrue/flysystem-qiniu": "1.0.4",
                 "ramsey/uuid": "^3.5.2",
                 "softcreatr/php-mime-detector": "^3.0"
             },
@@ -6346,6 +6398,55 @@
             "time": "2020-09-06T17:02:15+00:00"
         },
         {
+            "name": "overtrue/flysystem-qiniu",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/overtrue/flysystem-qiniu.git",
+                "reference": "d2f13e93cadf2543224afbed7e85230706a9451f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/overtrue/flysystem-qiniu/zipball/d2f13e93cadf2543224afbed7e85230706a9451f",
+                "reference": "d2f13e93cadf2543224afbed7e85230706a9451f",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "league/flysystem": "^1.0",
+                "php": ">=5.5.9",
+                "qiniu/php-sdk": "^7.2"
+            },
+            "require-dev": {
+                "mockery/mockery": "1.2.3",
+                "php": ">=5.6.0",
+                "phpunit/phpunit": "~8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Overtrue\\Flysystem\\Qiniu\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "overtrue",
+                    "email": "i@overtrue.me"
+                }
+            ],
+            "description": "Flysystem adapter for the Qiniu storage.",
+            "time": "2019-08-16T03:20:56+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v9.99.99",
             "source": {
@@ -7300,6 +7401,63 @@
                 "trigger"
             ],
             "time": "2017-06-06T16:41:17+00:00"
+        },
+        {
+            "name": "qiniu/php-sdk",
+            "version": "v7.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/qiniu/php-sdk.git",
+                "reference": "0a461e13b09545b23df361843c6a65fdd3a26426"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/qiniu/php-sdk/zipball/0a461e13b09545b23df361843c6a65fdd3a26426",
+                "reference": "0a461e13b09545b23df361843c6a65fdd3a26426",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Qiniu\\": "src/Qiniu"
+                },
+                "files": [
+                    "src/Qiniu/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Qiniu",
+                    "email": "sdk@qiniu.com",
+                    "homepage": "http://www.qiniu.com"
+                }
+            ],
+            "description": "Qiniu Resource (Cloud) Storage SDK for PHP",
+            "homepage": "http://developer.qiniu.com/",
+            "keywords": [
+                "cloud",
+                "qiniu",
+                "sdk",
+                "storage"
+            ],
+            "time": "2020-09-24T07:31:29+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -10335,6 +10493,72 @@
                 "standard"
             ],
             "time": "2016-03-31T09:25:28+00:00"
+        },
+        {
+            "name": "upyun/sdk",
+            "version": "3.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/upyun/php-sdk.git",
+                "reference": "c9f824626552c32b987de4ac7f136e0e21cca962"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/upyun/php-sdk/zipball/c9f824626552c32b987de4ac7f136e0e21cca962",
+                "reference": "c9f824626552c32b987de4ac7f136e0e21cca962",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-curl": "*",
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "consolidation/robo": "^1.0",
+                "phpdocumentor/phpdocumentor": "^2.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Upyun\\": "src/Upyun/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "lfeng",
+                    "email": "bonevv@gmail.com"
+                },
+                {
+                    "name": "lvtongda",
+                    "email": "riyao.lyu@gmail.com"
+                },
+                {
+                    "name": "totoleo",
+                    "email": "totoleo@163.com"
+                },
+                {
+                    "name": "sabakugaara",
+                    "email": "senellise@gmail.com"
+                }
+            ],
+            "description": "UPYUN sdk for php",
+            "homepage": "https://github.com/upyun/php-sdk/",
+            "keywords": [
+                "sdk",
+                "upyun"
+            ],
+            "time": "2020-04-22T06:08:39+00:00"
         },
         {
             "name": "wikimedia/less.php",
