@@ -19,6 +19,6 @@ jobs:
           git pull --recurse-submodules
           git submodule update --init --recursive
           docker run --rm --volume $PWD:/app --user $(id -u):$(id -g) composer i --ignore-platform-reqs -vvv
-          docker run --rm --volume $PWD:/app --user $(id -u):$(id -g) composer dump-autoload -o
+          docker run --rm --volume $PWD:/app --user $(id -u):$(id -g) composer dump-autoload -o --apcu
           echo "clear cache..."
           rm -f public/assets/admin-* public/assets/forum-* public/assets/rev-manifest.json
