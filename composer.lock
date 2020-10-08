@@ -2609,16 +2609,16 @@
         },
         {
             "name": "flarum/tags",
-            "version": "v0.1.0-beta.13.1",
+            "version": "v0.1.0-beta.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/tags.git",
-                "reference": "cd97f4e2ac1226b5fc799a2e87c5f2319c5ad383"
+                "reference": "f929d10426083fe959f37edd42edac70dc4b09fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/tags/zipball/cd97f4e2ac1226b5fc799a2e87c5f2319c5ad383",
-                "reference": "cd97f4e2ac1226b5fc799a2e87c5f2319c5ad383",
+                "url": "https://api.github.com/repos/flarum/tags/zipball/f929d10426083fe959f37edd42edac70dc4b09fe",
+                "reference": "f929d10426083fe959f37edd42edac70dc4b09fe",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2671,7 +2671,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-05T18:25:27+00:00"
+            "time": "2020-10-06T19:41:20+00:00"
         },
         {
             "name": "flarumchina/flysystem-upyun",
