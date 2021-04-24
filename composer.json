@@ -21,12 +21,12 @@
         "docs": "https://flarum.org/docs/"
     },
     "require": {
-        "flarum/core": "^0.1.0",
         "flarum/approval": "^0.1.0",
         "flarum/bbcode": "^0.1.0",
+        "flarum/core": "^0.1.0",
         "flarum/emoji": "^0.1.0",
-        "flarum/lang-english": "^0.1.0",
         "flarum/flags": "^0.1.0",
+        "flarum/lang-english": "^0.1.0",
         "flarum/likes": "^0.1.0",
         "flarum/lock": "^0.1.0",
         "flarum/markdown": "^0.1.0",
@@ -37,7 +37,8 @@
         "flarum/sticky": "^0.1.0",
         "flarum/subscriptions": "^0.1.0",
         "flarum/suspend": "^0.1.0",
-        "flarum/tags": "^0.1.0"
+        "flarum/tags": "^0.1.0",
+        "fof/upload": "^0.14.0"
     },
     "config": {
         "preferred-install": "dist",
@@ -48,7 +49,7 @@
     "repositories": {
         "packagist": {
             "type": "composer",
-            "url": "https://mirrors.cloud.tencent.com/composer/"
+            "url": "https://mirrors.aliyun.com/composer/"
         }
     }
 }
