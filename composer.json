@@ -21,6 +21,8 @@
         "docs": "https://flarum.org/docs/"
     },
     "require": {
+        "askvortsov/flarum-pwa": "^2.4",
+        "ffans/lang-simplified-chinese": "v0.1.0-beta.16.2",
         "flarum/approval": "^0.1.0",
         "flarum/bbcode": "^0.1.0",
         "flarum/core": "^0.1.0",
@@ -38,7 +40,10 @@
         "flarum/subscriptions": "^0.1.0",
         "flarum/suspend": "^0.1.0",
         "flarum/tags": "^0.1.0",
-        "fof/upload": "^0.14.0"
+        "fof/upload": "^0.14.0",
+        "fof/webhooks": "^0.5.1",
+        "league/flysystem-aws-s3-v3": "1.*",
+        "minishlink/web-push": "^6.0"
     },
     "config": {
         "preferred-install": "dist",
