@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a4575f9c57ed1e30ef9505f29de100d",
+    "content-hash": "2c72d802697396288b29fa0154c9a663",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -1066,6 +1066,73 @@
                 }
             ],
             "time": "2020-05-25T17:44:05+00:00"
+        },
+        {
+            "name": "dragonmantank/cron-expression",
+            "version": "v3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dragonmantank/cron-expression.git",
+                "reference": "7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c",
+                "reference": "7a8c6e56ab3ffcc538d05e8155bb42269abf1a0c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^7.2|^8.0",
+                "webmozart/assert": "^1.7.0"
+            },
+            "replace": {
+                "mtdowling/cron-expression": "^1.0"
+            },
+            "require-dev": {
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-webmozart-assert": "^0.12.7",
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cron\\": "src/Cron/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Tankersley",
+                    "email": "chris@ctankersley.com",
+                    "homepage": "https://github.com/dragonmantank"
+                }
+            ],
+            "description": "CRON for PHP: Calculate the next or previous run date and determine if a CRON expression is due",
+            "keywords": [
+                "cron",
+                "schedule"
+            ],
+            "support": {
+                "issues": "https://github.com/dragonmantank/cron-expression/issues",
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/dragonmantank",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-24T19:55:57+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -2509,6 +2576,456 @@
             "time": "2021-03-15T12:03:08+00:00"
         },
         {
+            "name": "fof/console",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/console.git",
+                "reference": "90d944ee596c48efe5f5c9e21c4d307daea63896"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/console/zipball/90d944ee596c48efe5f5c9e21c4d307daea63896",
+                "reference": "90d944ee596c48efe5f5c9e21c4d307daea63896",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "dragonmantank/cron-expression": "^3.1.0",
+                "flarum/core": "^0.1.0-beta.16",
+                "illuminate/console": "^8.0",
+                "illuminate/support": "^8.0",
+                "symfony/process": "~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Console\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clark Winkelmann",
+                    "email": "clark.winkelmann@gmail.com",
+                    "homepage": "https://clarkwinkelmann.com/"
+                },
+                {
+                    "name": "Daniël Klabbers",
+                    "email": "daniel@klabbers.email",
+                    "homepage": "http://luceos.com"
+                }
+            ],
+            "description": "Register custom commands and task scheduling into Flarum",
+            "keywords": [
+                "console",
+                "cron",
+                "cronjob",
+                "extension",
+                "flarum"
+            ],
+            "support": {
+                "issues": "https://github.com/friendsOfFlarum/console/issues",
+                "source": "https://github.com/friendsOfFlarum/console"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2021-03-08T20:03:17+00:00"
+        },
+        {
+            "name": "fof/extend",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/extend.git",
+                "reference": "9fc079d3b1c4c98c87fb252b4df12d5b2033458e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/extend/zipball/9fc079d3b1c4c98c87fb252b4df12d5b2033458e",
+                "reference": "9fc079d3b1c4c98c87fb252b4df12d5b2033458e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^0.1.0-beta.12"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Extend\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "david.s@redevs.org"
+                }
+            ],
+            "description": "Configurable PHP components for your Flarum extension",
+            "support": {
+                "issues": "https://github.com/FriendsOfFlarum/extend/issues",
+                "source": "https://github.com/FriendsOfFlarum/extend/tree/0.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2020-10-08T22:58:45+00:00"
+        },
+        {
+            "name": "fof/links",
+            "version": "0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/links.git",
+                "reference": "3aba6d3d04edf6cdb1dbf2a76e625ff2d19dcddc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/links/zipball/3aba6d3d04edf6cdb1dbf2a76e625ff2d19dcddc",
+                "reference": "3aba6d3d04edf6cdb1dbf2a76e625ff2d19dcddc",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^0.1.0-beta.16"
+            },
+            "replace": {
+                "sijad/flarum-ext-links": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF Links",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-bars",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/18335"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Links\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sajjad Hashemian",
+                    "email": "wolaws@gmail.com"
+                },
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "me+fof@datitisev.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manage Flarum primary navbar menu links",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/18335",
+                "issues": "https://github.com/FriendsOfFlarum/links/issues",
+                "source": "https://github.com/FriendsOfFlarum/links"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-03-16T11:34:10+00:00"
+        },
+        {
+            "name": "fof/nightmode",
+            "version": "0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/nightmode.git",
+                "reference": "a3d7614537f0e270e0a7a0ea745db8d0294a6c9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/nightmode/zipball/a3d7614537f0e270e0a7a0ea745db8d0294a6c9e",
+                "reference": "a3d7614537f0e270e0a7a0ea745db8d0294a6c9e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^0.1.0-beta.16",
+                "fof/extend": ">=0.3.1"
+            },
+            "replace": {
+                "reflar/nightmode": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF Night Mode",
+                    "category": "feature",
+                    "icon": {
+                        "name": "far fa-moon",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/21492"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\NightMode\\": "src/"
+                },
+                "files": [
+                    "src/Overrides/Forum/ValidateCustomLess.php",
+                    "src/Overrides/Frontend/Assets.php",
+                    "src/Overrides/Frontend/RecompileFrontendAssets.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lopez",
+                    "email": "Lopez.T.Christian@gmail.com"
+                }
+            ],
+            "description": "Add a Night Mode option for your users to use on your Flarum forum",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "extension",
+                "flarum",
+                "friendsoflarum",
+                "mode",
+                "night",
+                "nightmode",
+                "option"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/21492",
+                "issues": "https://github.com/FriendsOfFlarum/nightmode/issues",
+                "source": "https://github.com/FriendsOfFlarum/nightmode"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-03-18T08:39:42+00:00"
+        },
+        {
+            "name": "fof/sitemap",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/sitemap.git",
+                "reference": "dc6ae8bf2fdf83832d9ff009bf8ec3aaee472a0e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/sitemap/zipball/dc6ae8bf2fdf83832d9ff009bf8ec3aaee472a0e",
+                "reference": "dc6ae8bf2fdf83832d9ff009bf8ec3aaee472a0e",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-zlib": "*",
+                "flarum/core": ">=0.1.0-beta.16 <0.1.0-beta.17",
+                "fof/console": "^0.7.0"
+            },
+            "replace": {
+                "flagrow/sitemap": "*"
+            },
+            "suggest": {
+                "flarum/tags": "List tags in the sitemap",
+                "fof/pages": "List pages in the sitemap"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF Sitemap",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-sitemap",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/14941"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Sitemap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clark Winkelmann",
+                    "email": "clark.winkelmann@gmail.com",
+                    "homepage": "https://clarkwinkelmann.com/"
+                },
+                {
+                    "name": "Daniël Klabbers",
+                    "email": "daniel@klabbers.email",
+                    "homepage": "http://luceos.com"
+                }
+            ],
+            "description": "Generate a sitemap",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "Sitemap",
+                "extension",
+                "flagrow",
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/14941",
+                "issues": "https://github.com/FriendsOfFlarum/sitemap/issues",
+                "source": "https://github.com/FriendsOfFlarum/sitemap"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-03-28T02:17:50+00:00"
+        },
+        {
+            "name": "fof/socialprofile",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/socialprofile.git",
+                "reference": "324cf97dbb8cdeaaf397e07c17ec76a0fa62b079"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/socialprofile/zipball/324cf97dbb8cdeaaf397e07c17ec76a0fa62b079",
+                "reference": "324cf97dbb8cdeaaf397e07c17ec76a0fa62b079",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^0.1.0-beta.16"
+            },
+            "replace": {
+                "davis/flarum-ext-socialprofile": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF Social Profile",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-globe",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#ffff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/18775"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\SocialProfile\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "david.s@redevs.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add custom social media pages to your user profile",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/18775",
+                "issues": "https://github.com/FriendsOfFlarum/socialprofile/issues",
+                "source": "https://github.com/FriendsOfFlarum/socialprofile"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-03-19T01:36:45+00:00"
+        },
+        {
             "name": "fof/upload",
             "version": "0.14.0",
             "source": {
@@ -2598,6 +3115,80 @@
                 }
             ],
             "time": "2021-03-29T08:23:07+00:00"
+        },
+        {
+            "name": "fof/user-bio",
+            "version": "0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/user-bio.git",
+                "reference": "bb263c677aa79fb3b3750dd7d9631d4c68e11aad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/user-bio/zipball/bb263c677aa79fb3b3750dd7d9631d4c68e11aad",
+                "reference": "bb263c677aa79fb3b3750dd7d9631d4c68e11aad",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^0.1.0-beta.16"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF User Bio",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-pen",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/17775"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\UserBio\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Charlie K",
+                    "email": "charlie.k@redevs.org",
+                    "homepage": "https://redevs.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add a user bio to user profiles",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "Friends of Flarum",
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/17775",
+                "issues": "https://github.com/FriendsOfFlarum/user-bio/issues",
+                "source": "https://github.com/FriendsOfFlarum/user-bio"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-03-16T12:07:27+00:00"
         },
         {
             "name": "fof/webhooks",
@@ -9111,6 +9702,77 @@
             "time": "2016-03-31T09:25:28+00:00"
         },
         {
+            "name": "v17development/flarum-seo",
+            "version": "v1.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/v17development/flarum-seo.git",
+                "reference": "877e8bb776d7ddfe8ed5b1d9f0a6e88b9f961c82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/v17development/flarum-seo/zipball/877e8bb776d7ddfe8ed5b1d9f0a6e88b9f961c82",
+                "reference": "877e8bb776d7ddfe8ed5b1d9f0a6e88b9f961c82",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "flarum/core": "^0.1.0-beta.16"
+            },
+            "conflict": {
+                "franzl/flarum-open-links-in-new-tab": "*",
+                "zerosonesfun/elint": "*"
+            },
+            "suggest": {
+                "fof/sitemap": "Allows you to generate powerful sitemap.xml files"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "SEO",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-check",
+                        "backgroundColor": "#0072ff",
+                        "color": "#ffffff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/18316"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "V17Development\\FlarumSeo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "V17 Development",
+                    "email": "info@v17.dev"
+                }
+            ],
+            "description": "Adds SEO tags for your Flarum forum",
+            "homepage": "https://v17.dev/projects/flarum-seo",
+            "support": {
+                "docs": "https://community.v17.dev/knowledgebase/category/flarum-seo",
+                "forum": "https://discuss.flarum.org/d/18316",
+                "issues": "https://github.com/v17development/flarum-seo/issues",
+                "source": "https://github.com/v17development/flarum-seo"
+            },
+            "time": "2021-03-21T12:44:53+00:00"
+        },
+        {
             "name": "voku/portable-ascii",
             "version": "1.5.6",
             "source": {
@@ -9585,6 +10247,70 @@
                 }
             ],
             "time": "2021-03-24T13:35:17+00:00"
+        },
+        {
+            "name": "webmozart/assert",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozarts/assert.git",
+                "reference": "6964c76c7804814a842473e0c8fd15bab0f18e25"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/6964c76c7804814a842473e0c8fd15bab0f18e25",
+                "reference": "6964c76c7804814a842473e0c8fd15bab0f18e25",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": "^7.2 || ^8.0",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "phpstan/phpstan": "<0.12.20",
+                "vimeo/psalm": "<4.6.1 || 4.6.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5.13"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.10-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "support": {
+                "issues": "https://github.com/webmozarts/assert/issues",
+                "source": "https://github.com/webmozarts/assert/tree/1.10.0"
+            },
+            "time": "2021-03-09T10:59:23+00:00"
         },
         {
             "name": "wikimedia/less.php",

@@ -40,10 +40,16 @@
         "flarum/subscriptions": "^0.1.0",
         "flarum/suspend": "^0.1.0",
         "flarum/tags": "^0.1.0",
+        "fof/links": "^0.6.0",
+        "fof/nightmode": "^0.8.0",
+        "fof/sitemap": "^0.7.0",
+        "fof/socialprofile": "^0.3.0",
         "fof/upload": "^0.14.0",
+        "fof/user-bio": "^0.5.0",
         "fof/webhooks": "^0.5.1",
         "league/flysystem-aws-s3-v3": "1.*",
-        "minishlink/web-push": "^6.0"
+        "minishlink/web-push": "^6.0",
+        "v17development/flarum-seo": "^1.7"
     },
     "config": {
         "preferred-install": "dist",
