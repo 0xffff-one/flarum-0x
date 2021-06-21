@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d49535909c4d5da5fe934367ca094dc",
+    "content-hash": "ef11a8ffb60ea86241e2f24e5ff3a5ad",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -10172,6 +10172,72 @@
                 }
             ],
             "time": "2021-05-26T17:43:10+00:00"
+        },
+        {
+            "name": "the-turk/flarum-mathren",
+            "version": "0.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/the-turk/flarum-mathren.git",
+                "reference": "7302d200ff84b55235ff7dfecb9b784132406c6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/the-turk/flarum-mathren/zipball/7302d200ff84b55235ff7dfecb9b784132406c6f",
+                "reference": "7302d200ff84b55235ff7dfecb9b784132406c6f",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": ">=1.0.2"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "MathRen",
+                    "icon": {
+                        "name": "fas fa-square-root-alt",
+                        "backgroundColor": "#b72a2a",
+                        "color": "#fff"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "TheTurk\\MathRen\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hasan Özbey",
+                    "email": "hasanoozbey@gmail.com",
+                    "homepage": "https://github.com/the-turk"
+                }
+            ],
+            "description": "TeX math rendering for your forum.",
+            "keywords": [
+                "expressions",
+                "flarum",
+                "katex",
+                "latex",
+                "mathematics",
+                "mathren",
+                "tex"
+            ],
+            "support": {
+                "issues": "https://github.com/the-turk/flarum-mathren/issues",
+                "source": "https://github.com/the-turk/flarum-mathren"
+            },
+            "time": "2021-06-20T16:41:31+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

@@ -49,6 +49,7 @@
         "fof/webhooks": "*",
         "league/flysystem-aws-s3-v3": "1.*",
         "minishlink/web-push": "*",
+        "the-turk/flarum-mathren": "^0.3.4",
         "v17development/flarum-seo": "*"
     },
     "config": {
