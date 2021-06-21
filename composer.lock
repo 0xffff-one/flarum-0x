@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef11a8ffb60ea86241e2f24e5ff3a5ad",
+    "content-hash": "2a887bdf6aa3f327ee4a630efa1455a5",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -3708,6 +3708,81 @@
                 "source": "https://github.com/mtibben/html2text/tree/4.3.1"
             },
             "time": "2020-04-16T23:44:31+00:00"
+        },
+        {
+            "name": "ianm/syndication",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/imorland/syndication.git",
+                "reference": "ad59c74c6e2fdab13d6e88f8a5215252f9c2f1e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/imorland/syndication/zipball/ad59c74c6e2fdab13d6e88f8a5215252f9c2f1e5",
+                "reference": "ad59c74c6e2fdab13d6e88f8a5215252f9c2f1e5",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^1.0.2"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "Syndication",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-rss",
+                        "backgroundColor": "#e28f12",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundPosition": "center",
+                        "color": "#fff"
+                    },
+                    "optional-dependencies": [
+                        "flarum/tags"
+                    ]
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/27687"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IanM\\FlarumFeeds\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "CECILL-B"
+            ],
+            "authors": [
+                {
+                    "name": "Amaury Carrade",
+                    "email": "amaury@carrade.eu",
+                    "role": "Developer"
+                },
+                {
+                    "name": "IanM",
+                    "homepage": "https://discuss.flarum.org/u/ianm",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Brings RSS and Atom feeds to Flarum",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/27687",
+                "issues": "https://github.com/imorland/syndication/issues",
+                "source": "https://github.com/imorland/syndication"
+            },
+            "time": "2021-06-10T10:08:38+00:00"
         },
         {
             "name": "illuminate/bus",

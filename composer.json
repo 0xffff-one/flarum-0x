@@ -47,6 +47,7 @@
         "fof/upload": "*",
         "fof/user-bio": "*",
         "fof/webhooks": "*",
+        "ianm/syndication": "*",
         "league/flysystem-aws-s3-v3": "1.*",
         "minishlink/web-push": "*",
         "the-turk/flarum-mathren": "^0.3.4",
