@@ -3711,16 +3711,16 @@
         },
         {
             "name": "ianm/syndication",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/imorland/syndication.git",
-                "reference": "ad59c74c6e2fdab13d6e88f8a5215252f9c2f1e5"
+                "reference": "603f900587eb3c1d08585e2a51421c341b214b26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/imorland/syndication/zipball/ad59c74c6e2fdab13d6e88f8a5215252f9c2f1e5",
-                "reference": "ad59c74c6e2fdab13d6e88f8a5215252f9c2f1e5",
+                "url": "https://api.github.com/repos/imorland/syndication/zipball/603f900587eb3c1d08585e2a51421c341b214b26",
+                "reference": "603f900587eb3c1d08585e2a51421c341b214b26",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3782,7 +3782,7 @@
                 "issues": "https://github.com/imorland/syndication/issues",
                 "source": "https://github.com/imorland/syndication"
             },
-            "time": "2021-06-10T10:08:38+00:00"
+            "time": "2021-07-06T20:34:11+00:00"
         },
         {
             "name": "illuminate/bus",
