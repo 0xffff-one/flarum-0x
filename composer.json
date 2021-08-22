@@ -22,7 +22,7 @@
     },
     "require": {
         "askvortsov/flarum-pwa": "*",
-        "ffans/lang-simplified-chinese": "*",
+        "flarum-lang/chinese-simplified": "^1.0",
         "flarum/approval": "*",
         "flarum/bbcode": "*",
         "flarum/core": "^1.0",
@@ -42,6 +42,7 @@
         "flarum/tags": "*",
         "fof/links": "*",
         "fof/nightmode": "*",
+        "fof/oauth": "*",
         "fof/sitemap": "*",
         "fof/socialprofile": "*",
         "fof/upload": "*",

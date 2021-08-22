@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a887bdf6aa3f327ee4a630efa1455a5",
+    "content-hash": "98ee2e624c4d9753fcea7ac3b6178d16",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -1341,80 +1341,6 @@
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
-            "name": "ffans/lang-simplified-chinese",
-            "version": "v1.0.4.0810",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/flarum-lang/chinese-simplified.git",
-                "reference": "41d969cfed6cabe60e23d06c731abc099a4c1bf6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/flarum-lang/chinese-simplified/zipball/41d969cfed6cabe60e23d06c731abc099a4c1bf6",
-                "reference": "41d969cfed6cabe60e23d06c731abc099a4c1bf6",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "flarum/core": "^1.0.0"
-            },
-            "replace": {
-                "ffans/lang-simplified-chinese": "*",
-                "littlegolden/flarum-lang-simplified-chinese": "*"
-            },
-            "type": "flarum-extension",
-            "extra": {
-                "flarum-extension": {
-                    "title": "简体中文",
-                    "icon": {
-                        "image": "icon.svg",
-                        "backgroundColor": "#fff",
-                        "backgroundSize": "cover",
-                        "backgroundPosition": "center"
-                    }
-                },
-                "flagrow": {
-                    "discuss": "https://discuss.flarum.org/d/22690"
-                },
-                "flarum-locale": {
-                    "code": "zh-Hans",
-                    "title": "简体中文"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Flarum Fans",
-                    "email": "littlegoldenjin@gmail.com",
-                    "homepage": "https://github.com/FFans"
-                }
-            ],
-            "description": "Flarum 简体中文语言包 2021",
-            "keywords": [
-                "Chinsese",
-                "extension",
-                "flarum",
-                "locale",
-                "中文",
-                "简体中文"
-            ],
-            "support": {
-                "forum": "https://discuss.flarum.org/d/22690",
-                "issues": "https://github.com/flarum-lang/chinese-simplified/issues",
-                "source": "https://github.com/flarum-lang/chinese-simplified"
-            },
-            "abandoned": "flarum-lang/chinese-simplified",
-            "time": "2021-08-09T07:41:22+00:00"
-        },
-        {
             "name": "fgrosse/phpasn1",
             "version": "v2.3.0",
             "source": {
@@ -1633,6 +1559,79 @@
                 }
             ],
             "time": "2021-07-13T12:00:00+00:00"
+        },
+        {
+            "name": "flarum-lang/chinese-simplified",
+            "version": "v1.0.4.0810",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flarum-lang/chinese-simplified.git",
+                "reference": "41d969cfed6cabe60e23d06c731abc099a4c1bf6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/flarum-lang/chinese-simplified/zipball/41d969cfed6cabe60e23d06c731abc099a4c1bf6",
+                "reference": "41d969cfed6cabe60e23d06c731abc099a4c1bf6",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^1.0.0"
+            },
+            "replace": {
+                "ffans/lang-simplified-chinese": "*",
+                "littlegolden/flarum-lang-simplified-chinese": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "简体中文",
+                    "icon": {
+                        "image": "icon.svg",
+                        "backgroundColor": "#fff",
+                        "backgroundSize": "cover",
+                        "backgroundPosition": "center"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/22690"
+                },
+                "flarum-locale": {
+                    "code": "zh-Hans",
+                    "title": "简体中文"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Flarum Fans",
+                    "email": "littlegoldenjin@gmail.com",
+                    "homepage": "https://github.com/FFans"
+                }
+            ],
+            "description": "Flarum 简体中文语言包 2021",
+            "keywords": [
+                "Chinsese",
+                "extension",
+                "flarum",
+                "locale",
+                "中文",
+                "简体中文"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/22690",
+                "issues": "https://github.com/flarum-lang/chinese-simplified/issues",
+                "source": "https://github.com/flarum-lang/chinese-simplified"
+            },
+            "time": "2021-08-09T07:41:22+00:00"
         },
         {
             "name": "flarum/approval",
@@ -2817,6 +2816,63 @@
             "time": "2021-06-10T22:25:24+00:00"
         },
         {
+            "name": "fof/components",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/components.git",
+                "reference": "1e60224260b5a284a385968c6fa99ecd4a89c026"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/components/zipball/1e60224260b5a284a385968c6fa99ecd4a89c026",
+                "reference": "1e60224260b5a284a385968c6fa99ecd4a89c026",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Components\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "me+fof@datitisev.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "[NOT EXT] Reusable JavaScript components for your Flarum extension",
+            "keywords": [
+                "flarum",
+                "friendsofflarum"
+            ],
+            "support": {
+                "issues": "https://github.com/FriendsOfFlarum/components/issues",
+                "source": "https://github.com/FriendsOfFlarum/components/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2021-05-17T13:47:34+00:00"
+        },
+        {
             "name": "fof/extend",
             "version": "1.0.0",
             "source": {
@@ -3029,6 +3085,105 @@
                 }
             ],
             "time": "2021-05-26T17:57:21+00:00"
+        },
+        {
+            "name": "fof/oauth",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/oauth.git",
+                "reference": "18470619a8aa4c5011348e3305883bb9906f6343"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/oauth/zipball/18470619a8aa4c5011348e3305883bb9906f6343",
+                "reference": "18470619a8aa4c5011348e3305883bb9906f6343",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^1.0.0",
+                "fof/components": "^1.0.0",
+                "fof/extend": "^1.0.0",
+                "league/oauth1-client": "^1.8.2",
+                "league/oauth2-facebook": "^2.0.3",
+                "league/oauth2-github": "^3.0.0",
+                "league/oauth2-google": "^4.0.0",
+                "league/oauth2-linkedin": "^5.1.2",
+                "omines/oauth2-gitlab": "^3.3.0",
+                "wohali/oauth2-discord-new": "^1.1.0"
+            },
+            "replace": {
+                "flarum/auth-facebook": "*",
+                "flarum/auth-github": "*",
+                "flarum/auth-twitter": "*",
+                "fof/auth-discord": "*",
+                "fof/auth-gitlab": "*",
+                "luuhai48/oauth-google": "*",
+                "luuhai48/oauth-linkedin": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF OAuth",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-sign-in-alt",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/25182"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\OAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martin",
+                    "email": "me+fof@datitisev.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Allow users to log in with GitHub, Twitter, Facebook, Google, and more!",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "discord",
+                "facebook",
+                "flarum",
+                "friendsofflarum",
+                "github",
+                "gitlab",
+                "google",
+                "linkedin",
+                "oauth",
+                "twitter"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/25182",
+                "issues": "https://github.com/FriendsOfFlarum/oauth/issues",
+                "source": "https://github.com/FriendsOfFlarum/oauth"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-06-14T13:58:09+00:00"
         },
         {
             "name": "fof/sitemap",
@@ -6031,6 +6186,425 @@
             "time": "2021-01-18T20:58:21+00:00"
         },
         {
+            "name": "league/oauth1-client",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth1-client.git",
+                "reference": "88dd16b0cff68eb9167bfc849707d2c40ad91ddc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/88dd16b0cff68eb9167bfc849707d2c40ad91ddc",
+                "reference": "88dd16b0cff68eb9167bfc849707d2c40ad91ddc",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-openssl": "*",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "guzzlehttp/psr7": "^1.7|^2.0",
+                "php": ">=7.1||>=8.0"
+            },
+            "require-dev": {
+                "ext-simplexml": "*",
+                "friendsofphp/php-cs-fixer": "^2.17",
+                "mockery/mockery": "^1.3.3",
+                "phpstan/phpstan": "^0.12.42",
+                "phpunit/phpunit": "^7.5||9.5"
+            },
+            "suggest": {
+                "ext-simplexml": "For decoding XML-based responses."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev",
+                    "dev-develop": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth1\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Corlett",
+                    "email": "bencorlett@me.com",
+                    "homepage": "http://www.webcomm.com.au",
+                    "role": "Developer"
+                }
+            ],
+            "description": "OAuth 1.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "bitbucket",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth1",
+                "single sign on",
+                "trello",
+                "tumblr",
+                "twitter"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth1-client/issues",
+                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.10.0"
+            },
+            "time": "2021-08-15T23:05:49+00:00"
+        },
+        {
+            "name": "league/oauth2-client",
+            "version": "2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-client.git",
+                "reference": "badb01e62383430706433191b82506b6df24ad98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/badb01e62383430706433191b82506b6df24ad98",
+                "reference": "badb01e62383430706433191b82506b6df24ad98",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0 || ^7.0",
+                "paragonie/random_compat": "^1 || ^2 || ^9.99",
+                "php": "^5.6 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpunit/phpunit": "^5.7 || ^6.0 || ^9.3",
+                "squizlabs/php_codesniffer": "^2.3 || ^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Bilbie",
+                    "email": "hello@alexbilbie.com",
+                    "homepage": "http://www.alexbilbie.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Woody Gilk",
+                    "homepage": "https://github.com/shadowhand",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "OAuth 2.0 Client Library",
+            "keywords": [
+                "Authentication",
+                "SSO",
+                "authorization",
+                "identity",
+                "idp",
+                "oauth",
+                "oauth2",
+                "single sign on"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-client/issues",
+                "source": "https://github.com/thephpleague/oauth2-client/tree/2.6.0"
+            },
+            "time": "2020-10-28T02:03:40+00:00"
+        },
+        {
+            "name": "league/oauth2-facebook",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-facebook.git",
+                "reference": "14cead7580cab8caace67f5a61ea5d2a8ff213eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-facebook/zipball/14cead7580cab8caace67f5a61ea5d2a8ff213eb",
+                "reference": "14cead7580cab8caace67f5a61ea5d2a8ff213eb",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "league/oauth2-client": "^2.0",
+                "php": "^5.6 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "mockery/mockery": "~1.3.0",
+                "phpunit/phpunit": "^9.4",
+                "squizlabs/php_codesniffer": "~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sammy Kaye Powers",
+                    "email": "me@sammyk.me",
+                    "homepage": "http://www.sammyk.me"
+                }
+            ],
+            "description": "Facebook OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "client",
+                "facebook",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-facebook/issues",
+                "source": "https://github.com/thephpleague/oauth2-facebook/tree/2.0.5"
+            },
+            "time": "2021-02-01T15:33:45+00:00"
+        },
+        {
+            "name": "league/oauth2-github",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-github.git",
+                "reference": "266e9589a99e75bf696314e9ad8224009fccb91c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-github/zipball/266e9589a99e75bf696314e9ad8224009fccb91c",
+                "reference": "266e9589a99e75bf696314e9ad8224009fccb91c",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "league/oauth2-client": "^2.0",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.4",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steven Maguire",
+                    "email": "stevenmaguire@gmail.com",
+                    "homepage": "https://github.com/stevenmaguire"
+                },
+                {
+                    "name": "Woody Gilk",
+                    "email": "woody.gilk@gmail.com",
+                    "homepage": "https://github.com/shadowhand"
+                }
+            ],
+            "description": "Github OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "authorisation",
+                "authorization",
+                "client",
+                "github",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-github/issues",
+                "source": "https://github.com/thephpleague/oauth2-github/tree/3.0.0"
+            },
+            "time": "2021-05-10T13:15:40+00:00"
+        },
+        {
+            "name": "league/oauth2-google",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-google.git",
+                "reference": "db6d8ad67cdd7d014a1e5dd5c204a319a966de86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-google/zipball/db6d8ad67cdd7d014a1e5dd5c204a319a966de86",
+                "reference": "db6d8ad67cdd7d014a1e5dd5c204a319a966de86",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "league/oauth2-client": "^2.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "eloquent/phony-phpunit": "^6.0 || ^7.1",
+                "phpunit/phpunit": "^8.0 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Woody Gilk",
+                    "email": "woody.gilk@gmail.com",
+                    "homepage": "http://shadowhand.me"
+                }
+            ],
+            "description": "Google OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "client",
+                "google",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-google/issues",
+                "source": "https://github.com/thephpleague/oauth2-google/tree/4.0.0"
+            },
+            "time": "2021-03-04T21:12:06+00:00"
+        },
+        {
+            "name": "league/oauth2-linkedin",
+            "version": "5.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/oauth2-linkedin.git",
+                "reference": "f9ab661ca37884067ca286412b6c17304d3c2fac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/oauth2-linkedin/zipball/f9ab661ca37884067ca286412b6c17304d3c2fac",
+                "reference": "f9ab661ca37884067ca286412b6c17304d3c2fac",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "league/oauth2-client": "^2.0"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Steven Maguire",
+                    "email": "stevenmaguire@gmail.com",
+                    "homepage": "https://github.com/stevenmaguire"
+                }
+            ],
+            "description": "LinkedIn OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "authorisation",
+                "authorization",
+                "client",
+                "linkedin",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/thephpleague/oauth2-linkedin/issues",
+                "source": "https://github.com/thephpleague/oauth2-linkedin/tree/5.1.2"
+            },
+            "time": "2020-04-20T13:59:44+00:00"
+        },
+        {
             "name": "matthiasmullie/minify",
             "version": "1.3.66",
             "source": {
@@ -6965,6 +7539,79 @@
             "time": "2015-06-18T19:15:47+00:00"
         },
         {
+            "name": "omines/oauth2-gitlab",
+            "version": "3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omines/oauth2-gitlab.git",
+                "reference": "0c37361c54fae71a85350c445bda1834db5859af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omines/oauth2-gitlab/zipball/0c37361c54fae71a85350c445bda1834db5859af",
+                "reference": "0c37361c54fae71a85350c445bda1834db5859af",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "league/oauth2-client": "^2.4.1",
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.0",
+                "guzzlehttp/psr7": "^1.6",
+                "http-interop/http-factory-guzzle": "^1.0",
+                "m4tthumphrey/php-gitlab-api": "^10.0|^11.0",
+                "mockery/mockery": "^1.0",
+                "php-http/guzzle7-adapter": "^0.1",
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "suggest": {
+                "m4tthumphrey/php-gitlab-api": "For further API usage using the acquired OAuth2 token"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Omines\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Niels Keurentjes",
+                    "email": "niels.keurentjes@omines.com",
+                    "homepage": "https://www.omines.nl/"
+                }
+            ],
+            "description": "GitLab OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "authorisation",
+                "authorization",
+                "client",
+                "gitlab",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/omines/oauth2-gitlab/issues",
+                "source": "https://github.com/omines/oauth2-gitlab/tree/3.4.0"
+            },
+            "time": "2021-02-08T12:15:55+00:00"
+        },
+        {
             "name": "opis/closure",
             "version": "3.6.2",
             "source": {
@@ -7034,6 +7681,62 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "time": "2021-04-09T13:42:10+00:00"
+        },
+        {
+            "name": "paragonie/random_compat",
+            "version": "v9.99.100",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/996434e5492cb4c3edcb9168db6fbb1359ef965a",
+                "reference": "996434e5492cb4c3edcb9168db6fbb1359ef965a",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">= 7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*",
+                "vimeo/psalm": "^1"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "keywords": [
+                "csprng",
+                "polyfill",
+                "pseudorandom",
+                "random"
+            ],
+            "support": {
+                "email": "info@paragonie.com",
+                "issues": "https://github.com/paragonie/random_compat/issues",
+                "source": "https://github.com/paragonie/random_compat"
+            },
+            "time": "2020-10-15T08:29:30+00:00"
         },
         {
             "name": "psr/container",
@@ -11487,6 +12190,75 @@
                 "source": "https://github.com/wikimedia/less.php/tree/v3.1.0"
             },
             "time": "2020-12-11T19:33:31+00:00"
+        },
+        {
+            "name": "wohali/oauth2-discord-new",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wohali/oauth2-discord-new.git",
+                "reference": "0dcb5059cded358f55ae566de9621652cf8542c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wohali/oauth2-discord-new/zipball/0dcb5059cded358f55ae566de9621652cf8542c6",
+                "reference": "0dcb5059cded358f55ae566de9621652cf8542c6",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "league/oauth2-client": "^2.0"
+            },
+            "conflict": {
+                "team-reflex/oauth2-discord": ">=1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "~1.3.0",
+                "php-parallel-lint/php-parallel-lint": "~0.9",
+                "phpunit/phpunit": "~8.0",
+                "squizlabs/php_codesniffer": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Wohali\\OAuth2\\Client\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joan Touzet",
+                    "email": "code@atypical.net",
+                    "homepage": "https://github.com/wohali"
+                }
+            ],
+            "description": "Discord OAuth 2.0 Client Provider for The PHP League OAuth2-Client",
+            "keywords": [
+                "authorisation",
+                "authorization",
+                "client",
+                "discord",
+                "oauth",
+                "oauth2"
+            ],
+            "support": {
+                "issues": "https://github.com/wohali/oauth2-discord-new/issues",
+                "source": "https://github.com/wohali/oauth2-discord-new/tree/master"
+            },
+            "time": "2020-06-12T07:27:09+00:00"
         }
     ],
     "packages-dev": [],
