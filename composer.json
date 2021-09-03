@@ -48,6 +48,7 @@
         "fof/upload": "*",
         "fof/user-bio": "*",
         "fof/webhooks": "*",
+        "ganuonglachanh/sonic": "^0.1.2",
         "ianm/syndication": "*",
         "league/flysystem-aws-s3-v3": "1.*",
         "minishlink/web-push": "*",
