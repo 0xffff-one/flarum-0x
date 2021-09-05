@@ -52,6 +52,7 @@
         "ianm/syndication": "*",
         "league/flysystem-aws-s3-v3": "1.*",
         "minishlink/web-push": "*",
+        "overtrue/pinyin": "~4.0",
         "the-turk/flarum-mathren": "^0.3.4",
         "v17development/flarum-seo": "*"
     },

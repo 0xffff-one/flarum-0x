@@ -8,7 +8,16 @@
  */
 
 use Flarum\Extend;
+use Flarum\Discussion\Event\Saving;
+use Overtrue\Pinyin\Pinyin;
+
+// https://github.com/overtrue/pinyin
+$pinyin = new Pinyin();
 
 return [
-    // Register extenders here to customize your forum!
+    (new Extend\Event)
+        ->listen(Saving::class, function ($event) use ($pinyin) {
+            // pinyin slug
+            $event->discussion->slug = mb_strtolower($pinyin->permalink($event->discussion->title));
+        })
 ];
