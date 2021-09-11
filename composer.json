@@ -43,6 +43,7 @@
         "fof/links": "*",
         "fof/nightmode": "*",
         "fof/oauth": "*",
+        "fof/pages": "^1.0",
         "fof/sitemap": "*",
         "fof/socialprofile": "*",
         "fof/upload": "*",

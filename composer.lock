@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b90defdbabbfafa400161256d5532e43",
+    "content-hash": "23c3c9ba70be411bbe130b84abcab93c",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -3184,6 +3184,86 @@
                 }
             ],
             "time": "2021-06-14T13:58:09+00:00"
+        },
+        {
+            "name": "fof/pages",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/pages.git",
+                "reference": "323ba8797a488afc1a22207f09c8225bb447a44a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/pages/zipball/323ba8797a488afc1a22207f09c8225bb447a44a",
+                "reference": "323ba8797a488afc1a22207f09c8225bb447a44a",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "flarum/core": "^1.0"
+            },
+            "replace": {
+                "sijad/flarum-ext-pages": "*"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF Pages",
+                    "category": "feature",
+                    "icon": {
+                        "name": "far fa-file-alt",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/18301"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Pages\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sajjad Hashemian",
+                    "email": "wolaws@gmail.com"
+                },
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "david.s@redevs.org",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Create custom pages with Flarum",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/18301",
+                "issues": "https://github.com/FriendsOfFlarum/pages/issues",
+                "source": "https://github.com/FriendsOfFlarum/pages"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-06-05T13:47:18+00:00"
         },
         {
             "name": "fof/sitemap",
