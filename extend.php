@@ -18,7 +18,8 @@ return [
     (new Extend\Event)
         ->listen(Saving::class, function ($event) use ($pinyin) {
             // pinyin slug
-            $event->discussion->slug = mb_strtolower($pinyin->permalink($event->discussion->title));
+            $SLUG_MAX_LEN = 80;
+            $event->discussion->slug = trim(substr(mb_strtolower($pinyin->permalink($event->discussion->title)), 0, $SLUG_MAX_LEN), '-');
         }),
     // redis queue
     new Blomstra\Redis\Extend\Redis([
