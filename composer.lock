@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23c3c9ba70be411bbe130b84abcab93c",
+    "content-hash": "8d66772a2115d31870830f7ff939a9d0",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -383,6 +383,65 @@
                 "source": "https://github.com/axypro/sourcemap/tree/0.1.5"
             },
             "time": "2020-08-20T09:49:44+00:00"
+        },
+        {
+            "name": "blomstra/flarum-redis",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/blomstra/flarum-redis.git",
+                "reference": "47480b907389f031d44ed739764c210ddca0b2c8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/blomstra/flarum-redis/zipball/47480b907389f031d44ed739764c210ddca0b2c8",
+                "reference": "47480b907389f031d44ed739764c210ddca0b2c8",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^1.0.0",
+                "illuminate/redis": "*",
+                "predis/predis": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Blomstra\\Redis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniël Klabbers",
+                    "email": "daniel@klabbers.email",
+                    "homepage": "http://luceos.com"
+                }
+            ],
+            "description": "Adds Redis cache, sessions and queue to Flarum",
+            "homepage": "https://blomstra.net",
+            "keywords": [
+                "blomstra",
+                "cache",
+                "flarum",
+                "queue",
+                "redis",
+                "session"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/21873",
+                "issues": "https://github.com/blomstra/flarum-redis/issues",
+                "source": "https://github.com/blomstra/flarum-redis"
+            },
+            "time": "2021-06-21T14:17:27+00:00"
         },
         {
             "name": "brick/math",
@@ -5082,6 +5141,66 @@
             "time": "2021-08-25T18:01:56+00:00"
         },
         {
+            "name": "illuminate/redis",
+            "version": "v8.60.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/redis.git",
+                "reference": "f76f84cd27305bc510d67ae3a2ec83cd217dfeb8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/redis/zipball/f76f84cd27305bc510d67ae3a2ec83cd217dfeb8",
+                "reference": "f76f84cd27305bc510d67ae3a2ec83cd217dfeb8",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "illuminate/collections": "^8.0",
+                "illuminate/contracts": "^8.0",
+                "illuminate/macroable": "^8.0",
+                "illuminate/support": "^8.0",
+                "php": "^7.3|^8.0"
+            },
+            "suggest": {
+                "ext-redis": "Required to use the phpredis connector (^4.0|^5.0).",
+                "predis/predis": "Required to use the predis connector (^1.1.2)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "8.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Redis\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "The Illuminate Redis package.",
+            "homepage": "https://laravel.com",
+            "support": {
+                "issues": "https://github.com/laravel/framework/issues",
+                "source": "https://github.com/laravel/framework"
+            },
+            "time": "2021-09-08T12:09:40+00:00"
+        },
+        {
             "name": "illuminate/session",
             "version": "v8.57.0",
             "source": {
@@ -8084,6 +8203,78 @@
                 "source": "https://github.com/ppshobi/psonic/tree/v2.0.1"
             },
             "time": "2020-12-30T17:32:39+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/predis/predis.git",
+                "reference": "b240daa106d4e02f0c5b7079b41e31ddf66fddf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/predis/predis/zipball/b240daa106d4e02f0c5b7079b41e31ddf66fddf8",
+                "reference": "b240daa106d4e02f0c5b7079b41e31ddf66fddf8",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net",
+                    "role": "Creator & Maintainer"
+                },
+                {
+                    "name": "Till Krüss",
+                    "homepage": "https://till.im",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/predis/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "support": {
+                "issues": "https://github.com/predis/predis/issues",
+                "source": "https://github.com/predis/predis/tree/v1.1.7"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/tillkruss",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-04-04T19:34:46+00:00"
         },
         {
             "name": "psr/container",

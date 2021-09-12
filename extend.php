@@ -19,5 +19,12 @@ return [
         ->listen(Saving::class, function ($event) use ($pinyin) {
             // pinyin slug
             $event->discussion->slug = mb_strtolower($pinyin->permalink($event->discussion->title));
-        })
+        }),
+    // redis queue
+    new Blomstra\Redis\Extend\Redis([
+        'host' => 'redis',
+        'password' => null,
+        'port' => 6379,
+        'database' => 1
+    ])
 ];
