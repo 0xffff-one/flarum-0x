@@ -14,7 +14,6 @@ RUN curl -sS https://getcomposer.org/installer | php \
 
 # extensions
 RUN apk add \
-        git \
         freetype \
         freetype-dev \
         libpng \
@@ -25,14 +24,17 @@ RUN apk add \
         libjpeg-turbo-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd gmp pdo_mysql exif \
-    # Install APCu
-    && apk add autoconf automake make gcc g++ libtool pkgconfig \
-    && pecl install apcu \
-    && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
-    && apk del autoconf automake make gcc g++ libtool pkgconfig freetype-dev \
+    && apk del \
+        freetype-dev \
         libpng-dev \
         libjpeg-turbo-dev \
-        gmp-dev
+        gmp-dev 
+
+RUN apk add autoconf automake make gcc g++ libtool pkgconfig 
+
+# Install APCu
+RUN pecl install apcu \
+    && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini
 
 # uid
 RUN apk --no-cache add shadow \
