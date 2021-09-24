@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d66772a2115d31870830f7ff939a9d0",
+    "content-hash": "092adfc70cbf674845966be052c9a496",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -3486,6 +3486,82 @@
                 }
             ],
             "time": "2021-08-13T01:14:36+00:00"
+        },
+        {
+            "name": "fof/split",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/split.git",
+                "reference": "d405a2139c1a677550d8eafbbfdec5a644faa774"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/split/zipball/d405a2139c1a677550d8eafbbfdec5a644faa774",
+                "reference": "d405a2139c1a677550d8eafbbfdec5a644faa774",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF Split",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-code-branch",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/1903"
+                },
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Split\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniël Klabbers",
+                    "email": "daniel@klabbers.email",
+                    "homepage": "http://luceos.com"
+                }
+            ],
+            "description": "Separate posts from one discussion into its own, splits discussions.",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "flarum",
+                "split"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/1903",
+                "issues": "https://github.com/FriendsOfFlarum/split/issues",
+                "source": "https://github.com/FriendsOfFlarum/split"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-05-26T17:37:52+00:00"
         },
         {
             "name": "fof/upload",

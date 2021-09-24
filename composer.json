@@ -47,6 +47,7 @@
         "fof/pages": "^1.0",
         "fof/sitemap": "*",
         "fof/socialprofile": "*",
+        "fof/split": "*",
         "fof/upload": "*",
         "fof/user-bio": "*",
         "fof/webhooks": "*",
