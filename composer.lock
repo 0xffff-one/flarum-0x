@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "092adfc70cbf674845966be052c9a496",
+    "content-hash": "5346833d40df42efcd2c4ffbabd15f0f",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -2983,6 +2983,78 @@
                 }
             ],
             "time": "2021-05-21T23:38:23+00:00"
+        },
+        {
+            "name": "fof/formatting",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/formatting.git",
+                "reference": "814a1b825cda12a67763462c0ab7a453bd0a162f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/formatting/zipball/814a1b825cda12a67763462c0ab7a453bd0a162f",
+                "reference": "814a1b825cda12a67763462c0ab7a453bd0a162f",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "FoF Formatting",
+                    "category": "feature",
+                    "icon": {
+                        "name": "fas fa-font",
+                        "backgroundColor": "#e74c3c",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/17770"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Formatting\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Sevilla Martín",
+                    "email": "me+fof@datitisev.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Customize TextFormatter with plugins through the admin interface",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/17770",
+                "issues": "https://github.com/FriendsOfFlarum/formatting/issues",
+                "source": "https://github.com/FriendsOfFlarum/formatting"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2021-09-09T08:34:30+00:00"
         },
         {
             "name": "fof/links",

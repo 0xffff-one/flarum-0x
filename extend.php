@@ -20,6 +20,8 @@ use Psr\Http\Message\ServerRequestInterface;
 $pinyin = new Pinyin();
 
 return [
+    (new Extend\Frontend('forum'))
+        ->css(__DIR__.'/resources/less/post-table.less'),
     (new Extend\Event)
         ->listen(Saving::class, function ($event) use ($pinyin) {
             // pinyin slug
