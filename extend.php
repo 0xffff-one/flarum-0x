@@ -10,6 +10,7 @@
 use Flarum\Extend;
 use Flarum\Discussion\Event\Saving;
 use Flarum\Extend\ThrottleApi;
+use Flarum\Frontend\Document;
 use Flarum\Http\RequestUtil;
 use Flarum\Post\Post;
 use Illuminate\Support\Arr;
@@ -21,7 +22,7 @@ $pinyin = new Pinyin();
 
 return [
     (new Extend\Frontend('forum'))
-        ->css(__DIR__.'/resources/less/post-table.less'),
+        ->css(__DIR__ . '/resources/less/post-table.less'),
     (new Extend\Event)
         ->listen(Saving::class, function ($event) use ($pinyin) {
             // pinyin slug
@@ -55,5 +56,20 @@ return [
                     return true;
                 }
             }
+        }),
+    // add dns prefetch
+    (new Extend\Frontend('forum'))
+        ->content(function (Document $document) {
+            array_unshift(
+                $document->head,
+                '<link rel="dns-prefetch" href="https://cdngo.cn/">',
+                '<link rel="preconnect" href="https://cdngo.cn/">',
+                '<link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">',
+                '<link rel="preconnect" href="https://cdn.jsdelivr.net/">',
+                '<link rel="dns-prefetch" href="https://static.0xffff.one/">',
+                '<link rel="preconnect" href="https://static.0xffff.one/">',
+                '<link rel="dns-prefetch" href="https://0xffff-1251477793.file.myqcloud.com/">',
+                '<link rel="preconnect" href="https://0xffff-1251477793.file.myqcloud.com/">'
+            );
         }),
 ];
