@@ -62,8 +62,8 @@ return [
         ->content(function (Document $document) {
             array_unshift(
                 $document->head,
-                '<link rel="dns-prefetch" href="https://cdngo.cn/">',
-                '<link rel="preconnect" href="https://cdngo.cn/">',
+                '<link rel="dns-prefetch" href="https://cdn-go.cn/">',
+                '<link rel="preconnect" href="https://cdn-go.cn/">',
                 '<link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">',
                 '<link rel="preconnect" href="https://cdn.jsdelivr.net/">',
                 '<link rel="dns-prefetch" href="https://static.0xffff.one/">',
