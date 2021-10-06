@@ -10,8 +10,11 @@
 use Flarum\Extend;
 use Flarum\Discussion\Event\Saving;
 use Flarum\Extend\ThrottleApi;
+use Flarum\Foundation\Application;
+use Flarum\Foundation\Paths;
 use Flarum\Frontend\Document;
 use Flarum\Http\RequestUtil;
+use Flarum\Http\UrlGenerator;
 use Flarum\Post\Post;
 use Illuminate\Support\Arr;
 use Overtrue\Pinyin\Pinyin;
@@ -60,16 +63,32 @@ return [
     // add dns prefetch
     (new Extend\Frontend('forum'))
         ->content(function (Document $document) {
-            array_unshift(
-                $document->head,
-                '<link rel="dns-prefetch" href="https://cdn-go.cn/">',
-                '<link rel="preconnect" href="https://cdn-go.cn/">',
-                '<link rel="dns-prefetch" href="https://cdn.jsdelivr.net/">',
-                '<link rel="preconnect" href="https://cdn.jsdelivr.net/">',
-                '<link rel="dns-prefetch" href="https://static.0xffff.one/">',
-                '<link rel="preconnect" href="https://static.0xffff.one/">',
-                '<link rel="dns-prefetch" href="https://0xffff-1251477793.file.myqcloud.com/">',
-                '<link rel="preconnect" href="https://0xffff-1251477793.file.myqcloud.com/">'
-            );
+            $prefetchUrlList = resolve(Application::class)->config('prefetchUrlList', []);
+            $linkElemList = [];
+            foreach ($prefetchUrlList as $value) {
+                $linkElemList[] = '<link rel="dns-prefetch" href="' . $value . '">';
+                $linkElemList[] = '<link rel="preconnect" href="' . $value . '">';
+            }
+            $document->head = array_merge($linkElemList, $document->head);
         }),
+    // CDN URL Replacement
+    (new Extend\Filesystem())
+        ->disk('flarum-assets', function (Paths $paths, UrlGenerator $url) {
+            $cdnBase = resolve(Application::class)->config('cdnUrl', $url->to('forum')->path(''));
+            $cdnBase = rtrim($cdnBase, '\/');
+            $origUrl = resolve(Application::class)->config('url', $url->to('forum')->path(''));
+            return [
+                'root'   => "$paths->public/assets",
+                'url'    => str_replace($origUrl, $cdnBase, $url->to('forum')->path('assets'))
+            ];
+        })
+        ->disk('flarum-avatars', function (Paths $paths, UrlGenerator $url) {
+            $cdnBase = resolve(Application::class)->config('cdnUrl', $url->to('forum')->path(''));
+            $cdnBase = rtrim($cdnBase, '\/');
+            $origUrl = resolve(Application::class)->config('url', $url->to('forum')->path(''));
+            return [
+                'root'   => "$paths->public/assets",
+                'url'    => str_replace($origUrl, $cdnBase, $url->to('forum')->path('assets/avatars'))
+            ];
+        })
 ];
