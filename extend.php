@@ -60,32 +60,37 @@ return [
                 }
             }
         }),
-    // add dns prefetch
+    // custom header
     (new Extend\Frontend('forum'))
         ->content(function (Document $document) {
-            $prefetchUrlList = resolve(Application::class)->config('prefetchUrlList', []);
-            $linkElemList = [];
+            $app = resolve(Application::class);
+            $headStrList = [];
+            $prefetchUrlList = $app->config('prefetchUrlList', []);
             foreach ($prefetchUrlList as $value) {
-                $linkElemList[] = '<link rel="dns-prefetch" href="' . $value . '">';
-                $linkElemList[] = '<link rel="preconnect" href="' . $value . '">';
+                $headStrList[] = '<link rel="dns-prefetch" href="' . $value . '">';
+                $headStrList[] = '<link rel="preconnect" href="' . $value . '">';
             }
-            $document->head = array_merge($linkElemList, $document->head);
+            $customHeadStr = $app->config('customHead', '');
+            if ($customHeadStr) {
+                $headStrList[] = $customHeadStr;
+            }
+            $document->head = array_merge($headStrList, $document->head);
         }),
     // CDN URL Replacement
     (new Extend\Filesystem())
         ->disk('flarum-assets', function (Paths $paths, UrlGenerator $url) {
-            $cdnBase = resolve(Application::class)->config('cdnUrl', $url->to('forum')->path(''));
-            $cdnBase = rtrim($cdnBase, '\/');
-            $origUrl = resolve(Application::class)->config('url', $url->to('forum')->path(''));
+            $app = resolve(Application::class);
+            $cdnBase = rtrim($app->config('cdnUrl', $url->to('forum')->path('')), '\/');
+            $origUrl = $app->config('url', $url->to('forum')->path(''));
             return [
                 'root'   => "$paths->public/assets",
                 'url'    => str_replace($origUrl, $cdnBase, $url->to('forum')->path('assets'))
             ];
         })
         ->disk('flarum-avatars', function (Paths $paths, UrlGenerator $url) {
-            $cdnBase = resolve(Application::class)->config('cdnUrl', $url->to('forum')->path(''));
-            $cdnBase = rtrim($cdnBase, '\/');
-            $origUrl = resolve(Application::class)->config('url', $url->to('forum')->path(''));
+            $app = resolve(Application::class);
+            $cdnBase = rtrim($app->config('cdnUrl', $url->to('forum')->path('')), '\/');
+            $origUrl = $app->config('url', $url->to('forum')->path(''));
             return [
                 'root'   => "$paths->public/assets",
                 'url'    => str_replace($origUrl, $cdnBase, $url->to('forum')->path('assets/avatars'))
