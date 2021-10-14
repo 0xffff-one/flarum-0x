@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5346833d40df42efcd2c4ffbabd15f0f",
+    "content-hash": "1aa97838e83ac29d3eb6c39ffb73c2b6",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -8226,76 +8226,6 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
-        },
-        {
-            "name": "phenomlab/fancybox-wrapper",
-            "version": "0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phenomlab/fancybox-wrapper.git",
-                "reference": "772aa8ca24b78cddb3bfd8cc6425e23f6257230f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phenomlab/fancybox-wrapper/zipball/772aa8ca24b78cddb3bfd8cc6425e23f6257230f",
-                "reference": "772aa8ca24b78cddb3bfd8cc6425e23f6257230f",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "flarum/core": "^1.0.0"
-            },
-            "type": "flarum-extension",
-            "extra": {
-                "flarum-extension": {
-                    "title": "Fancybox",
-                    "category": "feature",
-                    "icon": {
-                        "name": "fas fa-images",
-                        "backgroundColor": "#666",
-                        "color": "#ffffff"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Phenomlan\\Fancybox\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mark Cutting",
-                    "homepage": "https://phenomlab.com",
-                    "role": "Creator"
-                }
-            ],
-            "description": "Enables all images to be presented in Fancybox",
-            "homepage": "https://paypal.me",
-            "keywords": [
-                "fancybox",
-                "images"
-            ],
-            "support": {
-                "forum": "https://discuss.flarum.org",
-                "issues": "https://github.com/phenomlab/fancybox/issues",
-                "source": "https://github.com/phenomlab/fancybox"
-            },
-            "funding": [
-                {
-                    "url": "https://phenomlab.com",
-                    "type": "website"
-                }
-            ],
-            "time": "2021-05-27T12:07:41+00:00"
         },
         {
             "name": "ppshobi/psonic",

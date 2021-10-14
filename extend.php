@@ -95,5 +95,38 @@ return [
                 'root'   => "$paths->public/assets",
                 'url'    => str_replace($origUrl, $cdnBase, $url->to('forum')->path('assets/avatars'))
             ];
+        }),
+    // fancybox
+    (new Extend\Frontend('forum'))
+    ->content(function (Document $document) {
+        $document->head[] = '<script defer type="text/javascript" src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>';
+        $document->head[] = '<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" onload="this.onload=null;this.rel=\'stylesheet\'">';
+        $document->foot[] = <<<HTML
+<script>
+flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function (output, vnode) {
+const self = this;
+this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
+    var currentImage = $(this);
+    var checksrc = currentImage.attr("data-src");
+    if (checksrc) {
+        $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("data-src") + "'></a>");
+    }
+    else {
+        $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("src") + "'></a>");
+    }
+    try {
+        $().ready(function(){
+            $().fancybox({
+                selector: '.fancybox'
+            });
         })
+    } catch (e) {
+        console.error(e.name);
+        console.error(e.message);
+    }
+});
+});
+</script>
+HTML;
+    })
 ];
