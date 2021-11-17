@@ -92,7 +92,7 @@ return [
             $cdnBase = rtrim($app->config('cdnUrl', $url->to('forum')->path('')), '\/');
             $origUrl = $app->config('url', $url->to('forum')->path(''));
             return [
-                'root'   => "$paths->public/assets",
+                'root'   => "$paths->public/assets/avatars",
                 'url'    => str_replace($origUrl, $cdnBase, $url->to('forum')->path('assets/avatars'))
             ];
         }),
