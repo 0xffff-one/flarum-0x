@@ -23,6 +23,7 @@
     "require": {
         "askvortsov/flarum-pwa": "*",
         "blomstra/flarum-redis": "*",
+        "cweagans/composer-patches": "^1.7",
         "flarum-lang/chinese-simplified": "^1.0",
         "flarum/approval": "*",
         "flarum/bbcode": "*",
@@ -73,6 +74,13 @@
         "packagist": {
             "type": "composer",
             "url": "https://mirrors.aliyun.com/composer/"
+        }
+    },
+    "extra": {
+        "patches": {
+            "askvortsov/flarum-pwa": {
+                "Fix Error Problem": "patches/flarum-pwa-1.patch"
+            }
         }
     }
 }
