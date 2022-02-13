@@ -18,6 +18,7 @@ RUN \
         oniguruma-dev \
         libjpeg-turbo \
         libjpeg-turbo-dev \
+        patch \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd gmp pdo_mysql exif \
     # complier & shadow & rsync
