@@ -1,8 +1,8 @@
 diff --git a/src/PushNotificationDriver.php b/src/PushNotificationDriver.php
-index d9da4b6..e50af36 100644
+index d9da4b6..f2bbce3 100644
 --- a/src/PushNotificationDriver.php
 +++ b/src/PushNotificationDriver.php
-@@ -140,7 +140,7 @@ class PushNotificationDriver implements NotificationDriverInterface
+@@ -140,10 +140,10 @@ class PushNotificationDriver implements NotificationDriverInterface
           * @var MessageSentReport $report
           */
          foreach ($webPush->flush() as $report) {
@@ -10,4 +10,8 @@ index d9da4b6..e50af36 100644
 +            if (!$report->isSuccess() && $report->getResponse() && in_array($report->getResponse()->getStatusCode(), [401, 403, 404, 410])) {
                  PushSubscription::where('endpoint', $report->getEndpoint())->delete();
              } elseif (!$report->isSuccess()) {
-                 echo "[x] Message failed to sent for subscription {$report->getEndpoint()}: {$report->getReason()}";
+-                echo "[x] Message failed to sent for subscription {$report->getEndpoint()}: {$report->getReason()}";
++                $this->logger->error("[PWA PUSH] [x] Message failed to sent for subscription {$report->getEndpoint()}: {$report->getReason()}");
+             } else {
+                 $sentCounter++;
+             }
