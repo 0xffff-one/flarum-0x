@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d2151ae56e8cadd001d9c959589b5c5",
+    "content-hash": "6e7034d684ac45e51d52d9cc7169a231",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -12788,16 +12788,16 @@
         },
         {
             "name": "the-turk/flarum-mathren",
-            "version": "0.3.7",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/the-turk/flarum-mathren.git",
-                "reference": "99941575e7be16bf8a76f7f60171830767b5613c"
+                "reference": "4baf2d078c6b22b34f2b39f3d136a02a6db3120f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/the-turk/flarum-mathren/zipball/99941575e7be16bf8a76f7f60171830767b5613c",
-                "reference": "99941575e7be16bf8a76f7f60171830767b5613c",
+                "url": "https://api.github.com/repos/the-turk/flarum-mathren/zipball/4baf2d078c6b22b34f2b39f3d136a02a6db3120f",
+                "reference": "4baf2d078c6b22b34f2b39f3d136a02a6db3120f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -12847,10 +12847,11 @@
                 "tex"
             ],
             "support": {
+                "docs": "https://katex.org/docs/options.html",
                 "issues": "https://github.com/the-turk/flarum-mathren/issues",
                 "source": "https://github.com/the-turk/flarum-mathren"
             },
-            "time": "2021-06-29T21:59:20+00:00"
+            "time": "2021-07-20T14:46:15+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

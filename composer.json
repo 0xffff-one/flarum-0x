@@ -59,7 +59,7 @@
         "minishlink/web-push": "*",
         "overtrue/pinyin": "~4.0",
         "the-turk/flarum-diff": "^1.1",
-        "the-turk/flarum-mathren": "^0.3.4",
+        "the-turk/flarum-mathren": "*",
         "v17development/flarum-seo": "*"
     },
     "config": {
@@ -80,7 +80,16 @@
         "patches": {
             "askvortsov/flarum-pwa": {
                 "Fix Error Problem": "patches/flarum-pwa-1.patch"
+            },
+            "the-turk/flarum-mathren": {
+                "Replace JSDelivr with 75 cdn": "patches/flarum-mathren-1.patch"
             }
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo 'Replace jsdelivr with bytedance cdn...'",
+            "sed -i 's\/\\\/\\\/cdn\\.jsdelivr\\.net\\\/npm\\\/pusher-js@7\\.0\\.3\\\/dist\\\/web\\\/pusher\\.min\\.js\/https:\\\/\\\/lf6-cdn-tos.bytecdntp.com\\\/cdn\\\/expire-1-M\\\/pusher\\\/7.0.3\\\/pusher.min.js\/g' vendor\/flarum\/pusher\/js\/dist\/forum.js"
+        ]
     }
 }
