@@ -1,0 +1,13 @@
+diff --git a/src/Content/Page.php b/src/Content/Page.php
+index 1b9be6f..b999734 100644
+--- a/src/Content/Page.php
++++ b/src/Content/Page.php
+@@ -58,6 +58,8 @@ class Page
+ 
+         $apiDocument = $this->getApiDocument($request, $id);
+ 
++        $document->title = $apiDocument->data->attributes->title;
++
+         $document->content = $this->view->make('fof-pages::content.page', compact('apiDocument'));
+ 
+         $document->payload['apiDocument'] = $apiDocument;

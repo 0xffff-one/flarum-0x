@@ -83,6 +83,9 @@
             },
             "the-turk/flarum-mathren": {
                 "Replace JSDelivr with 75 cdn": "patches/flarum-mathren-1.patch"
+            },
+            "fof/pages": {
+                "Add Page title": "patches/flarum-fof-pages-1.patch"
             }
         }
     },
