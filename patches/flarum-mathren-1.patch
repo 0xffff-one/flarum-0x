@@ -4,7 +4,7 @@ index f787836..bc3bbfb 100644
 +++ b/less/forum.less
 @@ -1,4 +1,4 @@
 -@import (css) "https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css";
-+@import (css) "https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.13.16/katex.min.css";
++@import (css) "https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.13.11/katex.min.css";
  
  @import "forum/copy-tex";
  @import "forum/text-editor";
@@ -17,7 +17,7 @@ index b5d19c3..535b396 100644
                          <xsl:attribute name="integrity">sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp</xsl:attribute>
                          <xsl:attribute name="onload">katex.render(this.parentNode.innerText, this.parentNode, '.$options.')</xsl:attribute>
 -                        <xsl:attribute name="src">https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js</xsl:attribute>
-+                        <xsl:attribute name="src">https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.13.16/katex.min.js</xsl:attribute>
++                        <xsl:attribute name="src">https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.13.11/katex.min.js</xsl:attribute>
                      </script>
                  </span>'
              );
