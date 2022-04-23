@@ -1,0 +1,13 @@
+diff --git a/src/Providers/ResourceProvider.php b/src/Providers/ResourceProvider.php
+index 72a0cb7..bcfd237 100644
+--- a/src/Providers/ResourceProvider.php
++++ b/src/Providers/ResourceProvider.php
+@@ -22,7 +22,7 @@ class ResourceProvider extends AbstractServiceProvider
+     {
+         $this->container->singleton('fof.sitemap.resources', function () {
+             $resources = [
+-                new Resources\User(),
++                // new Resources\User(),
+                 new Resources\Discussion(),
+             ];
+ 
