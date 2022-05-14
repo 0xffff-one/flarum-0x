@@ -46,8 +46,7 @@ services:
         max-size: "100m"
 
   site-fpm:
-    image: 0xffff-flarum-prod:latest
-    build: .
+    image: zgq354/0xffff-flarum:latest
     container_name: 0xffff-app
     depends_on:
       - redis
@@ -74,7 +73,7 @@ services:
 
   # https://laravel-news.com/laravel-scheduler-queue-docker
   scheduler:
-    image: 0xffff-flarum-prod:latest
+    image: zgq354/0xffff-flarum:latest
     container_name: 0xffff-scheduler
     depends_on:
       - site-fpm
@@ -92,7 +91,7 @@ services:
 
   # queue worker
   queue_worker:
-    image: 0xffff-flarum-prod:latest
+    image: zgq354/0xffff-flarum:latest
     container_name: 0xffff-queue-worker
     depends_on:
       - site-fpm
