@@ -1,0 +1,2 @@
+[mysqld]
+ngram_token_size=2
