@@ -47,7 +47,7 @@ EXPOSE 9000
 # app code
 COPY --chown=www-data:www-data . /wwwroot
 WORKDIR /wwwroot
-RUN cp ./scripts/start.sh /usr/local/bin/start \
+RUN cp ./services/php-fpm/start.sh /usr/local/bin/start \
     && chmod u+x /usr/local/bin/start \
     && composer i --ignore-platform-reqs \
     && rm -rf .git /root/.composer

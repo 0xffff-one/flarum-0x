@@ -3,5 +3,5 @@ vendor/
 storage/
 public/assets/
 config.php
-services/
 data/
+logs/
