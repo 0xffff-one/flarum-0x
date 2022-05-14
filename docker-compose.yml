@@ -62,6 +62,9 @@ services:
       - ./data/.empty:/wwwroot/logs
       - ./data/app/storage:/wwwroot/storage
       - ./data/app/assets:/wwwroot/public/assets
+      - ./services/php-fpm/docker-php-ext-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+    extra_hosts:
+      - xdebugdevhost:${XDEBUG_DEV_HOST:-127.0.0.1}
     healthcheck:
       test: ["CMD-SHELL", "pidof php-fpm"]
       interval: 5s
