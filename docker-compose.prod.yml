@@ -57,11 +57,12 @@ services:
       - 9000
     volumes:
       - ./logs:/var/log
-      - ./:/wwwroot
-      - ./data/.empty:/wwwroot/data
-      - ./data/.empty:/wwwroot/logs
+      # - ./:/wwwroot
+      # - ./data/.empty:/wwwroot/data
+      # - ./data/.empty:/wwwroot/logs
       - ./data/app/storage:/wwwroot/storage
       - ./data/app/assets:/wwwroot/public/assets
+      - ./data/app/config.php:/wwwroot/config.php
     healthcheck:
       test: ["CMD-SHELL", "pidof php-fpm"]
       interval: 5s
@@ -80,11 +81,12 @@ services:
     restart: always
     volumes:
       - ./logs:/var/log
-      - ./:/wwwroot
-      - ./data/.empty:/wwwroot/data
-      - ./data/.empty:/wwwroot/logs
+      # - ./:/wwwroot
+      # - ./data/.empty:/wwwroot/data
+      # - ./data/.empty:/wwwroot/logs
       - ./data/app/storage:/wwwroot/storage
       - ./data/app/assets:/wwwroot/public/assets
+      - ./data/app/config.php:/wwwroot/config.php
     environment:
       CONTAINER_ROLE: scheduler
 
@@ -97,11 +99,12 @@ services:
     restart: always
     volumes:
       - ./logs:/var/log
-      - ./:/wwwroot
-      - ./data/.empty:/wwwroot/data
-      - ./data/.empty:/wwwroot/logs
+      # - ./:/wwwroot
+      # - ./data/.empty:/wwwroot/data
+      # - ./data/.empty:/wwwroot/logs
       - ./data/app/storage:/wwwroot/storage
       - ./data/app/assets:/wwwroot/public/assets
+      - ./data/app/config.php:/wwwroot/config.php
     environment:
       CONTAINER_ROLE: queue
 
