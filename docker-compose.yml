@@ -1,7 +1,7 @@
 version: "3.6"
  
 services:
-  database:
+  site-db:
     image: mysql:5.7
     restart: always
     container_name: 0xffff-mysql
@@ -21,6 +21,8 @@ services:
     build: ./services/nginx
     container_name: 0xffff-nginx
     restart: always
+    depends_on:
+      - site-fpm
     ports:
       - ${NGINX_HTTP_PORT:-8080}:80
       - ${NGINX_HTTPS_PORT:-8443}:443
@@ -43,19 +45,21 @@ services:
       options:
         max-size: "100m"
 
-  php:
+  site-fpm:
     image: 0xffff-flarum:latest
     build: ./services/php-fpm 
     container_name: 0xffff-php-fpm
     depends_on:
       - redis
+      - site-db
     restart: always
     expose:
       - 9000
     volumes:
       - ./logs:/var/log
       - ./:/wwwroot
-      - ./data/empty:/wwwroot/data
+      - ./data/.empty:/wwwroot/data
+      - ./data/.empty:/wwwroot/logs
       - ./data/app/storage:/wwwroot/storage
       - ./data/app/assets:/wwwroot/public/assets
       # - ./data/app/config.php:/wwwroot/config.php
@@ -73,12 +77,13 @@ services:
     image: 0xffff-flarum:latest
     container_name: 0xffff-scheduler
     depends_on:
-      - php
+      - site-fpm
     restart: always
     volumes:
       - ./logs:/var/log
       - ./:/wwwroot
-      - ./data/empty:/wwwroot/data
+      - ./data/.empty:/wwwroot/data
+      - ./data/.empty:/wwwroot/logs
       - ./data/app/storage:/wwwroot/storage
       - ./data/app/assets:/wwwroot/public/assets
       # - ./data/app/config.php:/wwwroot/config.php
@@ -90,12 +95,13 @@ services:
     image: 0xffff-flarum:latest
     container_name: 0xffff-queue-worker
     depends_on:
-      - php
+      - site-fpm
     restart: always
     volumes:
       - ./logs:/var/log
       - ./:/wwwroot
-      - ./data/empty:/wwwroot/data
+      - ./data/.empty:/wwwroot/data
+      - ./data/.empty:/wwwroot/logs
       - ./data/app/storage:/wwwroot/storage
       - ./data/app/assets:/wwwroot/public/assets
       # - ./data/app/config.php:/wwwroot/config.php

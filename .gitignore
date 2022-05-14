@@ -4,6 +4,7 @@ Thumbs.db
 .vagrant
 config.php
 .idea
+.env
 vendor
 studio.json
 public/robots.txt

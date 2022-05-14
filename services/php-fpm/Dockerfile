@@ -58,6 +58,7 @@ ENTRYPOINT ["docker-php-entrypoint"]
 STOPSIGNAL SIGQUIT
 EXPOSE 9000
 
+# flarum start script
 COPY ./start.sh /usr/local/bin/start
 RUN chmod u+x /usr/local/bin/start
 CMD ["/usr/local/bin/start"]
