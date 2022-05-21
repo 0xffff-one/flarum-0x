@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "492b8259594fae65516a048bc63e15f6",
+    "content-hash": "bdb72af3d99db1983bc4c6a2c9f549c4",
     "packages": [
         {
             "name": "askvortsov/flarum-pwa",
@@ -227,16 +227,16 @@
         },
         {
             "name": "axy/backtrace",
-            "version": "1.0.7",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/axypro/backtrace.git",
-                "reference": "c6c7d0f3497a07ae934f9e8511cbc2286db311c5"
+                "reference": "e0f806986db00190e567b0071c765bd792360f06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/axypro/backtrace/zipball/c6c7d0f3497a07ae934f9e8511cbc2286db311c5",
-                "reference": "c6c7d0f3497a07ae934f9e8511cbc2286db311c5",
+                "url": "https://api.github.com/repos/axypro/backtrace/zipball/e0f806986db00190e567b0071c765bd792360f06",
+                "reference": "e0f806986db00190e567b0071c765bd792360f06",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -246,12 +246,18 @@
                 ]
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "^2.6",
+                "phpunit/phpunit": "^7.5",
+                "squizlabs/php_codesniffer": "^3.4"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "axy\\backtrace\\": ""
+                    "axy\\backtrace\\": "src",
+                    "axy\\backtrace\\tests\\": "tests"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -274,172 +280,9 @@
             ],
             "support": {
                 "issues": "https://github.com/axypro/backtrace/issues",
-                "source": "https://github.com/axypro/backtrace/tree/1.0.7"
+                "source": "https://github.com/axypro/backtrace/tree/2.0.0"
             },
-            "time": "2019-02-02T15:52:44+00:00"
-        },
-        {
-            "name": "axy/codecs-base64vlq",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/axypro/codecs-base64vlq.git",
-                "reference": "53a1957f2cb773c6533ac615b3f1ac59e40e13cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/axypro/codecs-base64vlq/zipball/53a1957f2cb773c6533ac615b3f1ac59e40e13cc",
-                "reference": "53a1957f2cb773c6533ac615b3f1ac59e40e13cc",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "axy/errors": "~1.0.1",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "axy\\codecs\\base64vlq\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oleg Grigoriev",
-                    "email": "go.vasac@gmail.com"
-                }
-            ],
-            "description": "Codec for VLQ (variable-length quantity) Base64 algorithm",
-            "homepage": "https://github.com/axypro/codecs-base64vlq",
-            "keywords": [
-                "Source map",
-                "VLQ",
-                "Variable length quantity",
-                "base64",
-                "codec"
-            ],
-            "support": {
-                "issues": "https://github.com/axypro/codecs-base64vlq/issues",
-                "source": "https://github.com/axypro/codecs-base64vlq/tree/master"
-            },
-            "time": "2015-11-23T07:08:52+00:00"
-        },
-        {
-            "name": "axy/errors",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/axypro/errors.git",
-                "reference": "2c64374ae2b9ca51304c09b6b6acc275557fc34f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/axypro/errors/zipball/2c64374ae2b9ca51304c09b6b6acc275557fc34f",
-                "reference": "2c64374ae2b9ca51304c09b6b6acc275557fc34f",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "axy/backtrace": "~1.0.2",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "axy\\errors\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oleg Grigoriev",
-                    "email": "go.vasac@gmail.com"
-                }
-            ],
-            "description": "Exceptions in PHP",
-            "homepage": "https://github.com/axypro/errors",
-            "keywords": [
-                "error",
-                "exception"
-            ],
-            "support": {
-                "issues": "https://github.com/axypro/errors/issues",
-                "source": "https://github.com/axypro/errors/tree/1.0.5"
-            },
-            "time": "2019-02-02T18:26:18+00:00"
-        },
-        {
-            "name": "axy/sourcemap",
-            "version": "0.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/axypro/sourcemap.git",
-                "reference": "95a52df5a08c3a011031dae2e79390134e28467c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/axypro/sourcemap/zipball/95a52df5a08c3a011031dae2e79390134e28467c",
-                "reference": "95a52df5a08c3a011031dae2e79390134e28467c",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "axy/codecs-base64vlq": "~1.0.0",
-                "axy/errors": "~1.0.1",
-                "ext-json": "*",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "axy\\sourcemap\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Oleg Grigoriev",
-                    "email": "go.vasac@gmail.com"
-                }
-            ],
-            "description": "Work with JavaScript/CSS Source Map",
-            "homepage": "https://github.com/axypro/sourcemap",
-            "keywords": [
-                "Source map",
-                "css",
-                "javascript",
-                "sourcemap"
-            ],
-            "support": {
-                "issues": "https://github.com/axypro/sourcemap/issues",
-                "source": "https://github.com/axypro/sourcemap/tree/0.1.5"
-            },
-            "time": "2020-08-20T09:49:44+00:00"
+            "time": "2019-02-02T18:01:31+00:00"
         },
         {
             "name": "blomstra/flarum-redis",
@@ -1798,16 +1641,16 @@
         },
         {
             "name": "flarum/approval",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/approval.git",
-                "reference": "95d3fe7c6b11162a10af8a0215f31243baab0101"
+                "reference": "5791efdb4c44f61ba373691024b8aadd2fb9e653"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/approval/zipball/95d3fe7c6b11162a10af8a0215f31243baab0101",
-                "reference": "95d3fe7c6b11162a10af8a0215f31243baab0101",
+                "url": "https://api.github.com/repos/flarum/approval/zipball/5791efdb4c44f61ba373691024b8aadd2fb9e653",
+                "reference": "5791efdb4c44f61ba373691024b8aadd2fb9e653",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1823,7 +1666,7 @@
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Approval",
@@ -1877,20 +1720,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T10:55:45+00:00"
+            "time": "2022-03-31T06:46:20+00:00"
         },
         {
             "name": "flarum/bbcode",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/bbcode.git",
-                "reference": "f449cce14fecd66912da24061569b407171900af"
+                "reference": "19f920441c2f669e1f94d021057cfdf859294c95"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/bbcode/zipball/f449cce14fecd66912da24061569b407171900af",
-                "reference": "f449cce14fecd66912da24061569b407171900af",
+                "url": "https://api.github.com/repos/flarum/bbcode/zipball/19f920441c2f669e1f94d021057cfdf859294c95",
+                "reference": "19f920441c2f669e1f94d021057cfdf859294c95",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1900,12 +1743,12 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "BBCode",
@@ -1954,20 +1797,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T10:57:27+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/core",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/flarum/core.git",
-                "reference": "7a22527b72fb0ff4b3a90947fd15c659878f2732"
+                "url": "https://github.com/flarum/flarum-core.git",
+                "reference": "db3346e4da422d8164d63072cf51a3348ea8b313"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/core/zipball/7a22527b72fb0ff4b3a90947fd15c659878f2732",
-                "reference": "7a22527b72fb0ff4b3a90947fd15c659878f2732",
+                "url": "https://api.github.com/repos/flarum/flarum-core/zipball/db3346e4da422d8164d63072cf51a3348ea8b313",
+                "reference": "db3346e4da422d8164d63072cf51a3348ea8b313",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -1977,7 +1820,6 @@
                 ]
             },
             "require": {
-                "axy/sourcemap": "^0.1.4",
                 "components/font-awesome": "^5.14.0",
                 "dflydev/fig-cookies": "^3.0.0",
                 "doctrine/dbal": "^2.7",
@@ -2016,6 +1858,8 @@
                 "psr/http-server-handler": "^1.0",
                 "psr/http-server-middleware": "^1.0",
                 "s9e/text-formatter": "^2.3.6",
+                "sycho/json-api": "^0.5.0",
+                "sycho/sourcemap": "^2.0.0",
                 "symfony/config": "^5.2.2",
                 "symfony/console": "^5.2.2",
                 "symfony/event-dispatcher": "^5.2.2",
@@ -2023,7 +1867,6 @@
                 "symfony/polyfill-intl-messageformatter": "^1.22.0",
                 "symfony/translation": "^5.1.5",
                 "symfony/yaml": "^5.2.2",
-                "tobscure/json-api": "^0.3.0",
                 "wikimedia/less.php": "^3.0"
             },
             "require-dev": {
@@ -2032,7 +1875,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-cli": {
                     "excludeScaffolding": [
@@ -2103,20 +1946,20 @@
                     "type": "other"
                 }
             ],
-            "time": "2022-01-20T12:56:05+00:00"
+            "time": "2022-05-13T21:15:00+00:00"
         },
         {
             "name": "flarum/emoji",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/emoji.git",
-                "reference": "d54bf88deec4b9306382026037d20f900678479f"
+                "reference": "c4b741b497cd6691754481fcb0853a6e5069b84f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/emoji/zipball/d54bf88deec4b9306382026037d20f900678479f",
-                "reference": "d54bf88deec4b9306382026037d20f900678479f",
+                "url": "https://api.github.com/repos/flarum/emoji/zipball/c4b741b497cd6691754481fcb0853a6e5069b84f",
+                "reference": "c4b741b497cd6691754481fcb0853a6e5069b84f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2131,7 +1974,7 @@
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Emoji",
@@ -2179,20 +2022,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:34:19+00:00"
+            "time": "2022-04-14T15:21:36+00:00"
         },
         {
             "name": "flarum/flags",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/flags.git",
-                "reference": "948ded930bba8583d861bfb9837e48eb5b217ad5"
+                "reference": "061b73b940e8cd1b5fe36262e9d63dfadebd56c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/flags/zipball/948ded930bba8583d861bfb9837e48eb5b217ad5",
-                "reference": "948ded930bba8583d861bfb9837e48eb5b217ad5",
+                "url": "https://api.github.com/repos/flarum/flags/zipball/061b73b940e8cd1b5fe36262e9d63dfadebd56c3",
+                "reference": "061b73b940e8cd1b5fe36262e9d63dfadebd56c3",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2202,7 +2045,7 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "require-dev": {
                 "flarum/core": "*@dev",
@@ -2212,7 +2055,7 @@
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Flags",
@@ -2233,7 +2076,7 @@
                         "gitConf": true,
                         "githubActions": true,
                         "prettier": true,
-                        "typescript": false,
+                        "typescript": true,
                         "bundlewatch": false,
                         "backendTesting": true,
                         "editorConfig": true,
@@ -2266,7 +2109,7 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:13:37+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/lang-english",
@@ -2358,16 +2201,16 @@
         },
         {
             "name": "flarum/likes",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/likes.git",
-                "reference": "75d974b13bcc667f5718b99b617a38ca20c564f7"
+                "reference": "971205060547c622b9cabcc48dcdf80f7010cde9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/likes/zipball/75d974b13bcc667f5718b99b617a38ca20c564f7",
-                "reference": "75d974b13bcc667f5718b99b617a38ca20c564f7",
+                "url": "https://api.github.com/repos/flarum/likes/zipball/971205060547c622b9cabcc48dcdf80f7010cde9",
+                "reference": "971205060547c622b9cabcc48dcdf80f7010cde9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2377,12 +2220,12 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Likes",
@@ -2436,20 +2279,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:35:35+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/lock",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/lock.git",
-                "reference": "8e641445c515c52ba51bf485446cd8130e2f97e9"
+                "reference": "d4d28546f5f72c391bf2151955e49a6efb70890f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/lock/zipball/8e641445c515c52ba51bf485446cd8130e2f97e9",
-                "reference": "8e641445c515c52ba51bf485446cd8130e2f97e9",
+                "url": "https://api.github.com/repos/flarum/lock/zipball/d4d28546f5f72c391bf2151955e49a6efb70890f",
+                "reference": "d4d28546f5f72c391bf2151955e49a6efb70890f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2459,12 +2302,12 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Lock",
@@ -2518,20 +2361,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:41:14+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/markdown",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/markdown.git",
-                "reference": "dff27f1920df2ce6dfa5faed6262fbd1651916b8"
+                "reference": "2af40dad1de5e9c3afa922f259c0d01b0c9eb059"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/markdown/zipball/dff27f1920df2ce6dfa5faed6262fbd1651916b8",
-                "reference": "dff27f1920df2ce6dfa5faed6262fbd1651916b8",
+                "url": "https://api.github.com/repos/flarum/markdown/zipball/2af40dad1de5e9c3afa922f259c0d01b0c9eb059",
+                "reference": "2af40dad1de5e9c3afa922f259c0d01b0c9eb059",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2541,12 +2384,12 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Markdown",
@@ -2598,20 +2441,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:43:25+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/mentions",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/mentions.git",
-                "reference": "004c9b0c2e9b3159cae1a922cdf087d98625bf3e"
+                "reference": "33f4ac79668eaf3a8b7f7e42ae288605c9f6aeee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/mentions/zipball/004c9b0c2e9b3159cae1a922cdf087d98625bf3e",
-                "reference": "004c9b0c2e9b3159cae1a922cdf087d98625bf3e",
+                "url": "https://api.github.com/repos/flarum/mentions/zipball/33f4ac79668eaf3a8b7f7e42ae288605c9f6aeee",
+                "reference": "33f4ac79668eaf3a8b7f7e42ae288605c9f6aeee",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2621,7 +2464,7 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "require-dev": {
                 "flarum/core": "*@dev",
@@ -2630,7 +2473,7 @@
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Mentions",
@@ -2684,7 +2527,7 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:45:05+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/nicknames",
@@ -2774,16 +2617,16 @@
         },
         {
             "name": "flarum/pusher",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/pusher.git",
-                "reference": "d3b553e55fb919f0f2b7f8126230362ab7c7d83b"
+                "reference": "b76645df6c92f53bd96ae3178344a1d0340cba41"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/pusher/zipball/d3b553e55fb919f0f2b7f8126230362ab7c7d83b",
-                "reference": "d3b553e55fb919f0f2b7f8126230362ab7c7d83b",
+                "url": "https://api.github.com/repos/flarum/pusher/zipball/b76645df6c92f53bd96ae3178344a1d0340cba41",
+                "reference": "b76645df6c92f53bd96ae3178344a1d0340cba41",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2793,13 +2636,16 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2",
+                "flarum/core": "^1.3",
                 "pusher/pusher-php-server": "^2.2"
+            },
+            "require-dev": {
+                "flarum/tags": "^1.0"
             },
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Pusher",
@@ -2856,20 +2702,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:07:47+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/statistics",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/statistics.git",
-                "reference": "affa7d3eb51da23370be109c502b0ee586363b65"
+                "reference": "1234a47dbb6c851900d330fb170239a7bb214976"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/statistics/zipball/affa7d3eb51da23370be109c502b0ee586363b65",
-                "reference": "affa7d3eb51da23370be109c502b0ee586363b65",
+                "url": "https://api.github.com/repos/flarum/statistics/zipball/1234a47dbb6c851900d330fb170239a7bb214976",
+                "reference": "1234a47dbb6c851900d330fb170239a7bb214976",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2879,7 +2725,7 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "require-dev": {
                 "flarum/testing": "^1.0.0"
@@ -2887,7 +2733,7 @@
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Statistics",
@@ -2899,6 +2745,9 @@
                     }
                 },
                 "flarum-cli": {
+                    "excludeScaffolding": [
+                        "js/src/admin/index.ts"
+                    ],
                     "modules": {
                         "admin": true,
                         "forum": false,
@@ -2908,7 +2757,7 @@
                         "gitConf": true,
                         "githubActions": true,
                         "prettier": true,
-                        "typescript": false,
+                        "typescript": true,
                         "bundlewatch": false,
                         "backendTesting": true,
                         "editorConfig": true,
@@ -2941,20 +2790,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:48:09+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/sticky",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/sticky.git",
-                "reference": "69a5a43ea8e5c0a758920a8ae4a5a3de287f09b9"
+                "reference": "52bb54e538e4ac4f198580c9519dee8e538af81f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/sticky/zipball/69a5a43ea8e5c0a758920a8ae4a5a3de287f09b9",
-                "reference": "69a5a43ea8e5c0a758920a8ae4a5a3de287f09b9",
+                "url": "https://api.github.com/repos/flarum/sticky/zipball/52bb54e538e4ac4f198580c9519dee8e538af81f",
+                "reference": "52bb54e538e4ac4f198580c9519dee8e538af81f",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -2964,12 +2813,12 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Sticky",
@@ -3023,20 +2872,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:49:18+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/subscriptions",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/subscriptions.git",
-                "reference": "7a9573b4cacfd33c2e574174ffe56464c41e118d"
+                "reference": "b30c5a9838170bae7e69cadcbd1f2ab357c3193d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/subscriptions/zipball/7a9573b4cacfd33c2e574174ffe56464c41e118d",
-                "reference": "7a9573b4cacfd33c2e574174ffe56464c41e118d",
+                "url": "https://api.github.com/repos/flarum/subscriptions/zipball/b30c5a9838170bae7e69cadcbd1f2ab357c3193d",
+                "reference": "b30c5a9838170bae7e69cadcbd1f2ab357c3193d",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3046,12 +2895,12 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Subscriptions",
@@ -3105,20 +2954,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:03:29+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/suspend",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/suspend.git",
-                "reference": "25c6134fe26d8b99f928cd482f8bb1dfe681a5eb"
+                "reference": "73e3d24de500ff45427716b4063a95e5ae87637a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/suspend/zipball/25c6134fe26d8b99f928cd482f8bb1dfe681a5eb",
-                "reference": "25c6134fe26d8b99f928cd482f8bb1dfe681a5eb",
+                "url": "https://api.github.com/repos/flarum/suspend/zipball/73e3d24de500ff45427716b4063a95e5ae87637a",
+                "reference": "73e3d24de500ff45427716b4063a95e5ae87637a",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3128,12 +2977,12 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Suspend",
@@ -3187,20 +3036,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:17:01+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "flarum/tags",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/tags.git",
-                "reference": "683ce7abb36fa1f89e747cecfb7e0756cff970bc"
+                "reference": "4aa02acf6f3a3153b8c5e3c24cb0652c08011ad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/tags/zipball/683ce7abb36fa1f89e747cecfb7e0756cff970bc",
-                "reference": "683ce7abb36fa1f89e747cecfb7e0756cff970bc",
+                "url": "https://api.github.com/repos/flarum/tags/zipball/4aa02acf6f3a3153b8c5e3c24cb0652c08011ad0",
+                "reference": "4aa02acf6f3a3153b8c5e3c24cb0652c08011ad0",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3210,7 +3059,7 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.2"
+                "flarum/core": "^1.3"
             },
             "require-dev": {
                 "flarum/core": "*@dev",
@@ -3219,7 +3068,7 @@
             "type": "flarum-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.x-dev"
+                    "dev-main": "1.x-dev"
                 },
                 "flarum-extension": {
                     "title": "Tags",
@@ -3240,7 +3089,7 @@
                         "gitConf": true,
                         "githubActions": true,
                         "prettier": false,
-                        "typescript": false,
+                        "typescript": true,
                         "bundlewatch": false,
                         "backendTesting": true,
                         "editorConfig": true,
@@ -3273,7 +3122,7 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-20T11:01:02+00:00"
+            "time": "2022-05-10T14:28:35+00:00"
         },
         {
             "name": "fof/extend",
@@ -3477,16 +3326,16 @@
         },
         {
             "name": "fof/nightmode",
-            "version": "1.2.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfFlarum/nightmode.git",
-                "reference": "1cce7a466cb121ca3946d8d26d75413237e9f926"
+                "reference": "fcc97af9028a9ff7dda00cf74392fae10432fc3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfFlarum/nightmode/zipball/1cce7a466cb121ca3946d8d26d75413237e9f926",
-                "reference": "1cce7a466cb121ca3946d8d26d75413237e9f926",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/nightmode/zipball/fcc97af9028a9ff7dda00cf74392fae10432fc3d",
+                "reference": "fcc97af9028a9ff7dda00cf74392fae10432fc3d",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3564,20 +3413,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-31T11:53:00+00:00"
+            "time": "2022-05-18T22:20:00+00:00"
         },
         {
             "name": "fof/oauth",
-            "version": "1.2.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfFlarum/oauth.git",
-                "reference": "b6e669570b86ca7e742b7ed8a8330f00fcec8847"
+                "reference": "b116a47bb4f53fbc77cff31366cd1a71dd074818"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfFlarum/oauth/zipball/b6e669570b86ca7e742b7ed8a8330f00fcec8847",
-                "reference": "b6e669570b86ca7e742b7ed8a8330f00fcec8847",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/oauth/zipball/b116a47bb4f53fbc77cff31366cd1a71dd074818",
+                "reference": "b116a47bb4f53fbc77cff31366cd1a71dd074818",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3662,7 +3511,7 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-24T23:27:58+00:00"
+            "time": "2022-05-06T08:12:03+00:00"
         },
         {
             "name": "fof/pages",
@@ -3834,16 +3683,16 @@
         },
         {
             "name": "fof/socialprofile",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfFlarum/socialprofile.git",
-                "reference": "4203d41370c9c9dded2b16870f1838f0671ac985"
+                "reference": "91201d1331b6cac7dcc0b32fdfaef0733d83dabe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfFlarum/socialprofile/zipball/4203d41370c9c9dded2b16870f1838f0671ac985",
-                "reference": "4203d41370c9c9dded2b16870f1838f0671ac985",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/socialprofile/zipball/91201d1331b6cac7dcc0b32fdfaef0733d83dabe",
+                "reference": "91201d1331b6cac7dcc0b32fdfaef0733d83dabe",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -3853,7 +3702,7 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.0.0"
+                "flarum/core": "^1.2.0"
             },
             "replace": {
                 "davis/flarum-ext-socialprofile": "*"
@@ -3905,7 +3754,7 @@
                     "type": "website"
                 }
             ],
-            "time": "2021-12-08T00:35:34+00:00"
+            "time": "2022-05-20T20:08:37+00:00"
         },
         {
             "name": "fof/split",
@@ -3982,16 +3831,16 @@
         },
         {
             "name": "fof/upload",
-            "version": "1.1.0",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfFlarum/upload.git",
-                "reference": "ea529196fa12654a3b7b3b5cd2d0adcc461bf9df"
+                "reference": "837e86a789695dd5c905abf0928e2dec61cd4169"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfFlarum/upload/zipball/ea529196fa12654a3b7b3b5cd2d0adcc461bf9df",
-                "reference": "ea529196fa12654a3b7b3b5cd2d0adcc461bf9df",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/upload/zipball/837e86a789695dd5c905abf0928e2dec61cd4169",
+                "reference": "837e86a789695dd5c905abf0928e2dec61cd4169",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4067,20 +3916,20 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-01-25T13:54:30+00:00"
+            "time": "2022-05-20T10:30:28+00:00"
         },
         {
             "name": "fof/user-bio",
-            "version": "1.0.2",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfFlarum/user-bio.git",
-                "reference": "c470810046acc4b6881b7e04d229ff0cbc1ed666"
+                "reference": "5104a93f40830d3df26cb368aa14bd58bece2635"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfFlarum/user-bio/zipball/c470810046acc4b6881b7e04d229ff0cbc1ed666",
-                "reference": "c470810046acc4b6881b7e04d229ff0cbc1ed666",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/user-bio/zipball/5104a93f40830d3df26cb368aa14bd58bece2635",
+                "reference": "5104a93f40830d3df26cb368aa14bd58bece2635",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -4090,7 +3939,7 @@
                 ]
             },
             "require": {
-                "flarum/core": "^1.0.0"
+                "flarum/core": "^1.2.0"
             },
             "type": "flarum-extension",
             "extra": {
@@ -4125,6 +3974,11 @@
                     "email": "charlie.k@redevs.org",
                     "homepage": "https://redevs.org",
                     "role": "Developer"
+                },
+                {
+                    "name": "IanM",
+                    "email": "ian@blomstra.net",
+                    "role": "Developer"
                 }
             ],
             "description": "Add a user bio to user profiles",
@@ -4144,7 +3998,7 @@
                     "type": "website"
                 }
             ],
-            "time": "2022-02-08T16:55:56+00:00"
+            "time": "2022-05-20T11:11:44+00:00"
         },
         {
             "name": "fof/webhooks",
@@ -4811,7 +4665,7 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -4870,7 +4724,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -4936,7 +4790,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -4996,7 +4850,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -5050,16 +4904,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "d93e3aeff1b7a0f647a8b20eefa8547fdcd61dcf"
+                "reference": "4aaa93223eb3bd8119157c95f58c022967826035"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/d93e3aeff1b7a0f647a8b20eefa8547fdcd61dcf",
-                "reference": "d93e3aeff1b7a0f647a8b20eefa8547fdcd61dcf",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/4aaa93223eb3bd8119157c95f58c022967826035",
+                "reference": "4aaa93223eb3bd8119157c95f58c022967826035",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5112,11 +4966,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-01-07T19:50:44+00:00"
+            "time": "2022-04-21T22:14:18+00:00"
         },
         {
             "name": "illuminate/container",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -5173,7 +5027,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -5227,16 +5081,16 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "ab8052c033036383fc2811fc9a518b5984e040a9"
+                "reference": "264976d81a37d06ad64242afa28bc8167cfd1efa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/ab8052c033036383fc2811fc9a518b5984e040a9",
-                "reference": "ab8052c033036383fc2811fc9a518b5984e040a9",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/264976d81a37d06ad64242afa28bc8167cfd1efa",
+                "reference": "264976d81a37d06ad64242afa28bc8167cfd1efa",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5297,11 +5151,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-03-21T16:13:31+00:00"
+            "time": "2022-05-11T13:33:08+00:00"
         },
         {
             "name": "illuminate/events",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -5362,7 +5216,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -5430,7 +5284,7 @@
         },
         {
             "name": "illuminate/hashing",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/hashing.git",
@@ -5484,7 +5338,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -5536,7 +5390,7 @@
         },
         {
             "name": "illuminate/mail",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/mail.git",
@@ -5603,7 +5457,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -5657,16 +5511,16 @@
         },
         {
             "name": "illuminate/queue",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/queue.git",
-                "reference": "c5eac0a0b9d66cd8f694b4126c090fdc787d8923"
+                "reference": "88e384188852b73ba7f7f309a2e43d012c943baa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/queue/zipball/c5eac0a0b9d66cd8f694b4126c090fdc787d8923",
-                "reference": "c5eac0a0b9d66cd8f694b4126c090fdc787d8923",
+                "url": "https://api.github.com/repos/illuminate/queue/zipball/88e384188852b73ba7f7f309a2e43d012c943baa",
+                "reference": "88e384188852b73ba7f7f309a2e43d012c943baa",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5725,11 +5579,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-01-28T23:01:24+00:00"
+            "time": "2022-05-15T15:53:20+00:00"
         },
         {
             "name": "illuminate/redis",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/redis.git",
@@ -5789,7 +5643,7 @@
         },
         {
             "name": "illuminate/session",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
@@ -5851,16 +5705,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "79afba1609f944a1678986c9e2c4486ae25999a6"
+                "reference": "89245b6e19017f627a35af3874ad9251b76b02cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/79afba1609f944a1678986c9e2c4486ae25999a6",
-                "reference": "79afba1609f944a1678986c9e2c4486ae25999a6",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/89245b6e19017f627a35af3874ad9251b76b02cc",
+                "reference": "89245b6e19017f627a35af3874ad9251b76b02cc",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5921,20 +5775,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-02-25T19:54:55+00:00"
+            "time": "2022-05-09T16:28:53+00:00"
         },
         {
             "name": "illuminate/translation",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
-                "reference": "c10a68f37f590dc8c1c1fe5b6ad3f09381282137"
+                "reference": "e119d1e55351bd846579c333dd24f9a042b724b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/translation/zipball/c10a68f37f590dc8c1c1fe5b6ad3f09381282137",
-                "reference": "c10a68f37f590dc8c1c1fe5b6ad3f09381282137",
+                "url": "https://api.github.com/repos/illuminate/translation/zipball/e119d1e55351bd846579c333dd24f9a042b724b2",
+                "reference": "e119d1e55351bd846579c333dd24f9a042b724b2",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5979,20 +5833,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-10-30T16:01:33+00:00"
+            "time": "2022-05-02T13:55:33+00:00"
         },
         {
             "name": "illuminate/validation",
-            "version": "v8.83.7",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "49b1cfd3a32f04255eed68fc1c304659de50e374"
+                "reference": "4e69c4e5552b6c2cddc260f0b4f96c0aa1518287"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/49b1cfd3a32f04255eed68fc1c304659de50e374",
-                "reference": "49b1cfd3a32f04255eed68fc1c304659de50e374",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/4e69c4e5552b6c2cddc260f0b4f96c0aa1518287",
+                "reference": "4e69c4e5552b6c2cddc260f0b4f96c0aa1518287",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -6045,20 +5899,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-02-01T16:13:18+00:00"
+            "time": "2022-05-12T15:00:22+00:00"
         },
         {
             "name": "illuminate/view",
-            "version": "v8.83.6",
+            "version": "v8.83.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
-                "reference": "f9f3ab882025d61d72a6383679fcadd08e79fbcf"
+                "reference": "5e73eef48d9242532f81fadc14c816a01bfb1388"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/view/zipball/f9f3ab882025d61d72a6383679fcadd08e79fbcf",
-                "reference": "f9f3ab882025d61d72a6383679fcadd08e79fbcf",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/5e73eef48d9242532f81fadc14c816a01bfb1388",
+                "reference": "5e73eef48d9242532f81fadc14c816a01bfb1388",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -6105,7 +5959,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-02-02T21:02:36+00:00"
+            "time": "2022-04-14T13:47:10+00:00"
         },
         {
             "name": "intervention/image",
@@ -6457,16 +6311,16 @@
         },
         {
             "name": "laminas/laminas-diactoros",
-            "version": "2.9.1",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laminas/laminas-diactoros.git",
-                "reference": "736ba5ca26cc411d4350289e2cf51c79077ea106"
+                "reference": "a3f03b3c158a3a7014c6ba553b0cb83bf7da19c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/736ba5ca26cc411d4350289e2cf51c79077ea106",
-                "reference": "736ba5ca26cc411d4350289e2cf51c79077ea106",
+                "url": "https://api.github.com/repos/laminas/laminas-diactoros/zipball/a3f03b3c158a3a7014c6ba553b0cb83bf7da19c4",
+                "reference": "a3f03b3c158a3a7014c6ba553b0cb83bf7da19c4",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -6558,7 +6412,7 @@
                     "type": "community_bridge"
                 }
             ],
-            "time": "2022-04-06T16:18:19+00:00"
+            "time": "2022-05-04T15:16:15+00:00"
         },
         {
             "name": "laminas/laminas-escaper",
@@ -7284,16 +7138,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.9.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "aa70e813a6ad3d1558fc927863d47309b4c23e69"
+                "reference": "ff6248ea87a9f116e78edd6002e39e5128a0d4dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/aa70e813a6ad3d1558fc927863d47309b4c23e69",
-                "reference": "aa70e813a6ad3d1558fc927863d47309b4c23e69",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/ff6248ea87a9f116e78edd6002e39e5128a0d4dd",
+                "reference": "ff6248ea87a9f116e78edd6002e39e5128a0d4dd",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -7330,7 +7184,7 @@
             "description": "Mime-type detection for Flysystem",
             "support": {
                 "issues": "https://github.com/thephpleague/mime-type-detection/issues",
-                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.9.0"
+                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.11.0"
             },
             "funding": [
                 {
@@ -7342,20 +7196,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-21T11:48:40+00:00"
+            "time": "2022-04-17T13:12:02+00:00"
         },
         {
             "name": "league/oauth1-client",
-            "version": "v1.10.0",
+            "version": "v1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth1-client.git",
-                "reference": "88dd16b0cff68eb9167bfc849707d2c40ad91ddc"
+                "reference": "d6365b901b5c287dd41f143033315e2f777e1167"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/88dd16b0cff68eb9167bfc849707d2c40ad91ddc",
-                "reference": "88dd16b0cff68eb9167bfc849707d2c40ad91ddc",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/d6365b901b5c287dd41f143033315e2f777e1167",
+                "reference": "d6365b901b5c287dd41f143033315e2f777e1167",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -7422,9 +7276,9 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/oauth1-client/issues",
-                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.10.0"
+                "source": "https://github.com/thephpleague/oauth1-client/tree/v1.10.1"
             },
-            "time": "2021-08-15T23:05:49+00:00"
+            "time": "2022-04-15T14:02:14+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -7765,16 +7619,16 @@
         },
         {
             "name": "matthiasmullie/minify",
-            "version": "1.3.66",
+            "version": "1.3.67",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasmullie/minify.git",
-                "reference": "45fd3b0f1dfa2c965857c6d4a470bea52adc31a6"
+                "reference": "acaee1b7ca3cd67a39d7f98673cacd7e4739a8d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/45fd3b0f1dfa2c965857c6d4a470bea52adc31a6",
-                "reference": "45fd3b0f1dfa2c965857c6d4a470bea52adc31a6",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/acaee1b7ca3cd67a39d7f98673cacd7e4739a8d9",
+                "reference": "acaee1b7ca3cd67a39d7f98673cacd7e4739a8d9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -7829,23 +7683,15 @@
             ],
             "support": {
                 "issues": "https://github.com/matthiasmullie/minify/issues",
-                "source": "https://github.com/matthiasmullie/minify/tree/1.3.66"
+                "source": "https://github.com/matthiasmullie/minify/tree/1.3.67"
             },
             "funding": [
                 {
-                    "url": "https://github.com/[user1",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/matthiasmullie] # Replace with up to 4 GitHub Sponsors-enabled usernames e.g.",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/user2",
+                    "url": "https://github.com/matthiasmullie",
                     "type": "github"
                 }
             ],
-            "time": "2021-01-06T15:18:10+00:00"
+            "time": "2022-03-24T08:54:59+00:00"
         },
         {
             "name": "matthiasmullie/path-converter",
@@ -8025,16 +7871,16 @@
         },
         {
             "name": "middlewares/request-handler",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/middlewares/request-handler.git",
-                "reference": "e5563184b4c9eab81ecb58c6ef530516559e8488"
+                "reference": "f07840434347520c11959caa54ab3476e16ceee2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/middlewares/request-handler/zipball/e5563184b4c9eab81ecb58c6ef530516559e8488",
-                "reference": "e5563184b4c9eab81ecb58c6ef530516559e8488",
+                "url": "https://api.github.com/repos/middlewares/request-handler/zipball/f07840434347520c11959caa54ab3476e16ceee2",
+                "reference": "f07840434347520c11959caa54ab3476e16ceee2",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -8046,7 +7892,7 @@
             "require": {
                 "middlewares/utils": "^3.0",
                 "php": "^7.2 || ^8.0",
-                "psr/container": "^1.0",
+                "psr/container": "^1.0||^2.0",
                 "psr/http-server-middleware": "^1.0"
             },
             "require-dev": {
@@ -8056,9 +7902,6 @@
                 "phpstan/phpstan": "^0.12",
                 "phpunit/phpunit": "^8|^9",
                 "squizlabs/php_codesniffer": "^3.0"
-            },
-            "suggest": {
-                "psr/container": "Can be used to resolve handlers automatically"
             },
             "type": "library",
             "autoload": {
@@ -8085,9 +7928,9 @@
             ],
             "support": {
                 "issues": "https://github.com/middlewares/request-handler/issues",
-                "source": "https://github.com/middlewares/request-handler/tree/v2.0.1"
+                "source": "https://github.com/middlewares/request-handler/tree/v2.0.2"
             },
-            "time": "2020-12-04T00:14:39+00:00"
+            "time": "2022-05-09T13:49:03+00:00"
         },
         {
             "name": "middlewares/utils",
@@ -8387,16 +8230,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.57.0",
+            "version": "2.58.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "4a54375c21eea4811dbd1149fe6b246517554e78"
+                "reference": "97a34af22bde8d0ac20ab34b29d7bfe360902055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/4a54375c21eea4811dbd1149fe6b246517554e78",
-                "reference": "4a54375c21eea4811dbd1149fe6b246517554e78",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/97a34af22bde8d0ac20ab34b29d7bfe360902055",
+                "reference": "97a34af22bde8d0ac20ab34b29d7bfe360902055",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -8420,7 +8263,8 @@
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12.54 || ^1.0",
-                "phpunit/phpunit": "^7.5.20 || ^8.5.14",
+                "phpunit/php-file-iterator": "^2.0.5",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.23",
                 "squizlabs/php_codesniffer": "^3.4"
             },
             "bin": [
@@ -8485,7 +8329,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-13T18:13:33+00:00"
+            "time": "2022-04-25T19:31:17+00:00"
         },
         {
             "name": "nette/schema",
@@ -10025,16 +9869,16 @@
         },
         {
             "name": "s9e/text-formatter",
-            "version": "2.11.0",
+            "version": "2.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/s9e/TextFormatter.git",
-                "reference": "b9d9d7ac480301f0cf718345daf591ddf475d9f1"
+                "reference": "db5ef4b093c00a187037030dac6fbea531aac3dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/s9e/TextFormatter/zipball/b9d9d7ac480301f0cf718345daf591ddf475d9f1",
-                "reference": "b9d9d7ac480301f0cf718345daf591ddf475d9f1",
+                "url": "https://api.github.com/repos/s9e/TextFormatter/zipball/db5ef4b093c00a187037030dac6fbea531aac3dc",
+                "reference": "db5ef4b093c00a187037030dac6fbea531aac3dc",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -10067,7 +9911,7 @@
             },
             "type": "library",
             "extra": {
-                "version": "2.11.0"
+                "version": "2.11.1"
             },
             "autoload": {
                 "psr-4": {
@@ -10099,9 +9943,9 @@
             ],
             "support": {
                 "issues": "https://github.com/s9e/TextFormatter/issues",
-                "source": "https://github.com/s9e/TextFormatter/tree/2.11.0"
+                "source": "https://github.com/s9e/TextFormatter/tree/2.11.1"
             },
-            "time": "2021-10-02T19:08:06+00:00"
+            "time": "2022-05-15T15:53:37+00:00"
         },
         {
             "name": "softcreatr/php-mime-detector",
@@ -10404,17 +10248,265 @@
             "time": "2021-10-18T15:26:12+00:00"
         },
         {
-            "name": "symfony/config",
-            "version": "v5.4.7",
+            "name": "sycho/codecs-base64vlq",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/config.git",
-                "reference": "05624c386afa1b4ccc1357463d830fade8d9d404"
+                "url": "https://github.com/SychO9/codecs-base64vlq.git",
+                "reference": "210932edfb29049831e4def7f11a264944132ac9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/05624c386afa1b4ccc1357463d830fade8d9d404",
-                "reference": "05624c386afa1b4ccc1357463d830fade8d9d404",
+                "url": "https://api.github.com/repos/SychO9/codecs-base64vlq/zipball/210932edfb29049831e4def7f11a264944132ac9",
+                "reference": "210932edfb29049831e4def7f11a264944132ac9",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.3",
+                "sycho/errors": "^3.0"
+            },
+            "require-dev": {
+                "sycho/errors": "^3.x-dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "axy\\codecs\\base64vlq\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oleg Grigoriev",
+                    "email": "go.vasac@gmail.com"
+                }
+            ],
+            "description": "Codec for VLQ (variable-length quantity) Base64 algorithm",
+            "homepage": "https://github.com/sycho9/codecs-base64vlq",
+            "keywords": [
+                "Source map",
+                "VLQ",
+                "Variable length quantity",
+                "base64",
+                "codec"
+            ],
+            "support": {
+                "source": "https://github.com/SychO9/codecs-base64vlq/tree/2.0.0"
+            },
+            "time": "2022-04-09T13:12:22+00:00"
+        },
+        {
+            "name": "sycho/errors",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SychO9/errors.git",
+                "reference": "82e955d247940aa7feed35e1ec7a61fc46639582"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SychO9/errors/zipball/82e955d247940aa7feed35e1ec7a61fc46639582",
+                "reference": "82e955d247940aa7feed35e1ec7a61fc46639582",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "axy/backtrace": "~2.0.0",
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "phpmd/phpmd": "^2.6",
+                "phpunit/phpunit": "^9.0",
+                "squizlabs/php_codesniffer": "^3.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "axy\\errors\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oleg Grigoriev",
+                    "email": "go.vasac@gmail.com"
+                }
+            ],
+            "description": "Exceptions in PHP",
+            "homepage": "https://github.com/sycho9/errors",
+            "keywords": [
+                "error",
+                "exception"
+            ],
+            "support": {
+                "source": "https://github.com/SychO9/errors/tree/3.0.0"
+            },
+            "time": "2022-04-09T13:10:47+00:00"
+        },
+        {
+            "name": "sycho/json-api",
+            "version": "v0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SychO9/json-api-php.git",
+                "reference": "9898b38f589ae13b881943f26846c6fbfff17c82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SychO9/json-api-php/zipball/9898b38f589ae13b881943f26846c6fbfff17c82",
+                "reference": "9898b38f589ae13b881943f26846c6fbfff17c82",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tobscure\\JsonApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Toby Zerner",
+                    "email": "toby.zerner@gmail.com"
+                }
+            ],
+            "description": "JSON-API responses in PHP",
+            "keywords": [
+                "api",
+                "json",
+                "jsonapi",
+                "standard"
+            ],
+            "support": {
+                "source": "https://github.com/SychO9/json-api-php/tree/v0.5.0"
+            },
+            "time": "2022-04-09T14:28:15+00:00"
+        },
+        {
+            "name": "sycho/sourcemap",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SychO9/sourcemap.git",
+                "reference": "81d514186e37efbea7f4dd701ea9133fd3412bf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SychO9/sourcemap/zipball/81d514186e37efbea7f4dd701ea9133fd3412bf1",
+                "reference": "81d514186e37efbea7f4dd701ea9133fd3412bf1",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.3",
+                "sycho/codecs-base64vlq": "^2.0",
+                "sycho/errors": "^3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0",
+                "sycho/codecs-base64vlq": "^2.x-dev",
+                "sycho/errors": "^3.x-dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "axy\\sourcemap\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oleg Grigoriev",
+                    "email": "go.vasac@gmail.com"
+                }
+            ],
+            "description": "Work with JavaScript/CSS Source Map",
+            "homepage": "https://github.com/sycho9/sourcemap",
+            "keywords": [
+                "Source map",
+                "css",
+                "javascript",
+                "sourcemap"
+            ],
+            "support": {
+                "source": "https://github.com/SychO9/sourcemap/tree/2.0.0"
+            },
+            "time": "2022-04-09T13:13:12+00:00"
+        },
+        {
+            "name": "symfony/config",
+            "version": "v5.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/config.git",
+                "reference": "9f8964f56f7234f8ace16f66cb3fbae950c04e68"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/config/zipball/9f8964f56f7234f8ace16f66cb3fbae950c04e68",
+                "reference": "9f8964f56f7234f8ace16f66cb3fbae950c04e68",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -10470,7 +10562,7 @@
             "description": "Helps you find, load, combine, autofill and validate configuration values of any kind",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/config/tree/v5.4.7"
+                "source": "https://github.com/symfony/config/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -10486,20 +10578,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-21T13:42:03+00:00"
+            "time": "2022-04-12T16:02:29+00:00"
         },
         {
             "name": "symfony/console",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "900275254f0a1a2afff1ab0e11abd5587a10e1d6"
+                "reference": "ffe3aed36c4d60da2cf1b0a1cee6b8f2e5fa881b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/900275254f0a1a2afff1ab0e11abd5587a10e1d6",
-                "reference": "900275254f0a1a2afff1ab0e11abd5587a10e1d6",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ffe3aed36c4d60da2cf1b0a1cee6b8f2e5fa881b",
+                "reference": "ffe3aed36c4d60da2cf1b0a1cee6b8f2e5fa881b",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -10575,7 +10667,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v5.4.7"
+                "source": "https://github.com/symfony/console/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -10591,7 +10683,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-31T17:09:19+00:00"
+            "time": "2022-04-12T16:02:29+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -10984,16 +11076,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.4.3",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "231313534dded84c7ecaa79d14bc5da4ccb69b7d"
+                "reference": "9b630f3427f3ebe7cd346c277a1408b00249dad9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/231313534dded84c7ecaa79d14bc5da4ccb69b7d",
-                "reference": "231313534dded84c7ecaa79d14bc5da4ccb69b7d",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/9b630f3427f3ebe7cd346c277a1408b00249dad9",
+                "reference": "9b630f3427f3ebe7cd346c277a1408b00249dad9",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -11033,7 +11125,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v5.4.3"
+                "source": "https://github.com/symfony/finder/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -11049,20 +11141,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-26T16:34:36+00:00"
+            "time": "2022-04-15T08:07:45+00:00"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v5.4.6",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "34e89bc147633c0f9dd6caaaf56da3b806a21465"
+                "reference": "ff2818d1c3d49860bcae1f2cbb5eb00fcd3bf9e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/34e89bc147633c0f9dd6caaaf56da3b806a21465",
-                "reference": "34e89bc147633c0f9dd6caaaf56da3b806a21465",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/ff2818d1c3d49860bcae1f2cbb5eb00fcd3bf9e2",
+                "reference": "ff2818d1c3d49860bcae1f2cbb5eb00fcd3bf9e2",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -11112,7 +11204,7 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-foundation/tree/v5.4.6"
+                "source": "https://github.com/symfony/http-foundation/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -11128,20 +11220,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-05T21:03:43+00:00"
+            "time": "2022-04-22T08:14:12+00:00"
         },
         {
             "name": "symfony/mime",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",
-                "reference": "92d27a34dea2e199fa9b687e3fff3a7d169b7b1c"
+                "reference": "af49bc163ec3272f677bde3bc44c0d766c1fd662"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mime/zipball/92d27a34dea2e199fa9b687e3fff3a7d169b7b1c",
-                "reference": "92d27a34dea2e199fa9b687e3fff3a7d169b7b1c",
+                "url": "https://api.github.com/repos/symfony/mime/zipball/af49bc163ec3272f677bde3bc44c0d766c1fd662",
+                "reference": "af49bc163ec3272f677bde3bc44c0d766c1fd662",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -11201,7 +11293,7 @@
                 "mime-type"
             ],
             "support": {
-                "source": "https://github.com/symfony/mime/tree/v5.4.7"
+                "source": "https://github.com/symfony/mime/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -11217,7 +11309,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-11T16:08:05+00:00"
+            "time": "2022-04-12T15:48:08+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -12188,16 +12280,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "38a44b2517b470a436e1c944bf9b9ba3961137fb"
+                "reference": "597f3fff8e3e91836bb0bd38f5718b56ddbde2f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/38a44b2517b470a436e1c944bf9b9ba3961137fb",
-                "reference": "38a44b2517b470a436e1c944bf9b9ba3961137fb",
+                "url": "https://api.github.com/repos/symfony/process/zipball/597f3fff8e3e91836bb0bd38f5718b56ddbde2f3",
+                "reference": "597f3fff8e3e91836bb0bd38f5718b56ddbde2f3",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -12236,7 +12328,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v5.4.7"
+                "source": "https://github.com/symfony/process/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -12252,7 +12344,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-18T16:18:52+00:00"
+            "time": "2022-04-08T05:07:18+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -12345,16 +12437,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v6.0.3",
+            "version": "v6.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "522144f0c4c004c80d56fa47e40e17028e2eefc2"
+                "reference": "ac0aa5c2282e0de624c175b68d13f2c8f2e2649d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/522144f0c4c004c80d56fa47e40e17028e2eefc2",
-                "reference": "522144f0c4c004c80d56fa47e40e17028e2eefc2",
+                "url": "https://api.github.com/repos/symfony/string/zipball/ac0aa5c2282e0de624c175b68d13f2c8f2e2649d",
+                "reference": "ac0aa5c2282e0de624c175b68d13f2c8f2e2649d",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -12416,7 +12508,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v6.0.3"
+                "source": "https://github.com/symfony/string/tree/v6.0.8"
             },
             "funding": [
                 {
@@ -12432,20 +12524,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-02T09:55:41+00:00"
+            "time": "2022-04-22T08:18:02+00:00"
         },
         {
             "name": "symfony/translation",
-            "version": "v5.4.7",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "e1eb790575202ee3ac2659f55b93b05853726f8e"
+                "reference": "f5c0f6d1f20993b2606f3a5f36b1dc8c1899170b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/e1eb790575202ee3ac2659f55b93b05853726f8e",
-                "reference": "e1eb790575202ee3ac2659f55b93b05853726f8e",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/f5c0f6d1f20993b2606f3a5f36b1dc8c1899170b",
+                "reference": "f5c0f6d1f20993b2606f3a5f36b1dc8c1899170b",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -12519,7 +12611,7 @@
             "description": "Provides tools to internationalize your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/translation/tree/v5.4.7"
+                "source": "https://github.com/symfony/translation/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -12535,7 +12627,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-24T17:09:09+00:00"
+            "time": "2022-04-22T08:14:12+00:00"
         },
         {
             "name": "symfony/translation-contracts",
@@ -12913,66 +13005,6 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
-        },
-        {
-            "name": "tobscure/json-api",
-            "version": "v0.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tobscure/json-api.git",
-                "reference": "663d1c1299d4363758e8e440e5849134f218f45c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tobscure/json-api/zipball/663d1c1299d4363758e8e440e5849134f218f45c",
-                "reference": "663d1c1299d4363758e8e440e5849134f218f45c",
-                "shasum": "",
-                "mirrors": [
-                    {
-                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
-                        "preferred": true
-                    }
-                ]
-            },
-            "require": {
-                "php": ">=5.5.9"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8 || ^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Tobscure\\JsonApi\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Toby Zerner",
-                    "email": "toby.zerner@gmail.com"
-                }
-            ],
-            "description": "JSON-API responses in PHP",
-            "keywords": [
-                "api",
-                "json",
-                "jsonapi",
-                "standard"
-            ],
-            "support": {
-                "issues": "https://github.com/tobscure/json-api/issues",
-                "source": "https://github.com/tobscure/json-api/tree/master"
-            },
-            "time": "2016-03-31T09:25:28+00:00"
         },
         {
             "name": "v17development/flarum-seo",
