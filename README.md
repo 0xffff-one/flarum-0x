@@ -1,43 +1,106 @@
-<p align="center"><img src="https://flarum.org/assets/img/logo.png"></p>
+## 0xFFFF Flarum
+Customized flarum for the [0xFFFF](https://0xffff.one/) website, with our LNMP Docker env config.
 
-<p align="center">
-<a href="https://travis-ci.org/flarum/core"><img src="https://travis-ci.org/flarum/core.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/flarum/core"><img src="https://poser.pugx.org/flarum/core/license.svg" alt="License"></a>
-</p>
+## Customizations
+This flarum application consists of these parts:
+1. Initialized [Flarum Skeleton](https://github.com/flarum/flarum) with our custom `composer.json` and `composer.lock` config
+2. Custom [flarum extenders](https://docs.flarum.org/extend/start#extenders) in `extend.php`
+3. Patches for the extensions in `vendor/` to make some small changes without publishing a new Composer Package
+4. *(To Be Done)* Custom [flarum framework](https://github.com/flarum/framework) and third-party extension integrated in this repo as submodules
 
-## About Flarum
+We described these Docker containers to run the website:
+1. MySQL: Database instance
+2. Nginx: Web Gateway that serves static files, proxy the dynamic HTTP request to php-fpm instance
+3. php-fpm: Serve the flarum application, run as a php-fpm service
+4. Queue Worker: Flarum application run as a [Flarum Queue Worker](https://docs.flarum.org/internal/package-manager/#background-tasks)
+5. Scheduler: Flarum application run as a [Flarum Task Scheduler](https://docs.flarum.org/console/#schedulerun)
+6. Redis: Redis instance for the queue
+7. Sonic: Chinese full-text Search Service for [ganuonglachanh/flarum-sonic](https://github.com/ganuonglachanh/flarum-sonic) extension
 
-**[Flarum](https://flarum.org/) is a delightfully simple discussion platform for your website.** It's fast and easy to use, with all the features you need to run a successful community. It is designed to be:
+## Setup Local Development Env
 
-* **Fast and simple.** No clutter, no bloat, no complex dependencies. Flarum is built with PHP so it’s quick and easy to deploy. The interface is powered by Mithril, a performant JavaScript framework with a tiny footprint.
+Prerequisites:
+1. Linux environments with [Docker](https://docs.docker.com/engine/install/) (recommend [Ubuntu with docker-ce](https://docs.docker.com/engine/install/ubuntu/)) and [Docker Compose](https://docs.docker.com/compose/install/) installed
+2. setup [PHP and composer](https://getcomposer.org/doc/00-intro.md)
 
-* **Beautiful and responsive.** This is forum software for humans. Flarum is carefully designed to be consistent and intuitive across platforms, out-of-the-box.
+```sh
+# clone
+git clone https://github.com/0xffff-one/0xffff-flarum.git
+cd 0xffff-flarum
 
-* **Powerful and extensible.** Customize, extend, and integrate Flarum to suit your community. Flarum’s architecture is amazingly flexible, with a powerful Extension API.
+# install dependencies
+composer i --ignore-platform-reqs
 
-![screenshot](https://flarum.org/assets/img/home-screenshot.png)
-
-## Installation
-
-You must have SSH access to a server with **PHP 7.3+** and **MySQL 5.6+** or **MariaDB 10.0.5+**, and install [Composer](https://getcomposer.org/).
-
+# env file
+touch .env
+vim .env
 ```
-composer create-project flarum/flarum . --stability=beta
+
+Then set environment variables through `.env` file to initialize MySQL service:
+```sh
+DB_NAME=flarum
+DB_USER=flarum_0xffff
+DB_PASS=748OwVlAvgmj
+DB_ROOT_PASS=mcXu71c90rIu
 ```
 
-Read the **[Installation guide](https://flarum.org/docs/install.html)** for more information. For support, refer to the [documentation](https://flarum.org/docs/), and ask questions on the [community forum](https://discuss.flarum.org/) or [Discord chat](https://flarum.org/discord/).
+Start the services:
+```sh
+docker-compose up -d
+```
 
-## Contributing
+By default it serve HTTP / HTTPS services by this ports:
 
-Thank you for considering contributing to Flarum! Please read the **[Contributing guide](https://flarum.org/docs/contributing.html)** to learn how you can help.
+* HTTP: http://0.0.0.0:8080
+* HTTPS (with self-signed cert): https://0.0.0.0:8443
 
-This repository only holds the Flarum skeleton application. Most development happens in [flarum/core](https://github.com/flarum/core).
+Set reverse proxy / debugging proxy (recommend [whistle](https://github.com/avwo/whistle)) to access the https services:
 
-## Security Vulnerabilities
+whistle config example:
+```
+https://local.0xffff.one https://0.0.0.0:8443
+```
 
-If you discover a security vulnerability within Flarum, please send an e-mail to [security@flarum.org](mailto:security@flarum.org). All security vulnerabilities will be promptly addressed.
+## Production Deployment
+
+Production deployment use `docker-compose.prod.yml` config, with pre built Docker image [zgq354/0xffff-flarum](https://hub.docker.com/r/zgq354/0xffff-flarum) by Github Actions.
+
+You should initialized the site data by the development config first (it depends a initialized `config.php` in `data/app` directory), then add a `COMPOSE_FILE` config let docker compose use the production yml file.
+
+`.env` file example:
+```sh
+DB_NAME=flarum
+DB_USER=flarum_0xffff
+DB_PASS=748OwVlAvgmj
+DB_ROOT_PASS=mcXu71c90rIu
+
+COMPOSE_FILE=docker-compose.prod.yml
+```
+
+Start the services:
+```sh
+# move config to production
+mv config.php data/app/
+# start the services
+docker-compose up -d
+```
+
+## Contribution
+Any contributions are welcome. Please feel free to:
+
+* Open an Issue
+* Creating a Pull Request
+* Comment in an Issue / PR
+* Open a Discussion in 0xFFFF Forum / QQ Group / Discord
+
+Thank you for willing to contribute to this project!
+
+## Reference
+ * [Flarum Community](https://discuss.flarum.org/)
+ * [Flarum Documentation](https://docs.flarum.org/)
+ * [Extending Flarum | Flarum Documentation](https://docs.flarum.org/extend/)
+ * [Flarum 中文社区](https://discuss.flarum.org.cn/)
+ * [ECNU-Forum/ECNU-Forum](https://github.com/ECNU-Forum/ECNU-Forum)
 
 ## License
 
