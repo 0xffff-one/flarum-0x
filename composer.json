@@ -21,6 +21,8 @@
         "docs": "https://flarum.org/docs/"
     },
     "require": {
+        "afrux/forum-widgets-core": "*",
+        "afrux/news-widget": "*",
         "askvortsov/flarum-pwa": "*",
         "blomstra/flarum-redis": "*",
         "cweagans/composer-patches": "^1.7",

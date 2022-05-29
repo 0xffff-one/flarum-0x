@@ -4,8 +4,166 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bdb72af3d99db1983bc4c6a2c9f549c4",
+    "content-hash": "130999d2a829dd5b204133469b62b6eb",
     "packages": [
+        {
+            "name": "afrux/forum-widgets-core",
+            "version": "v0.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/afrux/forum-widgets-core.git",
+                "reference": "32305870b2bf74dd70e4b8908db9ea07efbb52a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/afrux/forum-widgets-core/zipball/32305870b2bf74dd70e4b8908db9ea07efbb52a3",
+                "reference": "32305870b2bf74dd70e4b8908db9ea07efbb52a3",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "flarum/core": "^1.0.0"
+            },
+            "require-dev": {
+                "flarum/testing": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.1.x-dev"
+                },
+                "flarum-extension": {
+                    "title": "Forum Widgets",
+                    "category": "",
+                    "icon": {
+                        "image": "icon.svg"
+                    }
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Afrux\\ForumWidgets\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sami Mazouz",
+                    "email": "sychocouldy@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Core Extension for Managing Forum Widgets",
+            "homepage": "https://afrux.github.io",
+            "keywords": [
+                "core",
+                "flarum",
+                "framework",
+                "widgets"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/",
+                "issues": "https://github.com/afrux/forum-widgets-core/issues",
+                "source": "https://github.com/afrux/forum-widgets-core"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/sycho",
+                    "type": "other"
+                }
+            ],
+            "time": "2022-03-03T19:50:55+00:00"
+        },
+        {
+            "name": "afrux/news-widget",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/afrux/news-widget.git",
+                "reference": "f1e813322ed624dd8edb2f437b9ce441ba314a55"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/afrux/news-widget/zipball/f1e813322ed624dd8edb2f437b9ce441ba314a55",
+                "reference": "f1e813322ed624dd8edb2f437b9ce441ba314a55",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "afrux/forum-widgets-core": "^0.1.0",
+                "flarum/core": "^1.0.0"
+            },
+            "require-dev": {
+                "flarum/testing": "^1.0.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "0.1.x-dev"
+                },
+                "flarum-extension": {
+                    "title": "News Widget",
+                    "category": "forum-widget",
+                    "icon": {
+                        "name": "fas fa-bullhorn",
+                        "backgroundColor": "#e34b6e",
+                        "color": "#fff"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Afrux\\News\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sami Mazouz",
+                    "email": "sychocouldy@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple news fader widget",
+            "homepage": "https://afrux.github.io",
+            "keywords": [
+                "flarum",
+                "forum",
+                "news",
+                "widget"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/",
+                "issues": "https://github.com/afrux/news-widget/issues",
+                "source": "https://github.com/afrux/news-widget"
+            },
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/sycho",
+                    "type": "other"
+                }
+            ],
+            "time": "2021-12-11T19:18:08+00:00"
+        },
         {
             "name": "askvortsov/flarum-pwa",
             "version": "v3.1.3",
@@ -13829,5 +13987,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.0.0"
 }
