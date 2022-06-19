@@ -65,8 +65,12 @@ html, body {
   background-size: contain;
 }
 
+.link-wd {
+  font-size: 14px;
+}
+
 .link-url {
-  margin: 20px 0;
+  margin: 16px 0 20px;
   padding: 0 16px;
   font-size: 13px;
   color: #666;
