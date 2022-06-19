@@ -1,0 +1,301 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  font-family: PingFangSC-Regular, HelveticaNeue-Light, 'Helvetica Neue Light', 'Microsoft YaHei', sans-serif;
+}
+
+.open-tips {
+  position: absolute;
+  font-size: 14px;
+  line-height: 24px;
+  top: 8px;
+  right: 24px;
+}
+
+.open-tips::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  background: url(./imgs/icon-right-up-arrow.png);
+  background-size: contain;
+}
+
+.open-tips .tips-text {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  width: 120px;
+}
+
+.link-bd {
+  position: absolute;
+  left: 0;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.link-bd h3 {
+  margin: 0;
+}
+
+.site-logo {
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  background: url(./imgs/icon-logo-256x256.png);
+  background-size: contain;
+}
+
+.link-url {
+  margin: 20px 0;
+  padding: 0 16px;
+  font-size: 13px;
+  color: #666;
+  user-select: all;
+}
+
+.extra-tips {
+  font-size: 13px;
+  color: #888;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0 30px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 14px;
+  color: rgba(25, 95, 165, 0.74);
+  user-select: none;
+}
+
+/* from flarum */
+
+:root {
+  --border-radius: 4px;
+  --button-color: #667c99;
+  --button-bg: #e8ecf3;
+  --button-bg-hover: #d7dfea;
+  --button-bg-active: #c7d2e1;
+  --button-bg-disabled: #e8ecf3;
+  --button-primary-color: #fff;
+  --button-primary-bg: #195fa5;
+  --button-primary-bg-hover: #16528f;
+  --button-primary-bg-active: #124579;
+  --button-primary-bg-disabled: #195fa5;
+}
+
+.Button {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  /* vertical-align: middle; */
+  cursor: pointer;
+  white-space: nowrap;
+  line-height: 20px;
+  padding: 8px 13px;
+  border-radius: var(--border-radius);
+  -webkit-user-select: none;
+  user-select: none;
+  color: var(--button-color);
+  background: var(--button-bg);
+  border: 0;
+}
+
+.Button:hover {
+  text-decoration: none
+}
+
+.Button:active,.Button.active,.open>.Button.Dropdown-toggle {
+  box-shadow: inset 0 3px 5px rgba(0,0,0,0.125)
+}
+
+.Button.disabled,.Button[disabled],fieldset[disabled] .Button {
+  cursor: default;
+  opacity: 0.65;
+  box-shadow: none
+}
+
+a.Button.disabled,fieldset[disabled] a.Button {
+  pointer-events: none
+}
+
+.Button .Button-label {
+  transition: margin-right .1s
+}
+
+.Button .LoadingIndicator-container {
+  color: inherit;
+  margin-top: -0.175em;
+  margin-left: 4px
+}
+
+.Button:hover,.Button:focus,.Button.focus {
+  background-color: var(--button-bg-hover)
+}
+
+.Button:active,.Button.active,.open>.Dropdown-toggle.Button {
+  background-color: var(--button-bg-active)
+}
+
+.Button.disabled,.Button[disabled],fieldset[disabled] .Button {
+  background: var(--button-bg-disabled)
+}
+
+.Button--square {
+  padding-left: 9px;
+  padding-right: 9px
+}
+
+.Button--rounded {
+  border-radius: 18px
+}
+
+.Button--flat {
+  background: transparent;
+  border-radius: 18px
+}
+
+.Button--link {
+  background: transparent !important
+}
+
+.Button--link:hover {
+  background: transparent !important;
+  color: var(--link-color)
+}
+
+.Button--link:active,.Button--link.active,.Button--link:focus,.Button--link.focus,.open>.Button--link.Dropdown-toggle {
+  background: transparent !important;
+  box-shadow: none;
+  color: var(--link-color)
+}
+
+.Button--text {
+  background: transparent !important;
+  padding: 0;
+  color: inherit !important;
+  line-height: inherit
+}
+
+.Button--text:hover {
+  text-decoration: underline
+}
+
+.Button--text:active,.Button--text.active,.open>.Button--text.Dropdown-toggle {
+  box-shadow: none
+}
+
+.Button--primary {
+  --button-color: var(--button-primary-color);
+  --button-bg: var(--button-primary-bg);
+  --button-bg-hover: var(--button-primary-bg-hover);
+  --button-bg-active: var(--button-primary-bg-active);
+  --button-bg-disabled: var(--button-primary-bg-disabled);
+  font-weight: bold;
+  padding-left: 30px;
+  padding-right: 30px
+}
+
+.Button--primary .Button-icon {
+  display: none
+}
+
+.Button--danger {
+  --button-color: var(--control-danger-color);
+  --button-bg: var(--control-danger-bg);
+  --button-bg-hover: var(--control-danger-bg-hover);
+  --button-bg-active: var(--control-danger-bg-active);
+  --button-bg-disabled: var(--control-danger-bg-disabled)
+}
+
+.Button--more {
+  padding: 2px 4px;
+  line-height: 1
+}
+
+.Button--more .Button-icon {
+  margin: 0
+}
+
+.Button--block,.LogInButton {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.Button--block+.Button--block {
+  margin-top: 5px
+}
+
+.Button--icon {
+  width: 36px;
+  text-align: center;
+  padding: 8px 0
+}
+
+.Button--icon .Button-label,.Button--icon .Button-caret {
+  display: none
+}
+
+.Button--icon .Button-icon {
+  font-size: 16px;
+  vertical-align: -1px;
+  margin: 0
+}
+
+.toast-wrap {
+  display: none;
+  position: absolute;
+  top: 80%;
+  left: 0;
+  right: 0;
+  transform: translate(0, -50%);
+  justify-content: center;
+  align-items: center;
+  z-index: 4000;
+}
+
+.toast-wrap.wrap--no-action {
+  top: 0;
+  bottom: 0;
+  transform: none;
+}
+
+.toast-wrap.active {
+  display: flex;
+}
+
+.toast {
+  background: #000000;
+  background: rgba(0, 0, 0, .7);
+  color: #fff;
+  border-radius: 5px;
+  line-height: 24px;
+  padding: 4px 16px;
+  max-width: 300px;
+  font-size: 13px;
+}
