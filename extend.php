@@ -51,7 +51,7 @@ return [
         ->listen(Saving::class, function ($event) use ($pinyin) {
             // note: flarum v1.3 已支持转拼音 slug，但没有最大字符数量的限制，故此处的代码仍然需要
             // pinyin slug
-            $SLUG_MAX_LEN = 80;
+            $SLUG_MAX_LEN = 35;
             $event->discussion->slug = trim(substr(mb_strtolower($pinyin->permalink($event->discussion->title)), 0, $SLUG_MAX_LEN), '-');
         }),
     // redis queue
