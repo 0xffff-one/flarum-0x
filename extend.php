@@ -42,6 +42,22 @@ class LandPageMiddleware implements MiddlewareInterface {
     }
 }
 
+function getShortSlug($input) {
+    $SLUG_MAX_LEN = 35;
+    $resultArr = [];
+    $totalLen = 0;
+    $inputArr = explode("-", $input);
+    foreach ($inputArr as $curWord) {
+        $curLen = strlen($curWord);
+        if ($totalLen + $curLen > $SLUG_MAX_LEN || empty($curWord)) {
+            break;
+        }
+        $resultArr[] = $curWord;
+        $totalLen += strlen($curWord) + 1;
+    }
+    return implode("-", $resultArr);
+}
+
 return [
     (new Extend\Middleware('forum'))->add(LandPageMiddleware::class),
     (new Extend\Frontend('forum'))
@@ -51,8 +67,7 @@ return [
         ->listen(Saving::class, function ($event) use ($pinyin) {
             // note: flarum v1.3 已支持转拼音 slug，但没有最大字符数量的限制，故此处的代码仍然需要
             // pinyin slug
-            $SLUG_MAX_LEN = 35;
-            $event->discussion->slug = trim(substr(mb_strtolower($pinyin->permalink($event->discussion->title)), 0, $SLUG_MAX_LEN), '-');
+            $event->discussion->slug = getShortSlug(mb_strtolower($pinyin->permalink($event->discussion->title)));
         }),
     // redis queue
     new Blomstra\Redis\Extend\Redis([
