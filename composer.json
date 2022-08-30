@@ -84,7 +84,7 @@
                 "Fix Error Problem": "patches/flarum-pwa-1.patch"
             },
             "the-turk/flarum-mathren": {
-                "Replace JSDelivr with 75 cdn": "patches/flarum-mathren-1.patch"
+                "Replace JSDelivr with ByteDance cdn": "patches/flarum-mathren-1.patch"
             },
             "fof/sitemap": {
                 "Remote User in Sitemap": "patches/fof-sitemap-1.patch"
@@ -93,8 +93,9 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "echo 'Replace jsdelivr with bytedance cdn...'",
-            "sed -i 's\/\\\/\\\/cdn\\.jsdelivr\\.net\\\/npm\\\/pusher-js@7\\.0\\.3\\\/dist\\\/web\\\/pusher\\.min\\.js\/https:\\\/\\\/lf6-cdn-tos.bytecdntp.com\\\/cdn\\\/expire-1-M\\\/pusher\\\/7.0.3\\\/pusher.min.js\/g' vendor\/flarum\/pusher\/js\/dist\/forum.js"
+            "echo 'Replace jsdelivr with ByteDance cdn...'",
+            "sed -i 's\/\\\/\\\/cdn\\.jsdelivr\\.net\\\/npm\\\/pusher-js@7\\.0\\.3\\\/dist\\\/web\\\/pusher\\.min\\.js\/https:\\\/\\\/lf6-cdn-tos.bytecdntp.com\\\/cdn\\\/expire-1-M\\\/pusher\\\/7.0.3\\\/pusher.min.js\/g' vendor\/flarum\/pusher\/js\/dist\/forum.js",
+            "sed -i 's/const y=\"https:\\/\\/cdn\\.jsdelivr\\.net\\/gh\\/twitter\\/twemoji@\"+\\/(\\[0-9\\]+)\\.\\[0-9\\]+\\.\\[0-9\\]+\\/g\\.exec(h\\.base)\\[1\\]+\"\\/assets\\/\"\\;/const y=\"https:\\/\\/lf6-cdn-tos\\.bytecdntp\\.com\\/cdn\\/expire-1-M\\/twemoji\\/13.1.0\\/\"\\;/' vendor\/flarum\/emoji\/js\/dist\/forum.js"
         ]
     }
 }
