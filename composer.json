@@ -49,6 +49,7 @@
         "fof/nightmode": "*",
         "fof/oauth": "*",
         "fof/pages": "^1.0",
+        "fof/recaptcha": "*",
         "fof/sitemap": "*",
         "fof/socialprofile": "*",
         "fof/split": "*",
