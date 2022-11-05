@@ -83,6 +83,9 @@
             },
             "fof/sitemap": {
                 "Remote User in Sitemap": "patches/fof-sitemap-1.patch"
+            },
+            "flarum/core": {
+                "Get User Ip from CDN": "patches/core-1.patch"
             }
         }
     },
