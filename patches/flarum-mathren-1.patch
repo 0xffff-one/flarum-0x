@@ -1,0 +1,10 @@
+diff --git a/less/forum.less b/less/forum.less
+index c522e5e..f73e8a3 100644
+--- a/less/forum.less
++++ b/less/forum.less
+@@ -1,4 +1,4 @@
+-@import (css) "https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css";
++@import (css) "https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/KaTeX/0.15.2/katex.min.css";
+ 
+ @import "forum/text-editor";
+ 
