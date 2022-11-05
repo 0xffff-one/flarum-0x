@@ -61,6 +61,7 @@
         "league/flysystem-aws-s3-v3": "1.*",
         "minishlink/web-push": "*",
         "overtrue/pinyin": "~4.0",
+        "s9e/text-formatter": "^2.12",
         "the-turk/flarum-diff": "^1.1",
         "the-turk/flarum-mathren": "*",
         "v17development/flarum-seo": "*"
@@ -74,18 +75,11 @@
     "minimum-stability": "beta",
     "prefer-stable": true,
     "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
-        }
     },
     "extra": {
         "patches": {
             "askvortsov/flarum-pwa": {
                 "Fix Error Problem": "patches/flarum-pwa-1.patch"
-            },
-            "the-turk/flarum-mathren": {
-                "Replace JSDelivr with ByteDance cdn": "patches/flarum-mathren-1.patch"
             },
             "fof/sitemap": {
                 "Remote User in Sitemap": "patches/fof-sitemap-1.patch"
