@@ -27,7 +27,8 @@ use Laminas\Diactoros\Response\HtmlResponse;
 // https://github.com/overtrue/pinyin
 $pinyin = new Pinyin();
 
-class LandPageMiddleware implements MiddlewareInterface {
+class LandPageMiddleware implements MiddlewareInterface
+{
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
         $ua = $request->getHeader('User-Agent')[0];
@@ -69,13 +70,27 @@ return [
             // pinyin slug
             $event->discussion->slug = getShortSlug(mb_strtolower($pinyin->permalink($event->discussion->title)));
         }),
-    // redis queue
-    new Blomstra\Redis\Extend\Redis([
-        'host' => 'redis',
-        'password' => null,
-        'port' => 6379,
-        'database' => 1
-    ]),
+    /**
+     * redis for queue / session / cache
+     *
+     * config example:
+     * [
+     *   'redisConfig' => [
+     *    'host' => 'redis',
+     *    'password' => null,
+     *    'port' => 6379,
+     *    'database' => 1
+     *   ],
+     * ]
+     */
+    (function () {
+        $config = @include 'config.php';
+        if (empty($config) || !array_key_exists('redisConfig', $config) || empty($redisConfig = $config['redisConfig'])) {
+            // as a placeholder
+            return new Extend\Event;
+        }
+        return new Blomstra\Redis\Extend\Redis($redisConfig);
+    })(),
     // check dumplicate post in the last 10 minutes
     (new ThrottleApi())
         ->set('checkDumplicate', function (ServerRequestInterface $request) {
