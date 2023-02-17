@@ -25,6 +25,7 @@
         "afrux/news-widget": "*",
         "askvortsov/flarum-pwa": "*",
         "blomstra/flarum-redis": "*",
+        "clarkwinkelmann/flarum-ext-first-post-approval": "^1.0",
         "cweagans/composer-patches": "^1.7",
         "flarum-lang/chinese-simplified": "^1.0",
         "flarum/approval": "*",

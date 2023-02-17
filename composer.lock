@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf0e7a6bcb53fb02eeef504cd07e317b",
+    "content-hash": "00a8a50c6a0abdc1cdd9ae5722a76247",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",
@@ -520,6 +520,68 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "clarkwinkelmann/flarum-ext-first-post-approval",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clarkwinkelmann/flarum-ext-first-post-approval.git",
+                "reference": "d89a6be9f7c0aca4795342247fc34fdd2c4845aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clarkwinkelmann/flarum-ext-first-post-approval/zipball/d89a6be9f7c0aca4795342247fc34fdd2c4845aa",
+                "reference": "d89a6be9f7c0aca4795342247fc34fdd2c4845aa",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/approval": "*",
+                "flarum/core": "^1.3"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-extension": {
+                    "title": "First Post Approval",
+                    "category": "moderation",
+                    "icon": {
+                        "name": "fas fa-check",
+                        "backgroundColor": "#684ba6",
+                        "color": "#fff"
+                    }
+                },
+                "flagrow": {
+                    "discuss": "https://discuss.flarum.org/d/25055"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ClarkWinkelmann\\FirstPostApproval\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clark Winkelmann",
+                    "email": "clark.winkelmann@gmail.com",
+                    "homepage": "https://clarkwinkelmann.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Hold posts and discussions from new users for approval",
+            "keywords": [
+                "approval",
+                "flarum"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/25055",
+                "issues": "https://github.com/clarkwinkelmann/flarum-ext-first-post-approval/issues",
+                "source": "https://github.com/clarkwinkelmann/flarum-ext-first-post-approval"
+            },
+            "time": "2022-08-03T03:12:02+00:00"
         },
         {
             "name": "components/font-awesome",
