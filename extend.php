@@ -63,7 +63,8 @@ return [
     (new Extend\Middleware('forum'))->add(LandPageMiddleware::class),
     (new Extend\Frontend('forum'))
         ->css(__DIR__ . '/resources/less/post-table.less')
-        ->css(__DIR__ . '/resources/less/nav-widget.less'),
+        ->css(__DIR__ . '/resources/less/nav-widget.less')
+        ->css(__DIR__ . '/resources/less/custom.less'),
     (new Extend\Event)
         ->listen(Saving::class, function ($event) use ($pinyin) {
             // note: flarum v1.3 已支持转拼音 slug，但没有最大字符数量的限制，故此处的代码仍然需要

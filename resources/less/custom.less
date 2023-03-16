@@ -1,0 +1,92 @@
+
+.Hero-close {
+  display: none;
+}
+
+.katex .katex-mathml {
+    position: absolute;
+    clip: rect(1px,1px,1px,1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+
+.Post-body h1 {
+    font-size: 175%;
+}
+
+.Post-body h2 {
+    font-size: 150%;
+}
+
+.Post-body h3 {
+    font-size: 125%;
+}
+
+@media (max-width: 767px) {
+    .App {
+        padding-bottom: 0px;
+    }
+
+    .App-content {
+        padding-bottom: 30px;
+    }
+
+    .PostStream-item {
+        overflow: hidden;
+    }
+}
+
+.DiscussionListItem-info .item-excerpt {
+    max-height: 3em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* fix iPhone X problem */
+.TagLabel-text .fas {
+  display: inline;
+}
+
+/* select */
+#header,
+#content,
+.Post .PostUser-avatar {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.DiscussionHero-items,
+.CommentPost .Post-header,
+.CommentPost .Post-body {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.Pages-container {
+    white-space: inherit !important;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.Post-body h3 {
+    font-size: 125%;
+    margin-top: 1.5em;
+}
+
+
+.DiffDropdown {
+  left: -10px;
+  top: 1px;
+}
+
+.DiffDropdown .Button-icon {
+  margin-right: 5px;
+}
+
+a {
+  outline: none;
+}
