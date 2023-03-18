@@ -59,7 +59,7 @@ function getShortSlug($input) {
     return implode("-", $resultArr);
 }
 
-return [
+return array_filter([
     (new Extend\Middleware('forum'))->add(LandPageMiddleware::class),
     (new Extend\Frontend('forum'))
         ->css(__DIR__ . '/resources/less/post-table.less')
@@ -87,8 +87,7 @@ return [
     (function () {
         $config = @include 'config.php';
         if (empty($config) || !array_key_exists('redisConfig', $config) || empty($redisConfig = $config['redisConfig'])) {
-            // as a placeholder
-            return new Extend\Event;
+            return null;
         }
         return new Blomstra\Redis\Extend\Redis($redisConfig);
     })(),
@@ -151,10 +150,10 @@ return [
         }),
     // fancybox
     (new Extend\Frontend('forum'))
-    ->content(function (Document $document) {
-        $document->head[] = '<script defer type="text/javascript" src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js"></script>';
-        $document->head[] = '<link rel="preload" as="style" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css" onload="this.onload=null;this.rel=\'stylesheet\'">';
-        $document->foot[] = <<<HTML
+        ->content(function (Document $document) {
+            $document->head[] = '<script defer type="text/javascript" src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js"></script>';
+            $document->head[] = '<link rel="preload" as="style" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css" onload="this.onload=null;this.rel=\'stylesheet\'">';
+            $document->foot[] = <<<HTML
 <script>
 flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function (output, vnode) {
 const self = this;
@@ -181,5 +180,5 @@ this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(funct
 });
 </script>
 HTML;
-    })
-];
+        })
+], 'boolval');
