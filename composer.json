@@ -45,6 +45,7 @@
         "flarum/subscriptions": "*",
         "flarum/suspend": "*",
         "flarum/tags": "*",
+        "fof/drafts": "*",
         "fof/formatting": "*",
         "fof/links": "*",
         "fof/nightmode": "*",
