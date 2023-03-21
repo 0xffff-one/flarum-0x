@@ -117,13 +117,3 @@ services:
     restart: always
     expose:
       - 6379
-
-  sonic:
-    image: valeriansaliou/sonic:v1.3.0
-    container_name: 0xffff-sonic
-    volumes:
-      - ./data/sonic-store:/var/lib/sonic/store
-      - ./services/sonic/config.cfg:/etc/sonic.cfg
-    restart: always
-    expose:
-      - 1491

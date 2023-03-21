@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f58ad84eb5c298d193c5e4f517d0d710",
+    "content-hash": "1e21d74aa003882e6f3c81337d56c237",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",
@@ -4258,63 +4258,6 @@
                 "source": "https://github.com/franzliedke/whoops-middleware/tree/2.0.0"
             },
             "time": "2021-01-03T01:30:07+00:00"
-        },
-        {
-            "name": "ganuonglachanh/sonic",
-            "version": "0.1.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ganuonglachanh/flarum-sonic.git",
-                "reference": "49a5c9c7ce39866f2c2a47033ff68806dcb4c555"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ganuonglachanh/flarum-sonic/zipball/49a5c9c7ce39866f2c2a47033ff68806dcb4c555",
-                "reference": "49a5c9c7ce39866f2c2a47033ff68806dcb4c555",
-                "shasum": ""
-            },
-            "require": {
-                "flarum/core": ">=1.0",
-                "ppshobi/psonic": "^2.0.1"
-            },
-            "type": "flarum-extension",
-            "extra": {
-                "flarum-extension": {
-                    "title": "Search By Sonic",
-                    "icon": {
-                        "name": "fa fa-search",
-                        "backgroundColor": "#1976D2",
-                        "color": "#f44336"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "GaNuongLaChanh\\Sonic\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "AGPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "GaNuongLaChanh",
-                    "email": "ganuonglachanh@outlook.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Allows to search by sonic",
-            "keywords": [
-                "flarum",
-                "search",
-                "sonic"
-            ],
-            "support": {
-                "issues": "https://github.com/ganuonglachanh/flarum-sonic/issues",
-                "source": "https://github.com/ganuonglachanh/flarum-sonic"
-            },
-            "time": "2023-02-11T01:18:03+00:00"
         },
         {
             "name": "google/recaptcha",
@@ -8754,55 +8697,6 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
-        },
-        {
-            "name": "ppshobi/psonic",
-            "version": "v2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ppshobi/psonic.git",
-                "reference": "2087d0eb8bf8c3b53e19fa127fba3b6bf1c61951"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ppshobi/psonic/zipball/2087d0eb8bf8c3b53e19fa127fba3b6bf1c61951",
-                "reference": "2087d0eb8bf8c3b53e19fa127fba3b6bf1c61951",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.3|^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.0|^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Psonic\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Shobi P P",
-                    "email": "ppshobi@gmail.com"
-                }
-            ],
-            "description": "PHP client for Sonic Search Engine",
-            "keywords": [
-                "auto suggestion",
-                "psonic",
-                "search engine",
-                "sonic"
-            ],
-            "support": {
-                "issues": "https://github.com/ppshobi/psonic/issues",
-                "source": "https://github.com/ppshobi/psonic/tree/v2.1.0"
-            },
-            "time": "2022-11-01T11:37:31+00:00"
         },
         {
             "name": "predis/predis",
