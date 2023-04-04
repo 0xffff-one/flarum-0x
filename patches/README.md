@@ -1,12 +1,13 @@
-# composer 依赖魔改
-Flarum 通过 composer 管理扩展，当扩展代码有问题，改动 vendor 的依赖，需要版本控制的情况下，重新申请、发布 composer 包成本太高，因此我们采用 patch 的方案改善这个流程。
+# Composer Dependency Patching
+Flarum uses Composer to manage its dependencies. When there is an issue with extension code and modifications need to be made to the vendor dependencies, the cost of reapplying for and publishing a Composer package is too high. Therefore, we use the patching solution to improve this process.
 
-依赖方案：[cweagans/composer-patches](https://github.com/cweagans/composer-patches)
+We use [cweagans/composer-patches](https://github.com/cweagans/composer-patches) to achieve this, the patch files are stored in this directory.
 
-流程：
-1. 单独克隆依赖对应的 git 仓库
-2. 修改需要更新的部分代码，`git diff > xxxx.patch` 生成 patch 文件，copy 至 patches 目录
-3. 在 `composer.json` 指定依赖和对应的 patch 文件
-4. 重新 `composer i`
+The process is as follows:
 
-参考：https://drupal.stackexchange.com/a/297530
+1. Clone the corresponding Git repository for the dependency separately, or initialize the corresponding extension directory in `vendor` using `git init && git commit -a -m "temporary commit"`.
+2. Modify the code that needs updating, and generate the patch file using `git diff > xxxx.patch`, then copy it to the `patches` directory.
+3. Specify the dependency and corresponding patch file in `composer.json`.
+4. Run `composer i` again.
+
+Reference: https://drupal.stackexchange.com/a/297530
