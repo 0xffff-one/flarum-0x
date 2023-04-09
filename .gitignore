@@ -8,6 +8,7 @@ config.php
 vendor
 studio.json
 public/robots.txt
+storage/
 
 # data
 /data/app

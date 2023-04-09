@@ -1,0 +1,35 @@
+--- /dev/null
++++ ../override/Opis/Closure/SerializableClosure.php
+@@ -13,13 +13,12 @@
+ 
+ use Closure;
+ use ReflectionObject;
+-use Serializable;
+ use SplObjectStorage;
+ 
+ /**
+  * Provides a wrapper for serialization of closures.
+  */
+-class SerializableClosure implements Serializable
++class SerializableClosure
+ {
+     /**
+      * @var Closure Wrapped closure
+@@ -118,7 +117,7 @@
+      *
+      * @return string The serialized closure
+      */
+-    public function serialize()
++    public function __serialize()
+     {
+         if ($this->scope === null) {
+             $this->scope = new ClosureScope();
+@@ -190,7 +189,7 @@
+      *
+      * @throws SecurityException
+      */
+-    public function unserialize($data)
++    public function __unserialize($data)
+     {
+         ClosureStream::register();
+ 

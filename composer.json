@@ -71,14 +71,19 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "optimize-autoloader": true,
-        "apcu-autoloader": true
+        "apcu-autoloader": true,
+        "allow-plugins": {
+            "cweagans/composer-patches": true
+        }
     },
     "minimum-stability": "beta",
     "prefer-stable": true,
-    "repositories": {
-    },
+    "repositories": [],
     "extra": {
         "patches": {
+            "fof/webhooks": [
+                "patches/fof-webhooks-override-opis-closure-serializableclosure-php.patch"
+            ],
             "askvortsov/flarum-pwa": {
                 "Fix Error Problem": "patches/flarum-pwa-1.patch"
             },
@@ -96,8 +101,11 @@
     "scripts": {
         "post-install-cmd": [
             "echo 'Replace jsdelivr with ByteDance cdn...'",
-            "sed -i 's\/\\\/\\\/cdn\\.jsdelivr\\.net\\\/npm\\\/pusher-js@7\\.0\\.3\\\/dist\\\/web\\\/pusher\\.min\\.js\/https:\\\/\\\/lf6-cdn-tos.bytecdntp.com\\\/cdn\\\/expire-1-M\\\/pusher\\\/7.0.3\\\/pusher.min.js\/g' vendor\/flarum\/pusher\/js\/dist\/forum.js",
-            "sed -i 's/const y=\"https:\\/\\/cdn\\.jsdelivr\\.net\\/gh\\/twitter\\/twemoji@\"+\\/(\\[0-9\\]+)\\.\\[0-9\\]+\\.\\[0-9\\]+\\/g\\.exec(h\\.base)\\[1\\]+\"\\/assets\\/\"\\;/const y=\"https:\\/\\/lf6-cdn-tos\\.bytecdntp\\.com\\/cdn\\/expire-1-M\\/twemoji\\/13.1.0\\/\"\\;/' vendor\/flarum\/emoji\/js\/dist\/forum.js"
+            "sed -i 's/\\/\\/cdn\\.jsdelivr\\.net\\/npm\\/pusher-js@7\\.0\\.3\\/dist\\/web\\/pusher\\.min\\.js/https:\\/\\/lf6-cdn-tos.bytecdntp.com\\/cdn\\/expire-1-M\\/pusher\\/7.0.3\\/pusher.min.js/g' vendor/flarum/pusher/js/dist/forum.js",
+            "sed -i 's/const y=\"https:\\/\\/cdn\\.jsdelivr\\.net\\/gh\\/twitter\\/twemoji@\"+\\/(\\[0-9\\]+)\\.\\[0-9\\]+\\.\\[0-9\\]+\\/g\\.exec(h\\.base)\\[1\\]+\"\\/assets\\/\"\\;/const y=\"https:\\/\\/lf6-cdn-tos\\.bytecdntp\\.com\\/cdn\\/expire-1-M\\/twemoji\\/13.1.0\\/\"\\;/' vendor/flarum/emoji/js/dist/forum.js"
         ]
+    },
+    "require-dev": {
+        "symplify/vendor-patches": "^11.2"
     }
 }

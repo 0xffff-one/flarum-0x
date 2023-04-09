@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e21d74aa003882e6f3c81337d56c237",
+    "content-hash": "e8176015cd6264c62d5e886067fae54a",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",
@@ -13206,7 +13206,51 @@
             "time": "2022-12-29T18:45:10+00:00"
         }
     ],
-    "packages-dev": [],
+    "packages-dev": [
+        {
+            "name": "symplify/vendor-patches",
+            "version": "11.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symplify/vendor-patches.git",
+                "reference": "793c5d0f995988af690e2a278d0133df41638528"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symplify/vendor-patches/zipball/793c5d0f995988af690e2a278d0133df41638528",
+                "reference": "793c5d0f995988af690e2a278d0133df41638528",
+                "shasum": ""
+            },
+            "require": {
+                "cweagans/composer-patches": "^1.7",
+                "php": ">=7.2"
+            },
+            "bin": [
+                "bin/vendor-patches"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Generate vendor patches for packages with single command",
+            "support": {
+                "issues": "https://github.com/symplify/vendor-patches/issues",
+                "source": "https://github.com/symplify/vendor-patches/tree/11.2.3"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/rectorphp",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/tomasvotruba",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-02-07T11:23:54+00:00"
+        }
+    ],
     "aliases": [],
     "minimum-stability": "beta",
     "stability-flags": [],
@@ -13214,5 +13258,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }
