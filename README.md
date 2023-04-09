@@ -26,8 +26,9 @@ Thank you for willing to contribute to this project!
 
 ### TODO
 
- - [x] new Dev Envionment config (powered by [Dev Container](https://containers.dev/overview))
+ - [x] new Dev envionment config (powered by [Dev Container](https://containers.dev/overview))
  - [ ] Update latest README.md
+ - [ ] envionment config for Front-end Dev
 
 ## Reference
  * [Flarum Community](https://discuss.flarum.org/)
