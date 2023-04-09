@@ -1,9 +1,5 @@
 FROM php:8.2-fpm-bullseye
 
-ENV LANG=en_US.UTF-8 \
-    LANGUAGE=en_US.UTF-8 \
-    LC_ALL=en_US.UTF-8
-
 # 将镜像源替换为中科大镜像源
 RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
     sed -i 's/security.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
@@ -21,9 +17,18 @@ RUN \
     # && apk add autoconf automake make gcc g++ libtool pkgconfig shadow rsync redis nginx mariadb-client \
     # APCu
     && pecl install apcu \
-    && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
+    && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini
+
+# Install xdebug
+RUN yes | pecl install xdebug \
+    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.mode = debug" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.start_with_request = yes" >> /usr/local/etc/php/conf.d/xdebug.ini \
+    && echo "xdebug.client_port = 9003" >> /usr/local/etc/php/conf.d/xdebug.ini
+
+RUN \
     # composer
-    && curl -sS https://getcomposer.org/installer | php \
+    curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     # nginx
     && addgroup --system --gid 123 nginx \
