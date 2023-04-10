@@ -1,0 +1,36 @@
+name: Build Dev Container Image
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  build:
+    name: Build and Push Docker image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Pre-build dev container image
+        uses: devcontainers/ci@v0.3
+        with:
+          imageName: ghcr.io/0xffff-one/0xffff-flarum-devcontainer
+          cacheFrom: ghcr.io/0xffff-one/0xffff-flarum-devcontainer
+          push: always
