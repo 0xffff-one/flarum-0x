@@ -2,9 +2,7 @@ version: '3.8'
 
 services: 
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: ghcr.io/0xffff-one/0xffff-flarum-devcontainer:latest
 
     volumes:
       - ../..:/workspaces:cached
