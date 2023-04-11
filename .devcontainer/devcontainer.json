@@ -9,14 +9,11 @@
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
 			"installZsh": "true",
+			"configureZshAsDefaultShell": "true",
 			"username": "vscode",
 			"userUid": "1000",
 			"userGid": "1000",
 			"upgradePackages": "true"
-		},
-		"ghcr.io/devcontainers/features/git:1": {
-			"version": "latest",
-			"ppa": "false"
 		}
 	},
 	// from: https://github.com/devcontainers/images/blob/4ea2ed96dc80d4baebd0eef1efceeb27e33a3aef/src/php/.devcontainer/devcontainer.json
