@@ -20,7 +20,7 @@ Any contributions are welcome. Please feel free to:
 * Open an Issue
 * Creating a Pull Request
 * Comment in an Issue / PR
-* Open a Discussion in 0xFFFF Forum / QQ Group / Discord
+* Open a Discussion in 0xFFFF Forum / Discord / QQ Group
 
 Thank you for willing to contribute to this project!
 

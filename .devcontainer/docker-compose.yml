@@ -6,6 +6,8 @@ services:
 
     volumes:
       - ../..:/workspaces:cached
+      - app-data:/data
+      - home:/home
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
@@ -32,3 +34,5 @@ services:
   
 volumes:
   mariadb-data:
+  app-data:
+  home:

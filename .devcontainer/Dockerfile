@@ -1,6 +1,6 @@
-FROM php:8.2-fpm-bullseye
+FROM php:8.0-fpm-bullseye
 
-# 将镜像源替换为中科大镜像源
+# Change to USTC mirror to accelerate the building process
 RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
     sed -i 's/security.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
@@ -43,6 +43,9 @@ ADD ./nginx/nginx.conf /etc/nginx/
 ADD ./nginx/snippets /etc/nginx/snippets
 ADD ./nginx/sites /etc/nginx/sites
 
+# redis
+COPY ./redis/redis.conf /etc/redis/redis.conf
+
 # start up
 COPY ./nginx/start-nginx.sh /bin/start-nginx
 COPY ./app/start-app.sh /bin/start-app
@@ -50,7 +53,8 @@ COPY ./start.sh /bin/start
 
 RUN chmod 0755 /bin/start-nginx \
     && chmod 0755 /bin/start-app \
-    && chmod 0755 /bin/start
+    && chmod 0755 /bin/start \
+    && chmod -R 0755 /etc/redis
 
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
