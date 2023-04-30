@@ -1,4 +1,4 @@
-FROM php:8.0-fpm-bullseye
+FROM php:8.2-fpm-bullseye
 
 # Change to USTC mirror to accelerate the building process
 RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
