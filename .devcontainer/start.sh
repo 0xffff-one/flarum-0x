@@ -8,4 +8,4 @@ nohup start-app > /tmp/php-fpm.out 2>&1 &
 
 # redis
 sudo mkdir -p /data/redis && sudo chown -R $USERNAME:$USERNAME /data/redis
-nohup redis-server /etc/redis/redis.conf > /tmp/redis.out 2>&1 &
+nohup redis-server /etc/redis/redis-local.conf > /tmp/redis.out 2>&1 &

@@ -44,7 +44,7 @@ ADD ./nginx/snippets /etc/nginx/snippets
 ADD ./nginx/sites /etc/nginx/sites
 
 # redis
-COPY ./redis/redis.conf /etc/redis/redis.conf
+COPY ./redis/redis.conf /etc/redis/redis-local.conf
 
 # start up
 COPY ./nginx/start-nginx.sh /bin/start-nginx
