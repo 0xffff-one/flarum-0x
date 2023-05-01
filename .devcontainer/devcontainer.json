@@ -33,7 +33,9 @@
 			"extensions": [
 				"xdebug.php-debug",
 				"bmewburn.vscode-intelephense-client",
-				"mrmlnc.vscode-apache"
+				"mrmlnc.vscode-apache",
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	},
