@@ -43,6 +43,9 @@ ADD ./nginx/nginx.conf /etc/nginx/
 ADD ./nginx/snippets /etc/nginx/snippets
 ADD ./nginx/sites /etc/nginx/sites
 
+# php config
+ADD ./php/dev-config.ini "$PHP_INI_DIR/conf.d/"
+
 # redis
 COPY ./redis/redis.conf /etc/redis/redis-local.conf
 

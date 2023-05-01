@@ -7,6 +7,9 @@ if [ ! -z "$1" ]; then
   role=$1
 fi
 
+sudo mkdir -p /data/log/php
+sudo chown vscode:vscode /data/log/php
+
 mkfile() { mkdir -p "$(dirname "$1")" && touch "$1" ;  }
 
 if [ "$role" = "app" ]; then
