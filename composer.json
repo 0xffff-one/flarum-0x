@@ -67,6 +67,11 @@
         "the-turk/flarum-mathren": "*",
         "v17development/flarum-seo": "*"
     },
+    "autoload": {
+        "psr-4": {
+            "Flarum0x\\Extend\\": "src/"
+        }
+    },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,

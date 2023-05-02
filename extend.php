@@ -7,6 +7,7 @@
  * LICENSE file that was distributed with this source code.
  */
 
+use Flarum0x\Extend\DiskS3\DiskS3Driver;
 use Flarum\Extend;
 use Flarum\Discussion\Event\Saving;
 use Flarum\Extend\ThrottleApi;
@@ -59,6 +60,8 @@ function getShortSlug($input) {
     return implode("-", $resultArr);
 }
 
+$config = @include 'config.php';
+
 return array_filter([
     (new Extend\Middleware('forum'))->add(LandPageMiddleware::class),
     (new Extend\Frontend('forum'))
@@ -80,12 +83,11 @@ return array_filter([
      *    'host' => 'redis',
      *    'password' => null,
      *    'port' => 6379,
-     *    'database' => 1
+     *    'database' => 0
      *   ],
      * ]
      */
-    (function () {
-        $config = @include 'config.php';
+    (function () use ($config) {
         if (empty($config) || !array_key_exists('redisConfig', $config) || empty($redisConfig = $config['redisConfig'])) {
             return null;
         }
@@ -128,6 +130,13 @@ return array_filter([
             }
             $document->head = array_merge($headStrList, $document->head);
         }),
+    // s3 disk driver
+    (function () use ($config) {
+        if (empty($config) || !array_key_exists('disk_s3_config', $config)) {
+            return null;
+        }
+        return (new Extend\Filesystem())->driver('disk_s3', DiskS3Driver::class);
+    })(),
     // CDN URL Replacement
     (new Extend\Filesystem())
         ->disk('flarum-assets', function (Paths $paths, UrlGenerator $url) {
