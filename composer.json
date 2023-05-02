@@ -86,6 +86,9 @@
     "repositories": [],
     "extra": {
         "patches": {
+            "fof/upload": [
+                "patches/fof-upload-src-adapters-manager-php.patch"
+            ],
             "fof/webhooks": [
                 "patches/fof-webhooks-override-opis-closure-serializableclosure-php.patch"
             ],

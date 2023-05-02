@@ -1,0 +1,40 @@
+--- /dev/null
++++ ../src/Adapters/Manager.php
+@@ -13,6 +13,7 @@
+ namespace FoF\Upload\Adapters;
+ 
+ use Aws\S3\S3Client;
++use Flarum\Foundation\Application;
+ use Flarum\Foundation\Paths;
+ use Flarum\Foundation\ValidationException;
+ use Flarum\Settings\SettingsRepositoryInterface;
+@@ -49,12 +50,18 @@
+      */
+     protected $settings;
+ 
+-    public function __construct(Dispatcher $events, Paths $paths, Util $util, SettingsRepositoryInterface $settings)
++    /**
++     * @var Application
++     */
++    protected $app;
++
++    public function __construct(Dispatcher $events, Paths $paths, Util $util, SettingsRepositoryInterface $settings, Application $app)
+     {
+         $this->events = $events;
+         $this->paths = $paths;
+         $this->util = $util;
+         $this->settings = $settings;
++        $this->app = $app;
+     }
+ 
+     public function adapters(): Collection
+@@ -125,7 +132,8 @@
+         return new Adapters\AwsS3(
+             new AwsS3Adapter(
+                 new S3Client($s3Config),
+-                $this->settings->get('fof-upload.awsS3Bucket')
++                $this->settings->get('fof-upload.awsS3Bucket'),
++                $this->app->config('fof_upload_prefix', ''),
+             )
+         );
+     }
