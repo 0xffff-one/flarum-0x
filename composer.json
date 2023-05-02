@@ -69,7 +69,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Flarum0x\\Extend\\": "src/"
+            "Flarum0x\\": "src/"
         }
     },
     "config": {

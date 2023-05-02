@@ -8,6 +8,8 @@
  */
 
 use Flarum0x\Extend\DiskS3\DiskS3Driver;
+use Flarum0x\Extend\Misc\GenerateCustomSlugWhenSaving;
+use Flarum0x\Extend\Misc\GlobalLandingPageMiddleware;
 use Flarum\Extend;
 use Flarum\Discussion\Event\Saving;
 use Flarum\Extend\ThrottleApi;
@@ -18,62 +20,18 @@ use Flarum\Http\RequestUtil;
 use Flarum\Http\UrlGenerator;
 use Flarum\Post\Post;
 use Illuminate\Support\Arr;
-use Overtrue\Pinyin\Pinyin;
 use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Server\MiddlewareInterface;
-use Psr\Http\Server\RequestHandlerInterface;
-use Laminas\Diactoros\Response\HtmlResponse;
-
-// https://github.com/overtrue/pinyin
-$pinyin = new Pinyin();
-
-class LandPageMiddleware implements MiddlewareInterface
-{
-    public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
-    {
-        $ua = $request->getHeader('User-Agent')[0];
-        // landing page for Mobile QQ WebView
-        if (strpos($ua, 'QQ') !== false && strpos($ua, '_SQ_') !== false) {
-            return new HtmlResponse(file_get_contents(__DIR__ . '/resources/views/jump.html'));
-        }
-        // Logic to run before the request is processed and later middleware is called.
-        $response = $handler->handle($request);
-        // Logic to run after the request is processed.
-        return $response;
-    }
-}
-
-function getShortSlug($input) {
-    $SLUG_MAX_LEN = 35;
-    $resultArr = [];
-    $totalLen = 0;
-    $inputArr = explode("-", $input);
-    foreach ($inputArr as $curWord) {
-        $curLen = strlen($curWord);
-        if ($totalLen + $curLen > $SLUG_MAX_LEN || empty($curWord)) {
-            break;
-        }
-        $resultArr[] = $curWord;
-        $totalLen += strlen($curWord) + 1;
-    }
-    return implode("-", $resultArr);
-}
 
 $config = @include 'config.php';
 
 return array_filter([
-    (new Extend\Middleware('forum'))->add(LandPageMiddleware::class),
+    (new Extend\Middleware('forum'))->add(GlobalLandingPageMiddleware::class),
     (new Extend\Frontend('forum'))
         ->css(__DIR__ . '/resources/less/post-table.less')
         ->css(__DIR__ . '/resources/less/nav-widget.less')
         ->css(__DIR__ . '/resources/less/custom.less'),
     (new Extend\Event)
-        ->listen(Saving::class, function ($event) use ($pinyin) {
-            // note: flarum v1.3 已支持转拼音 slug，但没有最大字符数量的限制，故此处的代码仍然需要
-            // pinyin slug
-            $event->discussion->slug = getShortSlug(mb_strtolower($pinyin->permalink($event->discussion->title)));
-        }),
+        ->listen(Saving::class, GenerateCustomSlugWhenSaving::class),
     /**
      * redis for queue / session / cache
      *
@@ -165,27 +123,27 @@ return array_filter([
             $document->foot[] = <<<HTML
 <script>
 flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function (output, vnode) {
-const self = this;
-this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
-    var currentImage = $(this);
-    var checksrc = currentImage.attr("data-src");
-    if (checksrc) {
-        $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("data-src") + "'></a>");
-    }
-    else {
-        $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("src") + "'></a>");
-    }
-    try {
-        $().ready(function(){
-            $().fancybox({
-                selector: '.fancybox'
-            });
-        })
-    } catch (e) {
-        console.error(e.name);
-        console.error(e.message);
-    }
-});
+    const self = this;
+    this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
+        var currentImage = $(this);
+        var checksrc = currentImage.attr("data-src");
+        if (checksrc) {
+            $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("data-src") + "'></a>");
+        }
+        else {
+            $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("src") + "'></a>");
+        }
+        try {
+            $().ready(function(){
+                $().fancybox({
+                    selector: '.fancybox'
+                });
+            })
+        } catch (e) {
+            console.error(e.name);
+            console.error(e.message);
+        }
+    });
 });
 </script>
 HTML;
