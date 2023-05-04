@@ -30,7 +30,7 @@ jobs:
         run: |
           npm i -g strip-json-comments-cli
           sudo apt-get install -y jq
-          strip-json-comments .devcontainer/devcontainer.json | jq '.dockerComposeFile[1]="docker-compose.build.yml"' > .devcontainer/devcontainer.json
+          echo "$(strip-json-comments .devcontainer/devcontainer.json | jq '.dockerComposeFile[1]="docker-compose.build.yml"')" > .devcontainer/devcontainer.json
 
       - name: Log in to the Container registry
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
@@ -42,6 +42,6 @@ jobs:
       - name: Pre-build dev container image
         uses: devcontainers/ci@v0.3
         with:
-          imageName: ghcr.io/0xffff-one/0xffff-flarum-devcontainer
-          cacheFrom: ghcr.io/0xffff-one/0xffff-flarum-devcontainer
+          imageName: ghcr.io/0xffff-one/flarum-0x-devcontainer
+          cacheFrom: ghcr.io/0xffff-one/flarum-0x-devcontainer
           push: always

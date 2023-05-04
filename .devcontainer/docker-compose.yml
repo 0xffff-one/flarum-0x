@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    image: ghcr.io/0xffff-one/0xffff-flarum-devcontainer:latest
+    image: ghcr.io/0xffff-one/flarum-0x-devcontainer:latest
 
     volumes:
       - ../..:/workspaces:cached

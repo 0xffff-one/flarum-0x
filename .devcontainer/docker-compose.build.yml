@@ -5,3 +5,4 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: flarum-0x-devcontainer-local
