@@ -2,7 +2,11 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/php-mariadb
 {
 	"name": "PHP & MariaDB",
-	"dockerComposeFile": "docker-compose.yml",
+	"dockerComposeFile": [
+		"docker-compose.yml"
+		// uncomment next line to build image locally
+        // "docker-compose.build.yml"
+    ],
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	// Features to add to the dev container. More info: https://containers.dev/features.
