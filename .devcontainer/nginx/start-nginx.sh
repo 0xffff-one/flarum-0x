@@ -46,4 +46,4 @@ entrypoint_log() {
 mkdir -p /data/log/nginx && \
 chown -R nginx:nginx /data/log/nginx
 
-exec nginx -g "daemon off;"
+exec nginx
