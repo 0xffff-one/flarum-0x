@@ -44,7 +44,8 @@ ADD ./nginx/snippets /etc/nginx/snippets
 ADD ./nginx/sites /etc/nginx/sites
 
 # php config
-ADD ./php/dev-config.ini "$PHP_INI_DIR/conf.d/"
+ADD ./php/conf.d/dev-config.ini "$PHP_INI_DIR/conf.d/"
+ADD ./php/php-fpm.d/zz-override.conf "$PHP_INI_DIR/../php-fpm.d"
 
 # redis
 COPY ./redis/redis.conf /etc/redis/redis-local.conf

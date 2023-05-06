@@ -26,7 +26,7 @@ if [ "$role" = "app" ]; then
   # assets
   mkfile $basepath/public/assets/avatars/.gitignore
 
-  exec php-fpm
+  sudo php-fpm
 
 elif [ "$role" = "queue" ]; then
     # flarum queue
