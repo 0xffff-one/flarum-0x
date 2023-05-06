@@ -27,16 +27,17 @@ RUN yes | pecl install xdebug \
     && echo "xdebug.client_port = 9003" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 RUN \
-    # composer
-    curl -sS https://getcomposer.org/installer | php \
-    && mv composer.phar /usr/local/bin/composer \
     # nginx
-    && addgroup --system --gid 123 nginx \
+    addgroup --system --gid 123 nginx \
     && adduser --system --disabled-login --ingroup nginx --no-create-home --gecos "nginx user" --shell /bin/false --uid 123 nginx \
     && mkdir -p /data/log/nginx \
     && chown -R nginx:nginx /data/log/nginx \
     # clean
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+
+# multiple-stage builds, see https://docs.docker.com/develop/develop-images/multistage-build/
+# currently we don't want to bundle the deps in image, so just copy the compiled executable only.
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 # nginx config
 ADD ./nginx/nginx.conf /etc/nginx/

@@ -48,10 +48,11 @@
 		8080,
 		3306
 	],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "sudo chmod a+x \"$(pwd)\" && sudo rm -rf /var/www/html && sudo ln -s \"$(pwd)\" /var/www/html"
 	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// Restrict deps installation to first initialization, in which case the verdor directory doesn't exist locally
+	"postCreateCommand": "[ ! -d vendor ] && composer install",
 	// Use 'postStartCommand' to run commands each time the container is successfully started.
 	"postStartCommand": "start"
 }
