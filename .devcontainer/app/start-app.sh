@@ -22,9 +22,10 @@ if [ "$role" = "app" ]; then
   mkfile $basepath/storage/sessions/.gitignore
   mkfile $basepath/storage/tmp/.gitignore
   mkfile $basepath/storage/views/.gitignore
-
   # assets
   mkfile $basepath/public/assets/avatars/.gitignore
+  # php info
+  cp $basepath/.devcontainer/php/phpinfo.php $basepath/public/
 
   exec php-fpm
 
