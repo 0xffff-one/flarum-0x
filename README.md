@@ -1,8 +1,14 @@
 ## Flarum 0x
 Customized [flarum](https://github.com/flarum/flarum) for the [0xFFFF Community](https://0xffff.one/).
 
+We are working on:
+
+1. Customization based on the 0xFFFF Community requirements.
+2. A modern cloud-based Flarum development & deployment workflow.
+3. Easier code contribution process, engage more people to contribute to the Flarum Community.
+
 ## Customizations
-The customizations of Flarum 0x consists of these parts:
+The customizations of **Flarum 0x** consists of these parts:
 1. Initialized [Flarum Skeleton](https://github.com/flarum/flarum) with our custom `composer.json` / `composer.lock` config (contains the extensions we are using)
 2. Patches for the extensions in `vendor/` to make some small changes without publishing new Composer Packages
 3. Custom [flarum extenders](https://docs.flarum.org/extend/start#extenders) in `extend.php`
@@ -28,9 +34,9 @@ Thank you for willing to contribute to this project!
 
 ### TODO
 
- - [x] new Dev envionment config (powered by [Dev Container](https://containers.dev/overview))
- - [ ] envionment config for Front-end Dev
- - [ ] Update latest README.md
+ - [x] new Dev Envionment setup config
+ - [x] build process for Front-end Patching
+ - [ ] Update latest README.md about Dev Env setting and Production Deployment
 
 ## Contributors
 This project exists thanks to all the people who contribute.
