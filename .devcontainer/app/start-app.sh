@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 role=app
-basepath=/workspaces/0xffff-flarum
+basepath=/workspaces/flarum-0x
 
 if [ ! -z "$1" ]; then
   role=$1
