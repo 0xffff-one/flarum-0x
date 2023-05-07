@@ -52,7 +52,7 @@
 	"remoteUser": "vscode",
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// Restrict deps installation to first initialization, in which case the verdor directory doesn't exist locally
-	"postCreateCommand": "[ ! -d vendor ] && composer install",
+	"postCreateCommand": "[ ! -d vendor ] && composer install; true",
 	// Use 'postStartCommand' to run commands each time the container is successfully started.
 	"postStartCommand": "start"
 }
