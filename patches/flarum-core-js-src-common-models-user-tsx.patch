@@ -1,0 +1,29 @@
+--- /dev/null
++++ ../js/src/common/models/User.tsx
+@@ -133,6 +133,17 @@
+    */
+   protected calculateAvatarColor() {
+     const image = new Image();
++    const origUrl = this.avatarUrl();
++    let finalUrl = origUrl;
++    if (origUrl) {
++      try {
++        const url = new URL(origUrl);
++        url.searchParams.append('cors', '1');
++        finalUrl = url.toString();
++      } catch (err) {
++        console.error('calculateAvatarColor', err);
++      }
++    }
+     const user = this;
+ 
+     image.addEventListener('load', function (this: HTMLImageElement) {
+@@ -152,7 +163,7 @@
+       m.redraw();
+     });
+     image.crossOrigin = 'anonymous';
+-    image.src = this.avatarUrl() ?? '';
++    image.src = finalUrl ?? '';
+   }
+ 
+   /**

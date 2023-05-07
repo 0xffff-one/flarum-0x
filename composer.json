@@ -87,9 +87,10 @@
     "extra": {
         "patches": {
             "flarum/core": {
-                "0": "patches/flarum-core-src-forum-forumserviceprovider-php.patch",
-                "1": "patches/flarum-core-src-admin-adminserviceprovider-php.patch",
-                "2": "patches/flarum-core-js-package-json.patch",
+                "0": "patches/flarum-core-js-src-common-models-user-tsx.patch",
+                "1": "patches/flarum-core-src-forum-forumserviceprovider-php.patch",
+                "2": "patches/flarum-core-src-admin-adminserviceprovider-php.patch",
+                "3": "patches/flarum-core-js-package-json.patch",
                 "Get User Ip from CDN": "patches/core-1.patch"
             },
             "fof/upload": [
