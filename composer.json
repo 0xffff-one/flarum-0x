@@ -86,6 +86,12 @@
     "repositories": [],
     "extra": {
         "patches": {
+            "flarum/core": {
+                "0": "patches/flarum-core-src-forum-forumserviceprovider-php.patch",
+                "1": "patches/flarum-core-src-admin-adminserviceprovider-php.patch",
+                "2": "patches/flarum-core-js-package-json.patch",
+                "Get User Ip from CDN": "patches/core-1.patch"
+            },
             "fof/upload": [
                 "patches/fof-upload-src-adapters-manager-php.patch"
             ],
@@ -97,9 +103,6 @@
             },
             "fof/sitemap": {
                 "Remote User in Sitemap": "patches/fof-sitemap-1.patch"
-            },
-            "flarum/core": {
-                "Get User Ip from CDN": "patches/core-1.patch"
             },
             "the-turk/flarum-mathren": {
                 "Replace JSDelivr with ByteDance cdn": "patches/flarum-mathren-1.patch"
