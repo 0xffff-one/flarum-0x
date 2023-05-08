@@ -43,6 +43,23 @@ RUN \
     && mkdir -p /data/log/nginx \
     && chown -R nginx:nginx /data/log/nginx
 
+# php config
+ADD ./build/app/custom-php.ini "$PHP_INI_DIR/conf.d/"
+
+# nginx
+ADD ./build/nginx/nginx.conf /etc/nginx/
+ADD ./build/nginx/snippets /etc/nginx/snippets
+ADD ./build/nginx/sites /etc/nginx/sites
+
+# redis
+COPY ./build/redis/redis.conf /etc/redis/redis.conf
+
+# start up script
+COPY ./build/supervisor/supervisor.conf /etc/supervisor.conf
+COPY ./build/app/start-app.sh /
+COPY ./build/nginx/start-nginx.sh /
+COPY ./build/redis/start-redis.sh /
+
 # add flarum-0x
 ADD . /var/www/flarum
 WORKDIR /var/www/flarum
@@ -58,20 +75,6 @@ RUN \
 
 # custom storage path
 ADD ./build/app/site.php /var/www/flarum
-
-# nginx
-ADD ./build/nginx/nginx.conf /etc/nginx/
-ADD ./build/nginx/snippets /etc/nginx/snippets
-ADD ./build/nginx/sites /etc/nginx/sites
-
-# redis
-COPY ./build/redis/redis.conf /etc/redis/redis.conf
-
-# start up script
-COPY ./build/supervisor/supervisor.conf /etc/supervisor.conf
-COPY ./build/app/start-app.sh /
-COPY ./build/nginx/start-nginx.sh /
-COPY ./build/redis/start-redis.sh /
 
 # entry point
 ENTRYPOINT []
