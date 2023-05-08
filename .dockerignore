@@ -2,6 +2,7 @@
 vendor/
 storage/
 public/assets/
+public/phpinfo.php
 config.php
 data/
-logs/
+.git/
