@@ -1,8 +1,8 @@
-name: Build Production Image
+name: Build Production Deploy Image
 
 on:
   push:
-    branches: [ main, build-prod ]
+    branches: [ main ]
 
 env:
   REGISTRY: ghcr.io
