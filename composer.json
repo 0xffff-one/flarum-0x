@@ -100,9 +100,6 @@
             "fof/webhooks": [
                 "patches/fof-webhooks-override-opis-closure-serializableclosure-php.patch"
             ],
-            "askvortsov/flarum-pwa": {
-                "Fix Error Problem": "patches/flarum-pwa-1.patch"
-            },
             "fof/sitemap": {
                 "Remote User in Sitemap": "patches/fof-sitemap-1.patch"
             },

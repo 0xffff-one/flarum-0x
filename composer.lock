@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c8fe4f915e2526c0ad9a58477b0fd1c",
+    "content-hash": "6c16c1a4981f5c7edf0ffb58bec41ace",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",
@@ -154,16 +154,16 @@
         },
         {
             "name": "askvortsov/flarum-pwa",
-            "version": "v3.1.3",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/askvortsov1/flarum-pwa.git",
-                "reference": "a24471ed41391b2b395859c1161acbf9a178d4c9"
+                "reference": "b70351f3c53c9509b6b2903d450fe9550cf23eb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/askvortsov1/flarum-pwa/zipball/a24471ed41391b2b395859c1161acbf9a178d4c9",
-                "reference": "a24471ed41391b2b395859c1161acbf9a178d4c9",
+                "url": "https://api.github.com/repos/askvortsov1/flarum-pwa/zipball/b70351f3c53c9509b6b2903d450fe9550cf23eb6",
+                "reference": "b70351f3c53c9509b6b2903d450fe9550cf23eb6",
                 "shasum": ""
             },
             "require": {
@@ -182,6 +182,23 @@
                         "name": "fas fa-mobile-alt",
                         "backgroundColor": "#6932D1",
                         "color": "#fff"
+                    }
+                },
+                "flarum-cli": {
+                    "modules": {
+                        "admin": true,
+                        "forum": true,
+                        "js": true,
+                        "jsCommon": false,
+                        "css": false,
+                        "gitConf": true,
+                        "githubActions": true,
+                        "prettier": true,
+                        "typescript": false,
+                        "bundlewatch": false,
+                        "backendTesting": false,
+                        "editorConfig": true,
+                        "styleci": true
                     }
                 }
             },
@@ -210,7 +227,7 @@
                 "issues": "https://github.com/askvortsov1/flarum-pwa/issues",
                 "source": "https://github.com/askvortsov1/flarum-pwa"
             },
-            "time": "2022-04-04T19:17:45+00:00"
+            "time": "2023-04-14T22:36:36+00:00"
         },
         {
             "name": "aws/aws-crt-php",
