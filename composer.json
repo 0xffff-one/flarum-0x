@@ -101,7 +101,7 @@
                 "patches/fof-webhooks-override-opis-closure-serializableclosure-php.patch"
             ],
             "fof/sitemap": {
-                "Remote User in Sitemap": "patches/fof-sitemap-1.patch"
+                "Remove User in Sitemap": "patches/fof-sitemap-1.patch"
             },
             "the-turk/flarum-mathren": {
                 "Replace JSDelivr with ByteDance cdn": "patches/flarum-mathren-1.patch"

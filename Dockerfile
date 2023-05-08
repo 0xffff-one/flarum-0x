@@ -76,6 +76,9 @@ RUN \
 # custom storage path
 ADD ./build/app/site.php /var/www/flarum
 
+# volume
+VOLUME [ "/data" ]
+
 # entry point
 ENTRYPOINT []
 CMD supervisord -c /etc/supervisor.conf
