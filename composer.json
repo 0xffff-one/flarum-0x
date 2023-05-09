@@ -86,6 +86,9 @@
     "repositories": [],
     "extra": {
         "patches": {
+            "askvortsov/flarum-pwa": [
+                "patches/askvortsov-flarum-pwa-src-pushsender-php.patch"
+            ],
             "flarum/core": {
                 "0": "patches/flarum-core-js-src-common-helpers-avatar-tsx.patch",
                 "1": "patches/flarum-core-js-src-common-models-user-tsx.patch",

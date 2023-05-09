@@ -1,0 +1,21 @@
+--- /dev/null
++++ ../src/PushSender.php
+@@ -93,6 +93,8 @@
+                         'keys'            => json_decode($subscription->keys, true),
+                     ]),
+                     'payload' => $payload,
++                    // Fix the Apple Push BadWebPushTopic Error, see https://stackoverflow.com/a/75694273
++                    'topic' => str_contains($subscription->endpoint, '.push.apple.com') ? substr(str_pad($blueprint->getType(), 32, '0'), 0, 32) : $blueprint->getType(),
+                 ];
+             }
+         }
+@@ -119,7 +121,8 @@
+         foreach ($notifications as $notification) {
+             $webPush->queueNotification(
+                 $notification['subscription'],
+-                $notification['payload']
++                $notification['payload'],
++                [ 'topic' => $notification['topic'] ],
+             );
+         }
+ 
