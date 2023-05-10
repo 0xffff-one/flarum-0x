@@ -1,4 +1,4 @@
-name: Build Production Deploy Image
+name: Build Flarum Deploy Image
 
 on:
   push:
@@ -40,4 +40,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/0xffff-one/flarum-0x-prod:latest,ghcr.io/0xffff-one/flarum-0x-prod:${{ steps.vars.outputs.sha_short }}
+          tags: ghcr.io/0xffff-one/flarum-0x:latest,ghcr.io/0xffff-one/flarum-0x:${{ steps.vars.outputs.sha_short }}

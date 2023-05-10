@@ -38,8 +38,8 @@ Or you can just create a new GitHub codespace with this repo, and start developm
 ## Production Deployment
 Basically running a **Flarum 0x** website requires two Docker container instances.
 
-1. **Flarum 0x**, latest pre-built image: `ghcr.io/0xffff-one/flarum-0x-prod:latest`.
-2. **A MySQL-compatible DBMS**, like MySQL / MariaDB.
+1. **Flarum 0x**, latest pre-built image: `ghcr.io/0xffff-one/flarum-0x:latest`.
+2. **A MySQL-compatible DBMS**, MySQL, MariaDB or other.
 
 We are currently using [fly.io](https://fly.io/) to host our website, you can also deploy them via Docker Compose.
 
