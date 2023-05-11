@@ -33,15 +33,15 @@ Steps to configure your local development environment:
 3. Just clone this repository and use VSCode open it, then VSCode would notify you to open the repository in the Dev Container.
 4. After the Dev Container has initialised, open `http://localhost:8080` and see your Flarum app instance (It will automatically forward the ports to local).
 
-Or you can just create a new GitHub codespace with this repo, and start development.
+Or you can just create a new GitHub codespace with this repo, then start development.
 
 ## Production Deployment
 Basically running a **Flarum 0x** website requires two Docker container instances.
 
 1. **Flarum 0x**, latest pre-built image: `ghcr.io/0xffff-one/flarum-0x:latest`.
-2. **A MySQL-compatible DBMS**, MySQL, MariaDB or other.
+2. **A MySQL-compatible DBMS**, MySQL, MariaDB or other, use MySQL with [ngram](https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html) support for CJK full-text search.
 
-We are currently using [fly.io](https://fly.io/) to host our website, you can also deploy them via Docker Compose.
+We are currently using [fly.io](https://fly.io/) to host our website, you can also deploy them via [Docker Compose](./docker-compose.yml).
 
 ## Contribution
 Any contributions are welcome. Please feel free to:

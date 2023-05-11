@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  app:
+    image: flarum-0x-app-prod:latest
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+      cache_from:
+        - ghcr.io/0xffff-one/flarum-0x:latest
+    container_name: flarum-0x-app
+    ports:
+      - ${APP_HTTP_PORT:-8080}:80
+    volumes:
+      - app-data:/data
+
+  db:
+    image: flarum-0x-mysql-prod:latest
+    build:
+      context: ./build/mysql
+      dockerfile: Dockerfile
+    container_name: flarum-0x-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-flarum-0x}
+      MYSQL_USER: ${DB_USER:-flarum-0x}
+      MYSQL_PASSWORD: ${DB_PASS:-flarum-0x}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS:-flarum-0x}
+    volumes:
+      - ./build/mysql/ngram.cnf:/etc/mysql/conf.d/ngram.cnf
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  app-data:
+  mysql-data:
