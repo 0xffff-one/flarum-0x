@@ -27,8 +27,11 @@
 }
 
 // for image size optimize
-.Post-body img[width][height] {
+.Post-body img[width][height]:not([width=""]):not([height=""]) {
     height: auto;
+}
+
+.Post-body img {
     object-fit: contain;
 }
 
