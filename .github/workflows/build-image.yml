@@ -41,3 +41,8 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/0xffff-one/flarum-0x:latest,ghcr.io/0xffff-one/flarum-0x:${{ steps.vars.outputs.sha_short }}
+
+      - name: Trigger production build
+        shell: bash
+        run: |
+          curl -XPOST -u "${{ secrets.PROD_USERNAME }}:${{ secrets.PROD_TOKEN }}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/${{ secrets.PROD_REPO }}/dispatches --data '{"event_type": "build_production_image"}'
