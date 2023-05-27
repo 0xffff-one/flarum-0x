@@ -8,6 +8,8 @@
  */
 
 use Flarum0x\Extend\DiskS3\DiskS3Driver;
+use Flarum0x\Extend\ImageSize\ConfigureImgs;
+use Flarum0x\Extend\ImageSize\FormatImgs;
 use Flarum0x\Extend\Misc\GenerateCustomSlugWhenSaving;
 use Flarum0x\Extend\Misc\GlobalLandingPageMiddleware;
 use Flarum\Extend;
@@ -147,5 +149,8 @@ flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].pr
 });
 </script>
 HTML;
-        })
+        }),
+    (new Extend\Formatter)
+        ->render(FormatImgs::class)
+        ->configure(ConfigureImgs::class),
 ], 'boolval');

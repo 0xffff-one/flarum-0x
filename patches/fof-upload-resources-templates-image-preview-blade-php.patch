@@ -1,0 +1,5 @@
+--- /dev/null
++++ ../resources/templates/image-preview.blade.php
+@@ -1 +1 @@
+-<img src="{@url}" title="{@base_name}" alt="{@base_name}"/>
++<img src="{@url}" width="{@width}" height="{@height}" title="{@base_name}" alt="{@base_name}" />

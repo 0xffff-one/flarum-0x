@@ -60,6 +60,7 @@
         "fof/webhooks": "*",
         "ianm/syndication": "*",
         "league/flysystem-aws-s3-v3": "1.*",
+        "marc1706/fast-image-size": "^1.1",
         "minishlink/web-push": "*",
         "overtrue/pinyin": "~4.0",
         "s9e/text-formatter": "^2.12",
@@ -86,6 +87,11 @@
     "repositories": [],
     "extra": {
         "patches": {
+            "fof/upload": [
+                "patches/fof-upload-src-templates-markdownimagetemplate-php.patch",
+                "patches/fof-upload-resources-templates-image-preview-blade-php.patch",
+                "patches/fof-upload-src-adapters-manager-php.patch"
+            ],
             "askvortsov/flarum-pwa": [
                 "patches/askvortsov-flarum-pwa-src-pushsender-php.patch"
             ],
@@ -97,9 +103,6 @@
                 "4": "patches/flarum-core-js-package-json.patch",
                 "Get User Ip from CDN": "patches/core-1.patch"
             },
-            "fof/upload": [
-                "patches/fof-upload-src-adapters-manager-php.patch"
-            ],
             "fof/webhooks": [
                 "patches/fof-webhooks-override-opis-closure-serializableclosure-php.patch"
             ],
