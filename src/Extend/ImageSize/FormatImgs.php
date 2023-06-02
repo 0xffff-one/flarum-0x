@@ -121,7 +121,7 @@ class FormatImgs
         if ($ext === 'png' || $ext === 'jpg') {
             return rtrim($this->imgProxyBase, '/').$this->imgProxyBuilder->url($url, 'jpg');
         } else {
-            return $this->imgProxyBuilder->url($url);
+            return rtrim($this->imgProxyBase, '/').$this->imgProxyBuilder->url($url);
         }
     }
 
