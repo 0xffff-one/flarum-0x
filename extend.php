@@ -128,9 +128,9 @@ flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].pr
     const self = this;
     this.$('img').not('.emoji').not(".Avatar").not($(".PostMeta-ip img")).each(function () {
         var currentImage = $(this);
-        var checksrc = currentImage.attr("data-src");
+        var checksrc = currentImage.attr("data-orig-src");
         if (checksrc) {
-            $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("data-src") + "'></a>");
+            $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("data-orig-src") + "'></a>");
         }
         else {
             $(this).wrap("<a class=\"fancybox\" href='" + currentImage.attr("src") + "'></a>");

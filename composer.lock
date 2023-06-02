@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2df1485f91d35e6877b6be3fae54d799",
+    "content-hash": "98f820347917652244c353d71c52331b",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",
@@ -8522,6 +8522,50 @@
                 "source": "https://github.com/omines/oauth2-gitlab/tree/3.5.0"
             },
             "time": "2022-10-18T09:32:39+00:00"
+        },
+        {
+            "name": "onliner/imgproxy-php",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/onliner/imgproxy-php.git",
+                "reference": "84bd72464a6b9ec4df887b9786330dd0e85364e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/onliner/imgproxy-php/zipball/84bd72464a6b9ec4df887b9786330dd0e85364e4",
+                "reference": "84bd72464a6b9ec4df887b9786330dd0e85364e4",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^8.5.8|^9.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Onliner\\ImgProxy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "ImgProxy url builder for PHP",
+            "keywords": [
+                "image",
+                "imageproxy",
+                "imgproxy",
+                "resize"
+            ],
+            "support": {
+                "issues": "https://github.com/onliner/imgproxy-php/issues",
+                "source": "https://github.com/onliner/imgproxy-php/tree/v0.1.1"
+            },
+            "time": "2022-03-29T09:39:31+00:00"
         },
         {
             "name": "opis/closure",

@@ -62,6 +62,7 @@
         "league/flysystem-aws-s3-v3": "1.*",
         "marc1706/fast-image-size": "^1.1",
         "minishlink/web-push": "*",
+        "onliner/imgproxy-php": "^0.1",
         "overtrue/pinyin": "~4.0",
         "s9e/text-formatter": "^2.12",
         "the-turk/flarum-diff": "^1.1",
@@ -89,7 +90,6 @@
         "patches": {
             "fof/upload": [
                 "patches/fof-upload-src-templates-markdownimagetemplate-php.patch",
-                "patches/fof-upload-resources-templates-image-preview-blade-php.patch",
                 "patches/fof-upload-src-adapters-manager-php.patch"
             ],
             "askvortsov/flarum-pwa": [

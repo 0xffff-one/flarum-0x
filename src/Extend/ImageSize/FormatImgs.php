@@ -6,6 +6,12 @@ use Flarum0x\Extend\ImageSize\Job\FetchImageSizeJob;
 use Flarum\Foundation\Config;
 use Illuminate\Contracts\Queue\Queue;
 use Illuminate\Support\Arr;
+use Onliner\ImgProxy\Options\Dpr;
+use Onliner\ImgProxy\Options\Height;
+use Onliner\ImgProxy\Options\Quality;
+use Onliner\ImgProxy\Options\ResizingType;
+use Onliner\ImgProxy\Options\Width;
+use Onliner\ImgProxy\UrlBuilder;
 use s9e\TextFormatter\Renderer;
 use s9e\TextFormatter\Utils;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -30,6 +36,8 @@ class FormatImgs
      * @var string[]
      */
     protected $allowList;
+    protected $imgProxyBase = '';
+    protected $imgProxyBuilder = '';
 
     public static $KEY_PREFIX = 'img-size_';
 
@@ -38,12 +46,29 @@ class FormatImgs
         return self::$KEY_PREFIX.hash('sha256', $url);
     }
 
+    public static $imgProxyBuilderInner;
+
+    public static function getImageProxyBuilder($key, $salt)
+    {
+        if (empty(self::$imgProxyBuilderInner)) {
+            self::$imgProxyBuilderInner = UrlBuilder::signed($key, $salt)
+                ->with(
+                    new Quality(90),
+                    new Width(800),
+                    new ResizingType(ResizingType::FIT),
+                );
+        }
+        return self::$imgProxyBuilderInner;
+    }
+
     public function __construct(\Illuminate\Cache\Repository $cache, Queue $queue, Config $config)
     {
         $this->cache = $cache;
         $this->queue = $queue;
         $this->config = $config;
-        $this->allowList = Arr::get($config, 'fetchImageSizeAllowList', []);
+        $this->allowList = Arr::get($config, 'fetch_image_size_allow_list', []);
+        $this->imgProxyBase = Arr::get($config, 'img_proxy_base', '');
+        $this->imgProxyBuilder = self::getImageProxyBuilder(Arr::get($config, 'img_proxy_key', ''), Arr::get($config, 'img_proxy_salt', ''));
     }
 
     /**
@@ -66,6 +91,7 @@ class FormatImgs
     }
 
     private function processAttributes($url, $attributes) {
+        $attributes = $this->processImageProxyAttributes($url, $attributes);
         if (!empty($attributes['height']))
             return $attributes;
         $size = $this->fetchSize($url);
@@ -78,6 +104,25 @@ class FormatImgs
             $attributes['height'] = $size['h'];
         }
         return $attributes;
+    }
+
+    private function processImageProxyAttributes($url, $attributes) {
+        $newUrl = $this->getImageProxyURL($url);
+        $attributes['src'] = $newUrl;
+        $attributes['url'] = $newUrl;
+        $attributes['origsrc'] = $url;
+        return $attributes;
+    }
+
+    private function getImageProxyURL($url) {
+        if (empty($this->imgProxyBase)) return $url;
+        $path = parse_url($url, PHP_URL_PATH);
+        $ext = pathinfo($path, PATHINFO_EXTENSION);
+        if ($ext === 'png' || $ext === 'jpg') {
+            return rtrim($this->imgProxyBase, '/').$this->imgProxyBuilder->url($url, 'jpg');
+        } else {
+            return $this->imgProxyBuilder->url($url);
+        }
     }
 
     private function fetchSize($url) {
