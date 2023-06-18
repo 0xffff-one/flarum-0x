@@ -53,9 +53,9 @@ return array_filter([
         }
         return new Blomstra\Redis\Extend\Redis($redisConfig);
     })(),
-    // check dumplicate post in the last 10 minutes
+    // prevent duplicate post
     (new ThrottleApi())
-        ->set('checkDumplicate', function (ServerRequestInterface $request) {
+        ->set('preventDuplicate', function (ServerRequestInterface $request) {
             if (!in_array($request->getAttribute('routeName'), ['discussions.create', 'posts.create'])) {
                 return;
             }
