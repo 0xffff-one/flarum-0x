@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66b55362840da8c01195a5d46d1e0c21",
+    "content-hash": "1dcac109782e715444fad48e667dff76",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",

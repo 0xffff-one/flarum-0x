@@ -6,7 +6,7 @@ RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
 
 # Install MariaDB client and dependencies
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y mariadb-client libpng-dev libjpeg-dev libfreetype6-dev libgmp-dev redis nginx nodejs npm yarn
+    && apt-get install -y mariadb-client libpng-dev libjpeg-dev libfreetype6-dev libgmp-dev redis nginx
     # && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 RUN \
@@ -61,5 +61,20 @@ RUN chmod 0755 /bin/start-nginx \
     && chmod 0755 /bin/start \
     && chmod -R 0755 /etc/redis
 
-# [Optional] Uncomment this line to install global node packages.
-# RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
+# Node.js env setup
+# ref: https://nodejs.org/en/download/package-manager#debian-and-ubuntu-based-linux-distributions
+#   -> https://github.com/nodesource/distributions
+
+RUN \
+    sudo apt-get update; \
+    sudo apt-get install -y ca-certificates curl gnupg; \
+    sudo mkdir -p /etc/apt/keyrings; \
+    curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg; \
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -; \
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list; \
+    # set env
+    NODE_MAJOR=18; \
+    echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list; \
+    # install
+    sudo apt-get update; \
+    sudo apt-get install nodejs yarn -y

@@ -86,7 +86,12 @@
     },
     "minimum-stability": "beta",
     "prefer-stable": true,
-    "repositories": [],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/*"
+        }
+    ],
     "extra": {
         "patches": {
             "fof/upload": [
