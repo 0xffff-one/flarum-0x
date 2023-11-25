@@ -11,7 +11,7 @@ use Flarum0x\Extend\DiskS3\DiskS3Driver;
 use Flarum0x\Extend\ImageSize\ConfigureImgs;
 use Flarum0x\Extend\ImageSize\FormatImgs;
 use Flarum0x\Extend\Misc\GenerateCustomSlugWhenSaving;
-use Flarum0x\Extend\Misc\GlobalLandingPageMiddleware;
+// use Flarum0x\Extend\Misc\GlobalLandingPageMiddleware;
 use Flarum\Extend;
 use Flarum\Discussion\Event\Saving;
 use Flarum\Extend\ThrottleApi;
@@ -27,7 +27,7 @@ use Psr\Http\Message\ServerRequestInterface;
 $config = @include 'config.php';
 
 return array_filter([
-    (new Extend\Middleware('forum'))->add(GlobalLandingPageMiddleware::class),
+    // (new Extend\Middleware('forum'))->add(GlobalLandingPageMiddleware::class),
     (new Extend\Frontend('forum'))
         ->css(__DIR__ . '/resources/less/post-table.less')
         ->css(__DIR__ . '/resources/less/nav-widget.less')
