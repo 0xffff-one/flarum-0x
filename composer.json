@@ -59,7 +59,7 @@
         "fof/upload": "*",
         "fof/user-bio": "*",
         "fof/webhooks": "*",
-        "hikarilan/flarum-passkey-login": "0.1",
+        "hikarilan/flarum-passkey-login": "*",
         "ianm/syndication": "*",
         "league/flysystem-aws-s3-v3": "1.*",
         "marc1706/fast-image-size": "^1.1",
