@@ -13,7 +13,9 @@ class GenerateCustomSlugWhenSaving
     public function handle(Saving $event)
     {
         // since Flarum v1.3 it supports converting slugs to pinyin, but without a maximum character limit.
-        $event->discussion->slug = getShortSlug(mb_strtolower(self::$pinyin->permalink($event->discussion->title)));
+        // $event->discussion->slug = getShortSlug(mb_strtolower(self::$pinyin->permalink($event->discussion->title)));
+        // remove slug instead
+        $event->discussion->slug = '';
     }
 }
 
