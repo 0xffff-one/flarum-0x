@@ -17,6 +17,7 @@ RUN \
     # && apk add autoconf automake make gcc g++ libtool pkgconfig shadow rsync redis nginx mariadb-client \
     # APCu
     && pecl install apcu \
+    && pecl install xhprof \
     && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini
 
 # Install xdebug

@@ -23,8 +23,9 @@ RUN \
         libjpeg-turbo-dev \
         patch \
         supervisor \
+        $PHPIZE_DEPS \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd gmp pdo_mysql exif \
+    && docker-php-ext-install -j$(nproc) gd gmp pdo_mysql exif opcache \
     # complier & shadow & rsync & redis & nginx
     && apk add autoconf automake make gcc g++ libtool pkgconfig shadow rsync redis nginx \
     # APCu
@@ -38,6 +39,7 @@ RUN \
         freetype-dev \
         libpng-dev \
         libjpeg-turbo-dev \
+        $PHPIZE_DEPS \
     && rm /var/cache/apk/* \
     # nginx log
     && mkdir -p /data/log/nginx \
@@ -45,6 +47,7 @@ RUN \
 
 # php config
 ADD ./build/app/custom-php.ini "$PHP_INI_DIR/conf.d/"
+ADD ./build/app/opcache.ini "$PHP_INI_DIR/conf.d/"
 
 # nginx
 ADD ./build/nginx/nginx.conf /etc/nginx/
