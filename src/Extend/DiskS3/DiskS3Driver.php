@@ -10,6 +10,7 @@ use Illuminate\Contracts\Filesystem\Cloud;
 use Illuminate\Filesystem\FilesystemAdapter;
 use Illuminate\Support\Arr;
 use League\Flysystem\Filesystem;
+use League\Flysystem\Config as FlyConfig;
 
 class DiskS3Driver implements DriverInterface
 {
@@ -17,12 +18,14 @@ class DiskS3Driver implements DriverInterface
     {
         $s3Config = $this->formatS3Config($config['disk_s3_config']);
         $root = $diskName;
-        $options = $config['options'] ?? [];
-        $streamReads = $config['stream_reads'] ?? false;
+        $options = $s3Config['options'] ?? [];
+        $streamReads = $s3Config['stream_reads'] ?? false;
         $publicBaseUrl = $s3Config['public_base_url'] ?? null;
+        $flyConfig = $s3Config['fly_config'] ?? [];
 
         return new FilesystemAdapter(new Filesystem(
-            new DiskS3Adapter(new S3Client($s3Config), $s3Config['bucket'], $root, $options, $streamReads, $publicBaseUrl)
+            new DiskS3Adapter(new S3Client($s3Config), $s3Config['bucket'], $root, $options, $streamReads, $publicBaseUrl),
+            new FlyConfig($flyConfig),
         ));
     }
 
