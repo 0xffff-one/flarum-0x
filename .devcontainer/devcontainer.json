@@ -5,7 +5,7 @@
 	"dockerComposeFile": [
 		"docker-compose.yml"
 		// uncomment next line to build image locally
-        // "docker-compose.build.yml"
+		// "docker-compose.build.yml"
     ],
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -18,6 +18,12 @@
 			"userUid": "1000",
 			"userGid": "1000",
 			"upgradePackages": "true"
+		},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"moby": false
+		},
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "lts"
 		}
 	},
 	// from: https://github.com/devcontainers/images/blob/4ea2ed96dc80d4baebd0eef1efceeb27e33a3aef/src/php/.devcontainer/devcontainer.json
