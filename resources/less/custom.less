@@ -1,58 +1,56 @@
-
 .Hero-close {
   display: none;
 }
 
 .katex .katex-mathml {
-    position: absolute;
-    clip: rect(1px,1px,1px,1px);
-    padding: 0;
-    border: 0;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
 
-
 .Post-body h1 {
-    font-size: 175%;
+  font-size: 175%;
 }
 
 .Post-body h2 {
-    font-size: 150%;
+  font-size: 150%;
 }
 
 .Post-body h3 {
-    font-size: 125%;
+  font-size: 125%;
 }
 
 // for image size optimize
-.Post-body img[width][height]:not([width=""]):not([height=""]) {
-    height: auto;
+.Post-body img[width][height]:not([width='']):not([height='']) {
+  height: auto;
 }
 
 .Post-body img {
-    object-fit: contain;
+  object-fit: contain;
 }
 
 @media (max-width: 767px) {
-    .App {
-        padding-bottom: 0px;
-    }
+  .App {
+    padding-bottom: 0px;
+  }
 
-    .App-content {
-        padding-bottom: 30px;
-    }
+  .App-content {
+    padding-bottom: 30px;
+  }
 
-    .PostStream-item {
-        overflow: hidden;
-    }
+  .PostStream-item {
+    overflow: hidden;
+  }
 }
 
 .DiscussionListItem-info .item-excerpt {
-    max-height: 3em;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  max-height: 3em;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 /* fix iPhone X problem */
@@ -64,28 +62,27 @@
 #header,
 #content,
 .Post .PostUser-avatar {
-    -webkit-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .DiscussionHero-items,
 .CommentPost .Post-header,
 .CommentPost .Post-body {
-    -webkit-user-select: text;
-    user-select: text;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 .Pages-container {
-    white-space: inherit !important;
-    -webkit-user-select: text;
-    user-select: text;
+  white-space: inherit !important;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 .Post-body h3 {
-    font-size: 125%;
-    margin-top: 1.5em;
+  font-size: 125%;
+  margin-top: 1.5em;
 }
-
 
 .DiffDropdown {
   left: -10px;
@@ -98,4 +95,30 @@
 
 a {
   outline: none;
+}
+
+// Fix to prevent horizontal scrolling bug on iOS
+@media @phone {
+  html {
+    overflow-x: hidden;
+  }
+}
+
+// cf turnstile
+.Blomstra-Turnstile {
+  height: 65px;
+  margin-bottom: 12px;
+}
+
+.Blomstra-Turnstile > iframe {
+  width: 100% !important;
+}
+
+.Badge--social {
+  margin: -3px 3px -3px 0;
+}
+
+.social-settings > .fa-cog.fa-cog {
+  border-left: none;
+  margin-left: 3px;
 }
