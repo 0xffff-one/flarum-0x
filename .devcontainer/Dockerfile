@@ -1,8 +1,7 @@
 FROM php:8.2-fpm-bookworm
 
 # Change to USTC mirror to accelerate the building process
-RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list && \
-    sed -i 's/security.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources
 
 # Install MariaDB client and dependencies
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
