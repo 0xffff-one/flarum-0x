@@ -1942,16 +1942,16 @@
         },
         {
             "name": "flarum/core",
-            "version": "v1.8.3",
+            "version": "v1.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/flarum/flarum-core.git",
-                "reference": "88dbdb48f2756ce0b2496b3b63ede8c2503e4004"
+                "reference": "2e8500500c58927ab056ec2d27ec36ea836cf1b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/flarum/flarum-core/zipball/88dbdb48f2756ce0b2496b3b63ede8c2503e4004",
-                "reference": "88dbdb48f2756ce0b2496b3b63ede8c2503e4004",
+                "url": "https://api.github.com/repos/flarum/flarum-core/zipball/2e8500500c58927ab056ec2d27ec36ea836cf1b2",
+                "reference": "2e8500500c58927ab056ec2d27ec36ea836cf1b2",
                 "shasum": ""
             },
             "require": {
@@ -1994,7 +1994,7 @@
                 "psr/http-message": "^1.0",
                 "psr/http-server-handler": "^1.0",
                 "psr/http-server-middleware": "^1.0",
-                "s9e/text-formatter": "^2.3.6",
+                "s9e/text-formatter": ">=2.3.6 <2.15",
                 "staudenmeir/eloquent-eager-limit": "^1.0",
                 "sycho/json-api": "^0.5.0",
                 "sycho/sourcemap": "^2.0.0",
@@ -2084,7 +2084,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2023-10-18T18:47:50+00:00"
+            "time": "2024-01-05T15:47:32+00:00"
         },
         {
             "name": "flarum/emoji",
