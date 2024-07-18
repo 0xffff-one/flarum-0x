@@ -28,7 +28,7 @@
         "blomstra/turnstile": "*",
         "clarkwinkelmann/flarum-ext-first-post-approval": "^1.0",
         "cweagans/composer-patches": "^1.7",
-        "flarum-lang/chinese-simplified": "^1.0",
+        "flarum-lang/chinese-simplified": "dev-master",
         "flarum/approval": "*",
         "flarum/bbcode": "*",
         "flarum/core": "^1.2",
