@@ -5,7 +5,8 @@ FROM php:8.2-fpm-alpine
 #
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
-    LC_ALL=en_US.UTF-8
+    LC_ALL=en_US.UTF-8 \
+    COMPOSER_ALLOW_SUPERUSER=1
 
 RUN \
     # China mainland mirrors
