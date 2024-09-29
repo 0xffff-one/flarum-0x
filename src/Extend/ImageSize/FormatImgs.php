@@ -108,7 +108,11 @@ class FormatImgs
 
     private function processImageProxyAttributes($url, $attributes) {
         $newUrl = $this->getImageProxyURL($url);
-        $attributes['src'] = $newUrl;
+        /**
+         * hack: getImageProxyURL 生成的非 png / jpg 的 url 中没有 .jpg 的后缀，导致 seo 插件识别 og:image 生成有误，不想去改它正则，这里加一个 hack 骗过正则检测
+         * @url https://github.com/v17development/flarum-seo/blob/2091f651cde88fccf4ddc49d97ed33cbad44200e/src/Listeners/PageListener.php
+         */
+        $attributes['src'] = $newUrl.'?.jpg';
         $attributes['url'] = $newUrl;
         $attributes['origsrc'] = $url;
         return $attributes;
