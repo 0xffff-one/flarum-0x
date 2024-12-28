@@ -40,26 +40,10 @@
                 throw e;
             }
         };
-        /** TODO: move to application */
-        var bootInIframe = function () {
-            var timer = setTimeout(() => {
-                boot();
-            }, 3000);
-            window.addEventListener('message', function (event) {
-                if (event.data.type === 'ready_ack') {
-                    clearTimeout(timer);
-                    window.isIn0xApp = true;
-                    boot();
-                }
-            }, { once: true });
-            window.parent.postMessage({
-                from: 'frame',
-                type: 'ready',
-            }, '*');
-        };
         setTimeout(() => {
-            if (window.parent !== window) {
-                bootInIframe();
+            if (flarum.core.app.frame) {
+                // iframe boot
+                flarum.core.app.frame.bootApp(boot);
             } else {
                 boot();
             }
