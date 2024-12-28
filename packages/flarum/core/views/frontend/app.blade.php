@@ -1,32 +1,34 @@
 <!doctype html>
 <html @if ($direction) dir="{{ $direction }}" @endif
       @if ($language) lang="{{ $language }}" @endif>
-    <head>
-        <meta charset="utf-8">
-        <title>{{ $title }}</title>
+<head>
+    <meta charset="utf-8">
+    <title>{{ $title }}</title>
 
-        {!! $head !!}
-    </head>
+    {!! $head !!}
+</head>
 
-    <body>
-        {!! $layout !!}
+<body>
+    {!! $layout !!}
 
-        <div id="modal"></div>
-        <div id="alerts"></div>
+    <div id="modal"></div>
+    <div id="alerts"></div>
 
-        <script>
-            document.getElementById('flarum-loading').style.display = 'block';
-            var flarum = {extensions: {}};
-        </script>
+    <script>
+        document.getElementById('flarum-loading').style.display = 'block';
+        var flarum = {extensions: {}};
+    </script>
 
-        {!! $js !!}
+    {!! $js !!}
 
-        <script id="flarum-json-payload" type="application/json">@json($payload)</script>
+    <script id="flarum-json-payload" type="application/json">
+        @json($payload)
+    </script>
 
-        <script>
+    <script async>
+        var boot = function() {
             const data = JSON.parse(document.getElementById('flarum-json-payload').textContent);
             document.getElementById('flarum-loading').style.display = 'none';
-
             try {
                 flarum.core.app.load(data);
                 flarum.core.app.bootExtensions(flarum.extensions);
@@ -37,8 +39,12 @@
                 error.style.display = 'block';
                 throw e;
             }
-        </script>
+        };
+        setTimeout(() => {
+            boot();
+        });
+    </script>
 
-        {!! $foot !!}
-    </body>
+    {!! $foot !!}
+</body>
 </html>
