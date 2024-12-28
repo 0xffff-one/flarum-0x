@@ -15,24 +15,32 @@ services:
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     network_mode: service:db
 
-    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
-    # (Adding the "ports" property to this file will not forward from a Codespace.)
-
   db:
-    image: mariadb:10.4
+    image: mysql:5.7
     restart: unless-stopped
-    volumes:
-      - mariadb-data:/var/lib/mysql
+    volume:
+      - ./mysql/ngram.cnf:/etc/mysql/conf.d/ngram.cnf
+      - mysql-data:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: mariadb
-      MYSQL_DATABASE: mariadb
-      MYSQL_USER: mariadb
-      MYSQL_PASSWORD: mariadb
+      MYSQL_ROOT_PASSWORD: flarum
+      MYSQL_DATABASE: flarum
+      MYSQL_USER: flarum
+      MYSQL_PASSWORD: flarum
 
-    # Add "forwardPorts": ["3306"] to **devcontainer.json** to forward MariaDB locally.
-    # (Adding the "ports" property to this file will not forward from a Codespace.)
+  # phpmyadmin
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8090:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: flarum
+      UPLOAD_LIMIT: 300M
 
 volumes:
-  mariadb-data:
+  mysql-data:
   app-data:
   home:
