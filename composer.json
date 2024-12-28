@@ -85,16 +85,16 @@
             "cweagans/composer-patches": true
         }
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://packagist.org"
+            "type": "path",
+            "url": "packages/*/*"
         },
         {
-            "type": "path",
-            "url": "packages/*"
+            "type": "composer",
+            "url": "https://packagist.org"
         }
     ],
     "extra": {
