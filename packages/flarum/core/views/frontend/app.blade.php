@@ -40,9 +40,30 @@
                 throw e;
             }
         };
+        /** TODO: move to application */
+        var bootInIframe = function () {
+            var timer = setTimeout(() => {
+                boot();
+            }, 3000);
+            window.addEventListener('message', function (event) {
+                if (event.data.type === 'ready_ack') {
+                    clearTimeout(timer);
+                    window.isIn0xApp = true;
+                    boot();
+                }
+            }, { once: true });
+            window.parent.postMessage({
+                from: 'frame',
+                type: 'ready',
+            }, '*');
+        };
         setTimeout(() => {
-            boot();
-        });
+            if (window.parent !== window) {
+                bootInIframe();
+            } else {
+                boot();
+            }
+        }, 0);
     </script>
 
     {!! $foot !!}
