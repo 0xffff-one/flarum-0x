@@ -100,6 +100,7 @@
     "extra": {
         "patches": {
             "fof/upload": [
+                "patches/fof-upload-src-templates-markdownimagetemplate-php.patch",
                 "patches/fof-upload-src-adapters-manager-php.patch"
             ],
             "askvortsov/flarum-pwa": [
