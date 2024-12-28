@@ -107,7 +107,7 @@ class ForumServiceProvider extends AbstractServiceProvider
             $assets = $container->make('flarum.assets.factory')('forum');
 
             $assets->js(function (SourceCollector $sources) use ($container) {
-                $sources->addFile(__DIR__.'/../../../../../js/dist-core/forum.js');
+                $sources->addFile(__DIR__.'/../../js/dist/forum.js');
                 $sources->addString(function () use ($container) {
                     return $container->make(Formatter::class)->getJs();
                 });
