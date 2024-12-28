@@ -85,16 +85,16 @@
             "cweagans/composer-patches": true
         }
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://packagist.org"
+            "type": "path",
+            "url": "packages/*/*"
         },
         {
-            "type": "path",
-            "url": "packages/*"
+            "type": "composer",
+            "url": "https://packagist.org"
         }
     ],
     "extra": {
@@ -106,14 +106,6 @@
             "askvortsov/flarum-pwa": [
                 "patches/askvortsov-flarum-pwa-src-pushsender-php.patch"
             ],
-            "flarum/core": {
-                "0": "patches/flarum-core-js-src-common-helpers-avatar-tsx.patch",
-                "1": "patches/flarum-core-js-src-common-models-user-tsx.patch",
-                "2": "patches/flarum-core-src-forum-forumserviceprovider-php.patch",
-                "3": "patches/flarum-core-src-admin-adminserviceprovider-php.patch",
-                "4": "patches/flarum-core-js-package-json.patch",
-                "Get User Ip from CDN": "patches/core-1.patch"
-            },
             "fof/sitemap": {
                 "Remove User in Sitemap": "patches/fof-sitemap-1.patch"
             },

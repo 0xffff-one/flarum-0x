@@ -1,0 +1,11 @@
+import 'expose-loader?exposes=$,jQuery!jquery';
+import 'expose-loader?exposes=m!mithril';
+import 'expose-loader?exposes=dayjs!dayjs';
+import 'bootstrap/js/affix';
+import 'bootstrap/js/dropdown';
+import 'bootstrap/js/tooltip';
+import 'bootstrap/js/transition';
+import 'jquery.hotkeys/jquery.hotkeys';
+import app from './app';
+export { app };
+import './utils/arrayFlatPolyfill';

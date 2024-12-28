@@ -1,0 +1,208 @@
+// ------------------------------------
+// Modals
+
+.Modal {
+  padding: 0;
+  border-radius: @border-radius;
+
+  transform: scale(0.9);
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, top 0.2s ease-out;
+  z-index: 2;
+  position: relative;
+
+  width: auto;
+  margin: 10px;
+  max-width: 600px;
+
+  &.in {
+    transform: scale(1);
+  }
+}
+
+.Modal-backdrop {
+  background: var(--overlay-bg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  z-index: ~"calc(var(--zindex-modal) + var(--modal-count) - 2)";
+
+  &[data-showing] {
+    opacity: 1;
+  }
+}
+
+.ModalManager {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: ~"calc(var(--zindex-modal) + var(--modal-number))";
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &-invisibleBackdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+// Actual modal
+.Modal-content {
+  position: relative;
+  background-color: var(--body-bg);
+  background-clip: padding-box;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+.Modal-alert {
+  text-align: center;
+
+  .Alert {
+    border-radius: 0;
+  }
+  .Alert-controls {
+    margin: 0;
+    display: block;
+  }
+}
+
+.Modal-body {
+  background-color: var(--control-bg);
+  padding: 25px 30px;
+  color: var(--control-color);
+
+  .FormControl {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+  }
+
+  .Form--centered {
+    .helpText {
+      font-size: 14px;
+      line-height: 1.5em;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+  }
+
+  .off.Checkbox--switch .Checkbox-display {
+    background: var(--muted-more-color);
+  }
+}
+.Modal-footer {
+  border: 0;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted-color);
+}
+
+.Modal--inverted {
+  .Modal-header {
+    background-color: var(--control-bg);
+    color: var(--control-color);
+  }
+  .Modal-body {
+    background-color: transparent;
+    color: unset;
+  }
+}
+
+@media @phone {
+  .ModalManager {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: auto;
+
+    &:before {
+      content: " ";
+      .header-background();
+      position: absolute;
+      z-index: 2;
+    }
+  }
+  .Modal {
+    max-width: 100%;
+    margin: 0;
+    -webkit-transform: none !important;
+    transform: none !important;
+    top: 100vh;
+
+    &.fade {
+      opacity: 1;
+    }
+
+    &.in {
+      top: 0;
+    }
+  }
+  .Modal-content {
+    border-radius: 0;
+    border: 0;
+    min-height: 100vh;
+    padding-top: var(--header-height-phone);
+    box-shadow: none;
+  }
+  .Modal-header {
+    padding: 0;
+    border: 0;
+    min-height: 0;
+  }
+}
+
+@media @tablet-up {
+  .Modal {
+    border-radius: var(--border-radius);
+    box-shadow: 0 7px 15px var(--shadow-color);
+    width: 100%;
+    max-width: 600px;
+    margin: 120px auto;
+  }
+  .Modal-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 2;
+  }
+  .Modal-content {
+    border-radius: var(--border-radius);
+  }
+  .Modal--small {
+    max-width: 375px;
+  }
+  .Modal--large {
+    max-width: 800px;
+  }
+  .Modal-header {
+    text-align: center;
+    border: 0;
+    padding: 25px;
+
+    & h3 {
+      font-size: 20px;
+      font-weight: normal;
+      margin: 0;
+    }
+  }
+}
