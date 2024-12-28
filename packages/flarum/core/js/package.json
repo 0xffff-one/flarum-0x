@@ -45,6 +45,7 @@
     "scripts": {
         "dev": "webpack --mode development --watch",
         "build": "webpack --mode production",
+        "build-0x": "webpack --mode production && touch ../../../../js/dist-core && rm -r ../../../../js/dist-core && cp -r dist ../../../../js/dist-core",
         "analyze": "cross-env ANALYZER=true yarn run build",
         "format": "prettier --write src",
         "format-check": "prettier --check src",

@@ -31,7 +31,18 @@ export default class User extends Model {
   }
 
   avatarUrl() {
-    return Model.attribute<string | null>('avatarUrl').call(this);
+    const origUrl = Model.attribute<string | null>('avatarUrl').call(this);
+    let finalUrl = origUrl;
+    if (origUrl) {
+      try {
+        const url = new URL(origUrl);
+        url.searchParams.append('cors', '1');
+        finalUrl = url.toString();
+      } catch (err) {
+        console.error('avatarUrl append cors', err);
+      }
+    }
+    return finalUrl;
   }
 
   preferences() {

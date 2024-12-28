@@ -19,7 +19,11 @@ class ProcessIp implements Middleware
 {
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
+        $params = $request->getServerParams();
         $ipAddress = Arr::get($request->getServerParams(), 'REMOTE_ADDR', '127.0.0.1');
+        if ($cdnIpAddr = Arr::get($params, 'HTTP_X_FORWARDED_FOR')) {
+            $ipAddress = $cdnIpAddr;
+        }
 
         return $handler->handle($request->withAttribute('ipAddress', $ipAddress));
     }

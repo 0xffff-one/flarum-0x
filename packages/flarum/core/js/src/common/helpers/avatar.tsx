@@ -30,8 +30,12 @@ export default function avatar(user: User | null, attrs: ComponentAttrs = {}): M
     const avatarUrl = user.avatarUrl();
 
     if (hasTitle) attrs.title = attrs.title || username;
-
+    
     if (avatarUrl) {
+      // add cors support
+      if (avatarUrl?.indexOf('cors=1')) {
+        attrs.crossOrigin = 'anonymous';
+      }
       return <img {...attrs} src={avatarUrl} alt="" />;
     }
 

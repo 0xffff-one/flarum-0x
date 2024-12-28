@@ -51,7 +51,7 @@ class AccessTokenSerializer extends AbstractSerializer
             'isCurrent' => $session && $session->get('access_token') === $token->token,
             'isSessionToken' => in_array($token->type, ['session', 'session_remember'], true),
             'title' => $token->title,
-            'lastIpAddress' => $token->last_ip_address,
+            'lastIpAddress' => explode(", ", "$token->last_ip_address")[0],
             'device' => $this->translator->trans('core.forum.security.browser_on_operating_system', [
                 'browser' => $agent->browser(),
                 'os' => $agent->platform(),
