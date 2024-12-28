@@ -1,6 +1,14 @@
 --- /dev/null
 +++ ../src/Adapters/Manager.php
-@@ -39,7 +39,8 @@
+@@ -13,6 +13,7 @@
+ namespace FoF\Upload\Adapters;
+ 
+ use Aws\S3\S3Client;
++use Flarum\Foundation\Application;
+ use Flarum\Foundation\Paths;
+ use Flarum\Foundation\ValidationException;
+ use Flarum\Http\UrlGenerator;
+@@ -38,7 +39,8 @@
          protected Paths $paths,
          protected Util $util,
          protected SettingsRepositoryInterface $settings,
@@ -10,7 +18,7 @@
      ) {
      }
  
-@@ -107,7 +108,8 @@
+@@ -106,7 +108,8 @@
  
          $leagueAdapter = new AwsS3Adapter(
              new S3Client($s3Config),
