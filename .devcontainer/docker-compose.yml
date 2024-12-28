@@ -18,7 +18,7 @@ services:
   db:
     image: mysql:5.7
     restart: unless-stopped
-    volume:
+    volumes:
       - ./mysql/ngram.cnf:/etc/mysql/conf.d/ngram.cnf
       - mysql-data:/var/lib/mysql
     environment:
