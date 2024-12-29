@@ -37,6 +37,7 @@ import fireApplicationError from './helpers/fireApplicationError';
 import IHistory from './IHistory';
 import IExtender from './extenders/IExtender';
 import AccessToken from './models/AccessToken';
+import { Frame0xAdapter } from '../forum/utils/Frame0xAdapter';
 
 export type FlarumScreens = 'phone' | 'tablet' | 'desktop' | 'desktop-hd';
 
@@ -235,6 +236,11 @@ export default class Application {
   history: IHistory | null = null;
   pane: any = null;
 
+  /**
+   * embedded frame adapter
+   */
+  frame: Frame0xAdapter = new Frame0xAdapter();
+
   data!: ApplicationData;
 
   refs: Record<string, string> = {
@@ -246,6 +252,10 @@ export default class Application {
 
   private set title(val: string) {
     this._title = val;
+  }
+
+  get isIn0xApp() {
+    return this.frame.isIn0xApp;
   }
 
   get title() {
