@@ -7,6 +7,19 @@ export interface Frame0xMessage {
   payload?: any;
 }
 
+export class NavigateMessage implements Frame0xMessage {
+  from: 'app' | 'frame' = 'frame';
+  type: 'navigate' = 'navigate';
+  payload: {
+    path: string;
+    type?: 'push' | 'replace';
+    query?: Record<string, string>;
+  };
+  constructor(payload: typeof NavigateMessage.prototype.payload) {
+    this.payload = payload;
+  }
+};
+
 export class Frame0xAdapter {
   isIn0xApp: boolean = false;
 
@@ -26,6 +39,10 @@ export class Frame0xAdapter {
       this.isIn0xApp = true;
       boot();
     });
+  };
+
+  navigate = (path: string, type: 'push' | 'replace' = 'push', query?: Record<string, string>) => {
+    this.postMsgToParent(new NavigateMessage({ path, type, query }));
   };
 
   postMsgToParent = (message: Partial<Frame0xMessage>, onRes?: (msg: Frame0xMessage) => void) => {
