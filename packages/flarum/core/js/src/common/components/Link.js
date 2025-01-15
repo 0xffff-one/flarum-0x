@@ -1,3 +1,4 @@
+import { app } from '..';
 import Component from '../Component';
 import extract from '../utils/extract';
 
@@ -18,6 +19,21 @@ export default class Link extends Component {
     // For some reason, m.route.Link does not like vnode.text, so if present, we
     // need to convert it to text vnodes and store it in children.
     const children = vnode.children || { tag: '#', children: vnode.text };
+
+    if (app.isIn0xApp) {
+      return (
+        <a
+          {...attrs}
+          onclick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            app.frame.navigate(attrs.href);
+          }}
+        >
+          {children}
+        </a>
+      );
+    }
 
     if (attrs.external) {
       return <a {...attrs}>{children}</a>;

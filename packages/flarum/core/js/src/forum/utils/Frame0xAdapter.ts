@@ -11,9 +11,8 @@ export class NavigateMessage implements Frame0xMessage {
   from: 'app' | 'frame' = 'frame';
   type: 'navigate' = 'navigate';
   payload: {
-    path: string;
+    href: string;
     type?: 'push' | 'replace';
-    query?: Record<string, string>;
   };
   constructor(payload: typeof NavigateMessage.prototype.payload) {
     this.payload = payload;
@@ -41,11 +40,12 @@ export class Frame0xAdapter {
     });
   };
 
-  navigate = (path: string, type: 'push' | 'replace' = 'push', query?: Record<string, string>) => {
-    this.postMsgToParent(new NavigateMessage({ path, type, query }));
+  navigate = (href: string, type: 'push' | 'replace' = 'push') => {
+    this.postMsgToParent(new NavigateMessage({ href, type }));
   };
 
   postMsgToParent = (message: Partial<Frame0xMessage>, onRes?: (msg: Frame0xMessage) => void) => {
+    console.log('postMsgToParent', message);
     window.parent.postMessage({
       from: 'frame',
       ...message,
@@ -57,6 +57,17 @@ export class Frame0xAdapter {
 
   private registerEvents = () => {
     window.addEventListener('message', this.handleMessage);
+    window.addEventListener('click', this.handleLinkClick);
+  };
+
+  private handleLinkClick = (e: MouseEvent) => {
+    const target = e.target as HTMLAnchorElement;
+    if (!target.href || target.target === '_blank') {
+      return;
+    }
+    e.preventDefault();
+    e.stopPropagation();
+    this.navigate(target.href);
   };
 
   private handleMessage = (event: MessageEvent) => {

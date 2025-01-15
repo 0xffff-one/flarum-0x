@@ -41,6 +41,7 @@
             }
         };
         setTimeout(() => {
+            console.log('booting');
             if (flarum.core.app.frame) {
                 // iframe boot
                 flarum.core.app.frame.bootApp(boot);
