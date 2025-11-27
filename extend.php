@@ -120,8 +120,8 @@ return array_filter([
     // fancybox
     (new Extend\Frontend('forum'))
         ->content(function (Document $document) {
-            $document->head[] = '<script defer type="text/javascript" src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js"></script>';
-            $document->head[] = '<link rel="preload" as="style" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css" onload="this.onload=null;this.rel=\'stylesheet\'">';
+            $document->head[] = '<script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>';
+            $document->head[] = '<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" onload="this.onload=null;this.rel=\'stylesheet\'">';
             $document->foot[] = <<<HTML
 <script>
 flarum.core.compat.extend.extend(flarum.core.compat['components/CommentPost'].prototype, 'oncreate', function (output, vnode) {
