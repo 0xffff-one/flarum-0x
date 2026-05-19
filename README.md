@@ -19,7 +19,7 @@ The features we have customised include:
 2. Save avatars to S3-compatible Storage instead of local disk (thanks to [askvortsov1/flarum-azure-poc](https://github.com/askvortsov1/flarum-azure-poc)).
 3. Add support for [blomstra/flarum-redis](https://github.com/blomstra/flarum-redis) extension (for Queue / Cache / Session), enable the Queue Worker to consume the [Background Tasks](https://docs.flarum.org/internal/package-manager#background-tasks) asynchronously.
 4. Add support for custom head HTML like add some `<script>` / `<link>` / `<meta>` tags in `config.php`.
-5. Replace some hard-coded JsDelivr resource URLs with ByteDance's cdn (for mainland China users).
+5. Replace some hard-coded JsDelivr resource URLs with Cloudflare cdnjs CDN.
 6. All the extensions required at `composer.json`
 7. ...
 
@@ -76,4 +76,3 @@ This project exists thanks to all the people who contribute.
 ## License
 
 Flarum is open-source software licensed under the [MIT License](https://github.com/flarum/flarum/blob/master/LICENSE).
-
