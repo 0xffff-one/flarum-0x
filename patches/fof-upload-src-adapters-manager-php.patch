@@ -1,30 +1,25 @@
---- /dev/null
-+++ ../src/Adapters/Manager.php
-@@ -13,6 +13,7 @@
- namespace FoF\Upload\Adapters;
- 
- use Aws\S3\S3Client;
-+use Flarum\Foundation\Application;
- use Flarum\Foundation\Paths;
- use Flarum\Foundation\ValidationException;
- use Flarum\Http\UrlGenerator;
-@@ -38,7 +39,8 @@
+diff --git a/src/Adapters/Manager.php b/src/Adapters/Manager.php
+index 9d7ed64..0e92620 100644
+--- a/src/Adapters/Manager.php
++++ b/src/Adapters/Manager.php
+@@ -37,8 +37,9 @@ class Manager
          protected Paths $paths,
          protected Util $util,
          protected SettingsRepositoryInterface $settings,
--        protected UrlGenerator $url
-+        protected UrlGenerator $url,
-+        protected Application $app,
+         protected UrlGenerator $url,
+-        protected Config $config
++        protected Config $config,
++        protected \Flarum\Foundation\Application $app,
      ) {
      }
  
-@@ -106,7 +108,8 @@
+@@ -118,7 +119,8 @@ class Manager
  
          $leagueAdapter = new AwsS3Adapter(
              new S3Client($s3Config),
--            $this->settings->get('fof-upload.awsS3Bucket')
-+            $this->settings->get('fof-upload.awsS3Bucket'),
+-            $config['bucket']
++            $config['bucket'],
 +            $this->app->config('fof_upload_prefix', ''),
          );
  
-         return new Adapters\AwsS3($leagueAdapter, $this->settings, $this->url);
+         return new Adapters\AwsS3($leagueAdapter, $this->settings, $this->url, $this->config);
