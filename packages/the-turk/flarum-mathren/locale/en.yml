@@ -1,0 +1,59 @@
+the-turk-mathren:
+  ##
+  # UNIQUE KEYS - The following keys are used in only one location each.
+  ##
+
+  # Translations in this namespace are used by the admin interface.
+  admin:
+    # These translations are used in the Settings page.
+    settings:
+      katex_options_heading: KaTeX Options
+      delimiters_label: Delimiters
+      delimiters_text: Separate them with commas. <strong>%e%</strong> stands for mathematical expression.
+      block_delimiters_text: <strong>BBCode</strong> delimiters for block expressions
+      inline_delimiters_text: <strong>BBCode</strong> delimiters for inline expressions
+      alias_block_delimiters_text: <strong>Alias</strong> delimiters for block expressions
+      alias_inline_delimiters_text: <strong>Alias</strong> delimiters for inline expressions
+      block_asciimath_delimiters_text: <strong>BBCode</strong> delimiters for block AsciiMath expressions
+      inline_asciimath_delimiters_text: <strong>BBCode</strong> delimiters for inline AsciiMath expressions
+      alias_block_asciimath_delimiters_text: <strong>Alias</strong> delimiters for block AsciiMath expressions
+      alias_inline_asciimath_delimiters_text: <strong>Alias</strong> delimiters for inline AsciiMath expressions
+      primary_delimiters_text: First delimiters in above lists will be considered as primary.
+      output_mode_label: Output mode
+      output_mode_text: Choose the markup language for the output
+      error_color_label: Color of unsupported commands or invalid LaTeX
+      error_color_text: Choose the color that unsupported commands and invalid LaTeX are rendered in <strong>when error throwing is disabled</strong>.
+      sizing_options_heading: Sizing Options
+      minimum_thickness_text: Minimum thickness (em)
+      maximum_size_text: Maximum size (em)
+      macros_label: Macros
+      macros_text: A collection of custom macros.
+      java_syntax_text: You have to write them using JavaScript's syntax.
+      maximum_expand_limit_text: Maximum expand limit
+      enable_fleqn_label: Enable flush left equations (fleqn)
+      enable_leqno_label: Enable left equation numbers (leqno)
+      color_is_text_color_label: Allow <code>\color</code> command to take two arguments (colorIsTextColor)
+      throw_on_error_label: Throw an error on unsupported command or invalid LaTeX
+      bbcode_delimiters_rule_text: BBCode delimiters must be composed by uppercase or lowercase letters and dashes only.
+      cdn_options_heading: CDN Options
+      cdn_katex_text: CDN URL for <strong>KaTeX</strong>
+      sri_katex_text: SRI hash for <strong>KaTeX</strong>
+      cdn_asciimath2tex_text: CDN URL for <strong>asciimath2tex</strong>
+      sri_asciimath2tex_text: SRI hash for <strong>asciimath2tex</strong>
+      other_options_heading: Other Options
+      enable_editor_buttons_label: Show buttons on text editor
+      aliases_as_primary_label: Use alias delimiters as primary delimiters if possible
+      allow_asciimath_label: Allow AsciiMath syntax
+      enable_copy_tex_label: Allow copying the source of KaTeX-rendered elements
+      quote_button_text: You must enable the <code>flarum/mentions</code> extension to activate the quote button.
+
+  # Translations in this namespace are used by the forum user interface.
+  forum:
+    
+    # These translations are used by the composer.
+    composer:
+      block_expression: Block Expression
+      block_expression_asciimath: Block Expression (AsciiMath)
+      inline_expression: Inline Expression
+      inline_expression_asciimath: Inline Expression (AsciiMath)
+      asciimath_only: AsciiMath-only

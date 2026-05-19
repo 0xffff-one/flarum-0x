@@ -1,0 +1,13 @@
+// LESS variables for the diff extension.
+
+.define-colors(@config-dark-mode);
+
+// Lights on.
+.define-colors(false) {
+  @import 'variables/light-mode.less';
+}
+
+// Lights off.
+.define-colors(true) {
+  @import 'variables/dark-mode.less';
+}

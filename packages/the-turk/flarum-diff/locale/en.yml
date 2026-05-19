@@ -1,0 +1,108 @@
+the-turk-diff:
+    forum:
+        revisions:                    "{revisionCount, plural, one {{revisionCount} revision} other {{revisionCount} revisions}}"
+        emptyText:                    No Revisions
+        editedText:                   => core.forum.post.edited_text
+        deletedText:                  (deleted)
+        
+        tooltips:
+          # Revision List Tooltips
+          mostRecent:                 most recent
+          originalContent:            => the-turk-diff.ref.originalContent
+          revisionWithNumber:         => the-turk-diff.ref.revisionWithNumber
+          ## Renderer Switcher Tooltips
+          sideBySide:                 Side by Side
+          inline:                     Line by Line
+          combined:                   Combined
+          preview:                    => core.forum.composer.preview_tooltip
+
+        # Buttons
+        optionsButton:                Options
+        deleteButton:                 => core.forum.post_controls.delete_button
+        rollbackButton:               "Rollback to Revision {number}"
+        rollbackToOriginalButton:     Rollback to Original
+        revertChangesButton:          Revert Changes
+
+        # Confirmation Messages
+        confirmRollback:              Are you sure you want to change your current post?
+        confirmDelete:                Are you sure you want to delete this edit's contents from the history?
+
+        # Error Messages
+        rollbackErrorMessage:         Reverting of changes failed.
+        deleteErrorMessage:           Deletion of edit's contents failed.
+
+        # Informative Messages
+        rollbackSuccessMessage:       Your changes were reverted.
+        deleteSuccessMessage:         Edit's contents were deleted.
+        editedInfo:                   => core.forum.post.edited_tooltip
+        deletedInfo:                  "{username} deleted this content {ago}"
+        createdInfo:                  "{username} created {ago}"
+        revisionInfo:                 "Edited {revisionCount, plural, one {{revisionCount} time} other {{revisionCount} times}}, newest at the top"
+        noDiff:                       No differences found between these two contents.
+
+        differences:
+           # one of the following will be used in place of {old} or {new} in ‘sentence’ key
+          originalContent:            => the-turk-diff.ref.originalContent
+          currentContent:             => the-turk-diff.ref.currentContent
+          revisionWithNumber:         => the-turk-diff.ref.revisionWithNumber
+          # ---
+          sentence:                   "You're viewing differences between {old} and {new}"
+
+        previewMode:
+          # one of the following will be used in place of {content} in ‘sentence’ key
+          originalContent:            => the-turk-diff.ref.originalContent
+          currentContent:             => the-turk-diff.ref.currentContent
+          revisionWithNumber:         => the-turk-diff.ref.revisionWithNumber
+          # ---
+          sentence:                   "You're previewing {content}"
+    admin:
+        settings:
+            title:                    Diff Settings
+
+            ####################
+            # General Settings #
+            ####################
+
+            # Informative Messages
+            onlyUnsigned:             Only <strong>unsigned integers</strong> are allowed!
+            usePoint:                 Use <strong>point</strong> as decimal seperator for float values.
+
+            # Switch Components
+            separateBlock:            Show a separator between different diff hunks in HTML renderers
+            mainPostOnly:             Store main post's revisions only
+            textFormatting:           Enable text formatting for previews
+
+            # Select Component
+            detailLevel:              Detail Level
+            noneLevel:                None-level
+            lineLevel:                Line-level
+            wordLevel:                Word-level
+            charLevel:                Char-level
+
+            # Text Type Inputs
+            neighborLines:            Neighbor Lines
+            neighborLinesHelp:        Specify the neighbor line count that you want to show.
+            # ---
+            mergeThreshold:           Merge Threshold for the Combined Renderer
+            mergeThresholdHelp:       This determines whether a replace-type block should be merged or not depending on the content changed ratio, which values between 0 and 1.
+
+            ##################################
+            # Database Optimisation Settings #
+            ##################################
+
+            dbOptimisation:           Database Optimisation
+            archiveOlds:              Archive old revisions
+            archiveOldsInfo:          If <strong>x ≥ A</strong>, first <strong>y=mx+b</strong> revisions for the post will be stored as merged & compressed. The <strong>x</strong> refers to post's revision count. Float values of <strong>y</strong> will be rounded to the next lowest integer value.
+            useCrons:                 Use crons to archive old revisions
+            useCronsHelp:             You must add Cron entry to your server to make this option work. It'll work weekly on sundays at 02:00 AM. If you disable this option and enable above, all of the post's revisions will be scanned for archiving when the related post is revised.
+            archiveInfo:              Keep in mind that you can disable both options and run <code>php flarum diff:archive</code> command to archive old revisions manually.
+        permissions:
+            viewEditHistory:          View edit history
+            deleteEditHistory:        Delete others edit history
+            selfDeleteEditHistory:    Delete own edit history
+            rollbackEditHistory:      Rollback others edit history
+            selfRollbackEditHistory:  Rollback own edit history
+    ref:
+        originalContent:              original content
+        currentContent:               current content
+        revisionWithNumber:           "revision {number}"

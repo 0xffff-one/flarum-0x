@@ -1,0 +1,57 @@
+.MathRen-SettingsContainer {
+  max-width: 625px;
+
+  i.fa-icon {
+    padding-right: 5px;
+  }
+
+  input[type="color"] {
+    min-width: 50px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .Form-group > label,
+  h3,
+  h4 {
+    font-weight: 600;
+  }
+
+  div.helpText {
+    margin-bottom: 15px;
+  }
+
+  div.MathRen--flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+
+    &.Mathren--binary {
+      justify-content: center;
+    }
+
+    & > div:first-child:not('.MathRen--delimiterGroup') {
+      max-width: 450px;
+      margin: 0;
+    }
+
+    div.helpText {
+      margin: 0;
+    }
+
+    .MathRen--delimiterGroup,
+    .MathRen--cdnGroup {
+      flex-grow: 1;
+      flex-basis: 0;
+      margin: 0 15px;
+
+      & > div.helpText {
+        padding: 10px 0;
+      }
+    }
+  }
+}

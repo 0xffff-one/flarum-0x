@@ -1,0 +1,43 @@
+{
+    "name": "the-turk/flarum-mathren",
+    "description": "TeX math rendering for your forum.",
+    "keywords": [
+        "flarum",
+        "mathren",
+        "mathematics",
+        "expressions",
+        "tex",
+        "latex",
+        "katex"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [{
+        "name": "Hasan Özbey",
+        "email": "hasanoozbey@gmail.com",
+        "homepage": "https://github.com/the-turk"
+    }],
+    "support": {
+        "issues": "https://github.com/the-turk/flarum-mathren/issues",
+        "source": "https://github.com/the-turk/flarum-mathren",
+        "docs": "https://katex.org/docs/options.html"
+    },
+    "require": {
+        "flarum/core": ">=1.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TheTurk\\MathRen\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "MathRen",
+            "icon": {
+                "name": "fas fa-square-root-alt",
+                "backgroundColor": "#b72a2a",
+                "color": "#fff"
+            }
+        }
+    }
+}

@@ -1,0 +1,105 @@
+// ------------------------------------
+// DiffList
+
+// These are common list styles
+// for both modal & dropdown
+.DiffList-container .DiffList-content {
+  max-height: 150px;
+  overflow: auto;
+
+  & > ul {
+    margin: 7px 0;
+    padding: 8px 0;
+
+    // container for singular revision items
+    & > li.Diff {
+      display: block;
+      padding: 0;
+      color: @muted-color;
+      overflow: hidden;
+      text-decoration: none;
+
+      &:hover {
+        background: lighten(@control-bg, 5%);
+      }
+
+      &.active {
+        background: @control-bg;
+      }
+
+      & > a,
+      & > button,
+      & > span {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        color: @text-color;
+        border-radius: 0;
+        border: 0;
+        background: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        box-shadow: none;
+        text-align: left;
+        font-size: 12px;
+        font-weight: normal;
+        text-decoration: none;
+        padding: 8px 24px;
+
+        .Button-label {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+
+      & > a,
+      & > button {
+        &:focus {
+          outline: none;
+        }
+      }
+
+      & > button {
+        cursor: pointer;
+      }
+
+      // icon for deleted revisions
+      & > button > i.Button-caret {
+        margin-left: 0;
+        margin-right: 5px;
+      }
+
+      // info for deleted revisions
+      // pops when you click on a deleted revision
+      // (x deleted y ago)
+      &.SubDiff {
+        display: none;
+
+        & > button {
+          color: @muted-color;
+          cursor: inherit;
+          pointer-events: none;
+          white-space: normal;
+        }
+      }
+
+      .Avatar {
+        .Avatar--size(24px);
+        min-width: 24px;
+      }
+    }
+  }
+
+  .DiffList-empty {
+    color: @muted-color;
+    text-align: center;
+    padding: 35px 0;
+    font-size: 16px;
+  }
+
+  .loading-indicator {
+    height: 70px;
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "name": "the-turk/flarum-diff",
+  "description": "View post edit histories.",
+  "keywords": [
+    "flarum",
+    "edit",
+    "history",
+    "tracker",
+    "logger",
+    "diff"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Hasan Özbey",
+      "email": "hasanoozbey@gmail.com",
+      "homepage": "https://github.com/the-turk"
+    },
+    {
+      "name": "IanM",
+      "homepage": "https://discuss.flarum.org/u/ianm"
+    },
+    {
+      "name": "Alexander Skvortsov",
+      "email": "askvortsov@flarum.org",
+      "homepage": "https://github.com/askvortsov1"
+    },
+    {
+      "name": "David Wheatley",
+      "email": "hi@davwheat.dev",
+      "homepage": "https://github.com/davwheat"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/the-turk/flarum-diff/issues",
+    "source": "https://github.com/the-turk/flarum-diff",
+    "forum": "https://discuss.flarum.org/d/22779-diff-for-flarum"
+  },
+  "require": {
+    "flarum/core": "^1.2.0",
+    "jfcherng/php-diff": "^6.11.6",
+    "ext-json": "*"
+  },
+  "suggest": {
+    "the-turk/flarum-quiet-edits": "Recommended if you want to save storage volume"
+  },
+  "autoload": {
+    "psr-4": {
+      "TheTurk\\Diff\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Diff",
+      "category": "feature",
+      "icon": {
+        "name": "fas fa-history",
+        "backgroundColor": "#b72a2a",
+        "color": "#fff"
+      }
+    }
+  }
+}

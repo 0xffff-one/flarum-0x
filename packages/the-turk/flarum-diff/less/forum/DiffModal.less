@@ -1,0 +1,394 @@
+// ------------------------------------
+// DiffModal
+
+.DiffModal {
+  max-width: 960px;
+
+  .Modal-header {
+    text-align: left;
+    background: @control-bg;
+
+    .Avatar {
+      margin: -2px 5px -2px -6px;
+      .Avatar--size(24px);
+    }
+
+    & > time {
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    & > h3 {
+      font-size: 14px;
+    }
+  }
+
+  .Modal-body {
+    background: @body-bg;
+  }
+
+  // the "Options" button
+  .diffCotrollerDropdown {
+    & .Button {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      & .Button-icon {
+        display: none;
+      }
+    }
+  }
+
+  // Modal Content's Layout
+  // grids are partially supported and
+  // grid-areas are not supported by Internet Explorer
+  // https://caniuse.com/#feat=css-grid
+  .diff-grid {
+    display: -ms-grid;
+    display: grid;
+
+    & > .diff-grid-item {
+      display: -ms-flexbox;
+      display: -webkit-box;
+      display: flex;
+      -ms-flex-pack: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      flex-direction: column;
+      -ms-flex-direction: column;
+
+      // info about on-screen contents
+      &.diff-grid-info .revisionInfo {
+        padding: 10px 16px;
+        color: @control-color;
+
+        // x Revisions
+        & > h4 {
+          margin: 0;
+        }
+      }
+
+      &.diff-grid-controls {
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+        align-items: center;
+        margin: 15px 0;
+
+        // show tooltips on disabled buttons
+        // https://stackoverflow.com/a/19938049
+        & > .diffSwitcher > .tooltip-wrapper {
+          display: inline-block;
+
+          & > button[disabled] {
+            pointer-events: none;
+          }
+        }
+      }
+
+      // revision list
+      &.diff-grid-revisions {
+        border-top: 1px solid @control-bg;
+        position: relative;
+
+        & .DiffList-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+
+        .DiffList-content {
+          max-height: 100%;
+          overflow: auto;
+        }
+      }
+
+      // diff container
+      &.diff-grid-diff {
+        border-right: 1px solid @control-bg;
+        position: relative;
+
+        .diffContents {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+
+          .diffContainer {
+            max-height: 100%;
+            overflow: auto;
+            width: 100%;
+            height: 100%;
+
+            & > div.noDiff {
+              display: -ms-flexbox;
+              display: -webkit-box;
+              display: flex;
+              -ms-flex-align: center;
+              -webkit-box-align: center;
+              align-items: center;
+              -ms-flex-pack: center;
+              -webkit-box-pack: center;
+              justify-content: center;
+              width: 100%;
+              height: 100%;
+
+              & > p {
+                padding: 20px;
+                text-align: center;
+                font-size: 15px;
+                color: @control-color;
+              }
+            }
+          }
+
+          .previewContainer {
+            max-height: 100%;
+            overflow: auto;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+
+            // i'll switch this later
+            // when user click on the preview button
+            // or for the original content
+            display: none;
+
+            // additional preview container
+            // when text formatting disabled
+            &.diff-skip-formatting {
+              white-space: pre-wrap;
+              word-break: break-word;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .DiffModal-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: fade(@body-bg, 90%);
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    border-radius: @border-radius @border-radius 0 0;
+    z-index: 1010;
+
+    &.LoadingIndicator-container--block {
+      height: auto;
+    }
+  }
+
+  // diff display
+  .TheTurkDiff.CustomDiff.diff-wrapper {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-family: 'Menlo', 'Consolas', monospace;
+    font-size: 13px;
+    empty-cells: show;
+    width: 100%;
+    word-break: break-word;
+    table-layout: fixed;
+
+    // this is a workaround for stripes on blank lines
+    // https://stackoverflow.com/a/25689081/12866913
+    .diff-stripes(lighten(@control-bg, 4%), darken(@control-bg, 3%));
+
+    th.sign,
+    thead {
+      display: none;
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    &.diff-html {
+      white-space: pre-wrap;
+
+      .change {
+        .old {
+          border-left: 3px solid @diff-old-version-bg-color-border;
+          // blank changes will be striped in SideBySide view
+          &:not(.none) {
+            background: @diff-old-version-bg-color;
+          }
+        }
+
+        .new {
+          border-left: 3px solid @diff-new-version-bg-color-border;
+          // blank changes will be striped in SideBySide view
+          &:not(.none) {
+            background: @diff-new-version-bg-color;
+          }
+        }
+
+        .rep {
+          border-left: 3px solid @diff-change-version-del-color-border;
+          background: @body-bg;
+        }
+
+        .rep-del {
+          border-left: 3px solid @diff-change-version-del-color-border;
+          background: @diff-change-version-del-color;
+        }
+
+        .rep-ins {
+          border-left: 3px solid @diff-change-version-ins-color-border;
+          background: @diff-change-version-ins-color;
+        }
+
+        &.change-eq {
+          .new,
+          .old {
+            border-left: 3px solid @diff-info-color-border;
+            background: @body-bg;
+            color: @muted-color;
+          }
+        }
+
+        ins {
+          display: inline-block;
+          margin-top: -1px;
+          text-decoration: none;
+          background-color: @diff-new-version-ins-color;
+          border-radius: 0.2em;
+        }
+
+        del {
+          display: inline-block;
+          margin-top: -1px;
+          text-decoration: none;
+          background-color: @diff-old-version-del-color;
+          border-radius: 0.2em;
+        }
+
+        .new.none,
+        .old.none,
+        .rep.none {
+          border-left: 3px solid @diff-info-color-border;
+        }
+      }
+    }
+  }
+
+  @media @tablet-up {
+    .diffCotrollerDropdown {
+      position: absolute;
+      top: 10px;
+      right: 50px;
+    }
+
+    .diff-grid {
+      max-height: 465px;
+      min-height: 115px;
+      -ms-grid-rows: 0.2fr auto 0.3fr;
+      grid-template-rows: 0.2fr auto 0.3fr;
+      -ms-grid-columns: 8fr 2.8fr;
+      grid-template-columns: 8fr 2.8fr;
+
+      & > .diff-grid-item {
+        &.diff-grid-info {
+          border-top: 1px solid @control-bg;
+          -ms-grid-column: 2;
+          -ms-grid-row: 3;
+          grid-column: 2;
+          grid-row: 3;
+        }
+
+        &.diff-grid-revisions {
+          -ms-grid-column: 2;
+          -ms-grid-row: 2;
+          grid-column: 2;
+          grid-row: 2;
+          min-height: 230px;
+        }
+
+        &.diff-grid-diff {
+          -ms-grid-column: 1;
+          -ms-grid-row: 1;
+          -ms-grid-row-span: 3;
+          grid-column: 1;
+          grid-row-start: 1;
+          grid-row-end: 4;
+        }
+
+        &.diff-grid-controls {
+          -ms-grid-column: 2;
+          -ms-grid-row: 1;
+          grid-column: 2;
+          grid-row: 1;
+        }
+      }
+    }
+  }
+
+  @media @phone {
+    // this will be positioned relatively to .Modal-content
+    // to fill the full height on narrow views
+    .diff-grid {
+      -ms-grid-rows: 0.5fr 1.3fr 0.2fr 3fr;
+      grid-template-rows: 0.5fr 1.3fr 0.2fr 3fr;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: @header-height-phone;
+
+      & > .diff-grid-item {
+        &.diff-grid-info {
+          -ms-grid-row: 1;
+          grid-row: 1;
+        }
+
+        &.diff-grid-revisions {
+          -ms-grid-row: 2;
+          grid-row: 2;
+        }
+
+        &.diff-grid-diff {
+          -ms-grid-row: 4;
+          grid-row: 4;
+        }
+
+        &.diff-grid-controls {
+          border-top: 1px solid @control-bg;
+          -ms-grid-row: 3;
+          grid-row: 3;
+        }
+      }
+    }
+
+    .Modal-header {
+      // fix for username links
+      // on default Flarum theme
+      & when (@config-colored-header = true) {
+        a {
+          color: @header-control-color;
+        }
+      }
+
+      .Avatar {
+        margin-top: 10px;
+        // fix for long usernames
+        margin-left: 6px;
+      }
+    }
+  }
+}

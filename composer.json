@@ -67,7 +67,7 @@
         "onliner/imgproxy-php": "^0.1",
         "overtrue/pinyin": "~4.0",
         "s9e/text-formatter": "^2.12",
-        "the-turk/flarum-diff": "^1.1",
+        "the-turk/flarum-diff": "*",
         "the-turk/flarum-mathren": "*",
         "v17development/flarum-seo": "*"
     },

@@ -1,0 +1,20 @@
+@import './common/variables.less';
+@import './common/mixins.less';
+@import './forum/DiffDropdown.less';
+@import './forum/DiffList.less';
+@import './forum/DiffModal.less';
+
+// all tooltips are docked to body
+// because of z-index problems in dropdown list
+// https://stackoverflow.com/a/15981951/12866913
+body > .deletedDiffTooltip {
+  &.tooltip.left {
+    & .tooltip-inner {
+      background-color: indianred;
+    }
+
+    & .tooltip-arrow {
+      border-left-color: indianred;
+    }
+  }
+}

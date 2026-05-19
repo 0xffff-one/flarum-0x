@@ -1,0 +1,108 @@
+the-turk-diff:
+    forum:
+        revisions:                   "{revisionCount} revizyon"
+        emptyText:                   Düzenleme Bulunamadı
+        editedText:                  => core.forum.post.edited_text
+        deletedText:                 (silinmiş)
+        
+        tooltips:
+          # Revision List Tooltips
+          mostRecent:                en güncel
+          originalContent:           => the-turk-diff.ref.originalContent
+          revisionWithNumber:        => the-turk-diff.ref.revisionWithNumber
+          ## Renderer Switcher Tooltips
+          sideBySide:                Yan Yana
+          inline:                    Alt Alta
+          combined:                  Kombine
+          preview:                   => core.forum.composer.preview_tooltip
+
+        # Buttons
+        optionsButton:               Seçenekler
+        deleteButton:                => core.forum.post_controls.delete_button
+        rollbackButton:              "{number}. Revizyona Geri Dön"
+        rollbackToOriginalButton:    Orijinale Geri Dön
+        revertChangesButton:         Düzenlemeyi Geri Al
+
+        # Confirmation Messages
+        confirmRollback:             Mesajınızı değiştirmek istediğinize emin misiniz?
+        confirmDelete:               Bu düzenleme içeriğini geçmişten silmek istediğinize emin misiniz?
+
+        # Error Messages
+        rollbackErrorMessage:        Düzenlemeler geri alınamadı.
+        deleteErrorMessage:          Düzenleme içeriği silinemedi.
+
+        # Informative Messages
+        rollbackSuccessMessage:      Düzenlemeler geri alındı.
+        deleteSuccessMessage:        Düzenleme içeriği, geçmişten silindi.
+        editedInfo:                  => core.forum.post.edited_tooltip
+        deletedInfo:                 "{username}, bu içeriği {ago} sildi"
+        createdInfo:                 "{username}, {ago} yazdı"
+        revisionInfo:                "{revisionCount} kere düzeltildi, yenisi en üstte"
+        noDiff:                      İki içerik arasında gösterilecek bir değişiklik bulunamadı.
+
+        differences:
+          # one of the following will be used in place of {old} or {new} in ‘sentence’ key
+          originalContent:           => the-turk-diff.ref.originalContent
+          currentContent:            => the-turk-diff.ref.currentContent
+          revisionWithNumber:        => the-turk-diff.ref.revisionWithNumber
+          #---
+          sentence:                  "{old} ve {new} arasındaki farklılıkları görüntülüyorsunuz"
+
+        previewMode:
+          # one of the following will be used in place of {content} in ‘sentence’ key
+          originalContent:           => the-turk-diff.ref.originalContent
+          currentContent:            => the-turk-diff.ref.currentContent
+          revisionWithNumber:        => the-turk-diff.ref.revisionWithNumber
+          #---
+          sentence:                  "{content} için ön izlemeyi görüntülüyorsunuz"
+    admin:
+        settings:
+            title:                   Diff Ayarları
+
+            ####################
+            # General Settings #
+            ####################
+
+            # Informative Messages
+            onlyUnsigned:            Sadece <strong>işaretsiz tamsayılar</strong> geçerlidir!
+            usePoint:                Ondalık değerler için <strong>nokta</strong> kullanın.
+
+            # Switch Components
+            separateBlock:           HTML işleyicilerinde uzak satırlardaki farklılıkları gösterirken birbirinden ayır
+            mainPostOnly:            Sadece ana mesajdaki düzenlemeleri kaydet
+            textFormatting:          Ön izlemede zengin içeriğe izin ver
+
+            # Select Component
+            detailLevel:             Detay Seviyesi
+            noneLevel:               Varsayılan
+            lineLevel:               Satır seviyesi
+            wordLevel:               Kelime seviyesi
+            charLevel:               Karakter seviyesi
+
+            # Text Type Inputs
+            neighborLines:           Komşu Satırlar
+            neighborLinesHelp:       Düzeltilen kısımlara komşu satırlardan kaçının gösterileceğini yazın.
+            # ---
+            mergeThreshold:          Kombine İşleyici için Birleştirme Sınırı
+            mergeThresholdHelp:      0 ile 1 arasındaki değişim oranına bağlı olarak değişikliğe uğrayan blokların birleştirilip birleştirilmeyeceğini buradan belirleyebilirsiniz.
+
+            ##################################
+            # Database Optimisation Settings #
+            ##################################
+
+            dbOptimisation:          Veritabanı Optimizasyonu
+            archiveOlds:             Eski düzenlemeleri arşivle
+            archiveOldsInfo:         Mesajın düzenlenme sayısı <strong>x</strong> olmak üzere <strong>x ≥ A</strong> koşulunu sağlayan mesajdaki ilk <strong>y=mx+b</strong> düzenleme, sıkıştırılmış olarak saklanır. Ondalık <strong>y</strong> en yakın alt tam sayıya yuvarlanır.
+            useCrons:                Arşivleme için zamanlanmış görevi kullan
+            useCronsHelp:            Görevin çalışabilmesi için sunucuya yeni bir zamanlayıcı eklemeniz gerekir. Bu görev her hafta Pazar günü saat 02:00'de çalışır. Zamanlanmış görev kullanmazsanız mesaja ait düzenlemeler her mesaj düzenlendiğinde taranır ve eski düzenlemeler arşivlenir.
+            archiveInfo:             Eski düzenlemeleri manuel olarak arşivlemek için her iki ayarı da kapatıp <code>php flarum diff:archive</code> komutunu kullanabilirsiniz.
+        permissions:
+            viewEditHistory:         Düzenleme geçmişini görüntüle
+            deleteEditHistory:       Başkalarının düzenleme geçmişlerini sil
+            selfDeleteEditHistory:   Kendi düzenleme geçmişini sil
+            rollbackEditHistory:     Başkalarının düzenleme geçmişlerini döndür
+            selfRollbackEditHistory: Kendi düzenleme geçmişini döndür
+    ref:
+        originalContent:             orijinal içerik
+        currentContent:              şimdiki içerik
+        revisionWithNumber:          "revizyon {number}"

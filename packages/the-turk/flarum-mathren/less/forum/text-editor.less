@@ -1,0 +1,26 @@
+/**
+ * @see https://github.com/flarum/core/issues/1692
+ */
+
+// Override horizontal scrolling
+.TextEditor-controls {
+  overflow: visible;
+}
+
+// Overrides ".TextEditor-controls li" inline behaviour
+.MathRen-buttonsDropdown li {
+  display: block;
+  margin: 0 !important;
+
+  &.item-mathren-asciiMath {
+    padding: 8px 15px 8px 40px;
+
+    & > label.checkbox {
+      padding-left: 0;
+
+      & > input[type="checkbox"] {
+        margin-left: -25px;
+      }
+    }
+  }
+}

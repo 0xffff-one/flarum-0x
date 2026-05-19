@@ -1,0 +1,15 @@
+@import (css) "https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css";
+
+@import "forum/text-editor";
+
+/**
+ * If we want to be able to quote expressions,
+ * then we need to hide `flarum/mentions` extension's quote button
+ * and show ours instead. Because it seems impossible to
+ * access its functions through this extension.
+ */
+.Post-quoteButtonContainer {
+  & when (@config-copy-tex = true) {
+    display: none !important;
+  }
+}
