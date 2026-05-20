@@ -27,6 +27,7 @@ export type Extension = {
             title: string;
         };
     };
+    abandoned?: boolean | string;
 };
 export interface AdminApplicationData extends ApplicationData {
     extensions: Record<string, Extension>;

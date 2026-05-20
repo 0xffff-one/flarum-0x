@@ -6,6 +6,7 @@ import Dropdown from '../../common/components/Dropdown';
 import Button from '../../common/components/Button';
 import LoadingModal from './LoadingModal';
 import LinkButton from '../../common/components/LinkButton';
+import InfoModal from './InfoModal';
 
 export default class StatusWidget extends DashboardWidget {
   className() {
@@ -40,7 +41,7 @@ export default class StatusWidget extends DashboardWidget {
         [
           <span>
             <strong>{app.translator.trans('core.admin.dashboard.status.headers.scheduler-status')}</strong>{' '}
-            <LinkButton href="https://discuss.flarum.org/d/24118" external={true} target="_blank" icon="fas fa-info-circle" />
+            <LinkButton href="https://docs.flarum.org/scheduler" external={true} target="_blank" icon="fas fa-info-circle" />
           </span>,
           <br />,
           app.data.schedulerStatus,
@@ -68,8 +69,11 @@ export default class StatusWidget extends DashboardWidget {
 
     items.add(
       'clearCache',
-      <Button onclick={this.handleClearCache.bind(this)}>{app.translator.trans('core.admin.dashboard.clear_cache_button')}</Button>
+      <Button onclick={this.handleClearCache.bind(this)}>{app.translator.trans('core.admin.dashboard.clear_cache_button')}</Button>,
+      10
     );
+
+    items.add('info', <Button onclick={this.handleShowInfo.bind(this)}>{app.translator.trans('core.admin.dashboard.info_button')}</Button>, 0);
 
     return items;
   }
@@ -91,5 +95,9 @@ export default class StatusWidget extends DashboardWidget {
 
         app.modal.close();
       });
+  }
+
+  handleShowInfo() {
+    app.modal.show(InfoModal);
   }
 }
