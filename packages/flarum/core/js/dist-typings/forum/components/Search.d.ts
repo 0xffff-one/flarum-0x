@@ -47,6 +47,10 @@ export default class Search<T extends SearchAttrs = SearchAttrs> extends Compone
      */
     protected static MIN_SEARCH_LEN: number;
     /**
+     * Time to wait (in milliseconds) after the user stops typing before triggering a search.
+     */
+    protected static SEARCH_DEBOUNCE_TIME_MS: number;
+    /**
      * The instance of `SearchState` for this component.
      */
     protected searchState: SearchState;
