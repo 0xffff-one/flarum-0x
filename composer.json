@@ -24,7 +24,6 @@
         "afrux/forum-widgets-core": "*",
         "afrux/news-widget": "*",
         "askvortsov/flarum-pwa": "*",
-        "blomstra/turnstile": "*",
         "clarkwinkelmann/flarum-ext-first-post-approval": "^1.0",
         "cweagans/composer-patches": "^1.7",
         "flarum-lang/chinese-simplified": "dev-master",
