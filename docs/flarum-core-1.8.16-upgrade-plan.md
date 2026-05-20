@@ -91,10 +91,11 @@ Risk:
   trusted reverse proxy. If origin can be reached directly, clients can spoof
   `X-Forwarded-For`.
 
-Follow-up hardening:
+Deployment note:
 
-- Prefer Cloudflare's `CF-Connecting-IP` when available.
-- Keep `X-Forwarded-For` fallback for the current deployment if needed.
+- Keep the current `X-Forwarded-For` behavior. This deployment also has an HK
+  reverse proxy for mainland traffic before Cloudflare, so switching to
+  `CF-Connecting-IP` is intentionally out of scope for this upgrade.
 
 ### Avatar CORS
 
