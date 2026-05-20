@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "203742e2341d7006cc9dba12b3e9ea11",
+    "content-hash": "57f1e7b2221559ece44d029a7c388e6c",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",
@@ -639,59 +639,6 @@
                 }
             ],
             "time": "2025-09-11T23:36:19+00:00"
-        },
-        {
-            "name": "blomstra/flarum-redis",
-            "version": "0.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/blomstra/flarum-redis.git",
-                "reference": "4322363138d0798a13d2b35d464af50e87b4ff21"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/blomstra/flarum-redis/zipball/4322363138d0798a13d2b35d464af50e87b4ff21",
-                "reference": "4322363138d0798a13d2b35d464af50e87b4ff21",
-                "shasum": ""
-            },
-            "require": {
-                "flarum/core": "^1.0.0",
-                "illuminate/redis": "*",
-                "predis/predis": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Blomstra\\Redis\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Team Blomstra",
-                    "email": "development@blomstra.net"
-                }
-            ],
-            "description": "Adds Redis cache, sessions and queue to Flarum",
-            "homepage": "https://blomstra.net",
-            "keywords": [
-                "blomstra",
-                "cache",
-                "flarum",
-                "queue",
-                "redis",
-                "session"
-            ],
-            "support": {
-                "forum": "https://discuss.flarum.org/d/21873",
-                "issues": "https://github.com/blomstra/flarum-redis/issues",
-                "source": "https://github.com/blomstra/flarum-redis"
-            },
-            "abandoned": "fof/redis",
-            "time": "2022-03-03T21:05:29+00:00"
         },
         {
             "name": "blomstra/turnstile",
@@ -3713,6 +3660,87 @@
             "time": "2026-04-11T18:16:20+00:00"
         },
         {
+            "name": "flectar/flarum-turnstile",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flectar/flarum-ext-turnstile.git",
+                "reference": "d56c41d43c04319bc6194253609dbbccec1da4a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/flectar/flarum-ext-turnstile/zipball/d56c41d43c04319bc6194253609dbbccec1da4a2",
+                "reference": "d56c41d43c04319bc6194253609dbbccec1da4a2",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.8.0",
+                "guzzlehttp/guzzle": "^7.0"
+            },
+            "type": "flarum-extension",
+            "extra": {
+                "flarum-cli": {
+                    "modules": {
+                        "js": true,
+                        "css": true,
+                        "admin": true,
+                        "forum": true,
+                        "locale": true,
+                        "gitConf": true,
+                        "styleci": true,
+                        "jsCommon": true,
+                        "prettier": true,
+                        "typescript": false,
+                        "bundlewatch": false,
+                        "editorConfig": true,
+                        "githubActions": true,
+                        "backendTesting": false
+                    }
+                },
+                "flarum-extension": {
+                    "icon": {
+                        "image": "resources/assets/Cloudflare_Turnstile_logo.svg",
+                        "backgroundSize": "80%",
+                        "backgroundColor": "#ffffff",
+                        "backgroundRepeat": "no-repeat",
+                        "backgroundPosition": "center"
+                    },
+                    "title": "Cloudflare Turnstile",
+                    "category": "feature"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Flectar\\Turnstile\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Flectar",
+                    "email": "tomas@flectar.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds Cloudflare Turnstile CAPTCHA protection to your Flarum forum.",
+            "homepage": "https://flectar.com/",
+            "keywords": [
+                "captcha",
+                "cloudflare",
+                "flarum",
+                "turnstile"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/",
+                "issues": "https://github.com/flectar/flarum-ext-turnstile/issues/",
+                "source": "https://github.com/flectar/flarum-ext-turnstile/"
+            },
+            "time": "2025-11-11T18:28:27+00:00"
+        },
+        {
             "name": "fof/drafts",
             "version": "1.2.14",
             "source": {
@@ -4373,6 +4401,72 @@
                 }
             ],
             "time": "2025-08-10T18:58:53+00:00"
+        },
+        {
+            "name": "fof/redis",
+            "version": "v1.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfFlarum/redis.git",
+                "reference": "37785781d7b404e34a3da0aec21d9d2a37992b79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/redis/zipball/37785781d7b404e34a3da0aec21d9d2a37992b79",
+                "reference": "37785781d7b404e34a3da0aec21d9d2a37992b79",
+                "shasum": ""
+            },
+            "require": {
+                "flarum/core": "^1.8.13",
+                "illuminate/redis": "*",
+                "predis/predis": "*"
+            },
+            "require-dev": {
+                "flarum/phpstan": "*",
+                "flarum/testing": "*",
+                "jetbrains/phpstorm-stubs": "^2025.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "1.x": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "FoF\\Redis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FriendsOfFlarum",
+                    "homepage": "https://friendsofflarum.org"
+                }
+            ],
+            "description": "Adds Redis cache, sessions and queue to Flarum",
+            "homepage": "https://friendsofflarum.org",
+            "keywords": [
+                "cache",
+                "queue",
+                "redis",
+                "session"
+            ],
+            "support": {
+                "forum": "https://discuss.flarum.org/d/37228",
+                "issues": "https://github.com/FriendsOfFlarum/redis/issues",
+                "source": "https://github.com/FriendsOfFlarum/redis"
+            },
+            "funding": [
+                {
+                    "url": "https://opencollective.com/fof/donate",
+                    "type": "website"
+                }
+            ],
+            "time": "2026-03-06T23:46:36+00:00"
         },
         {
             "name": "fof/sitemap",

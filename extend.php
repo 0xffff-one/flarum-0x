@@ -51,7 +51,7 @@ return array_filter([
         if (empty($config) || !array_key_exists('redisConfig', $config) || empty($redisConfig = $config['redisConfig'])) {
             return null;
         }
-        return new Blomstra\Redis\Extend\Redis($redisConfig);
+        return new FoF\Redis\Extend\Redis($redisConfig);
     })(),
     // prevent duplicate post
     (new ThrottleApi())
