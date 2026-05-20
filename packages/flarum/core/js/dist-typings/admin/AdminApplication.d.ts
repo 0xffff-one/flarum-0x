@@ -45,6 +45,7 @@ export default class AdminApplication extends Application {
     extensionCategories: {
         feature: number;
         theme: number;
+        'forum-widget': number;
         language: number;
     };
     history: IHistory;
