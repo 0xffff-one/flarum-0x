@@ -1,0 +1,21 @@
+diff --git a/src/Overrides/Frontend/Assets.php b/src/Overrides/Frontend/Assets.php
+--- a/src/Overrides/Frontend/Assets.php
++++ b/src/Overrides/Frontend/Assets.php
+@@ -69,7 +69,7 @@ class Assets implements AssetInterface
+      */
+     protected $customFunctions = [];
+ 
+-    public function __construct(string $name, Cloud $assetsDir, string $cacheDir = null, array $lessImportDirs = null, array $customFunctions = [])
++    public function __construct(string $name, Cloud $assetsDir, ?string $cacheDir = null, ?array $lessImportDirs = null, array $customFunctions = [])
+     {
+         $this->name = $name;
+         $this->assetsDir = $assetsDir;
+@@ -111,7 +111,7 @@ class Assets implements AssetInterface
+         $this->sources[$type][] = $callback;
+     }
+ 
+-    private function populate(CompilerInterface $compiler, string $type, string $locale = null, ...$additionalSources)
++    private function populate(CompilerInterface $compiler, string $type, ?string $locale = null, ...$additionalSources)
+     {
+         $compiler->addSources(function (SourceCollector $sources) use ($additionalSources, $type, $locale) {
+             foreach (array_merge($this->sources[$type], $additionalSources) as $callback) {

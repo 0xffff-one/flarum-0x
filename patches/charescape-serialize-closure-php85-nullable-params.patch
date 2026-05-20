@@ -1,0 +1,12 @@
+diff --git a/functions.php b/functions.php
+--- a/functions.php
++++ b/functions.php
+@@ -29,7 +29,7 @@ function serialize($data)
+  * @param array|null $options
+  * @return mixed
+  */
+-function unserialize($data, array $options = null)
++function unserialize($data, ?array $options = null)
+ {
+     SerializableClosure::enterContext();
+     $data = ($options === null || \PHP_MAJOR_VERSION < 7)

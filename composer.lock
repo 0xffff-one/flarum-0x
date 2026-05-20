@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6f78dad8ede8ace6d984ce458b8f22ba",
+    "content-hash": "203742e2341d7006cc9dba12b3e9ea11",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",
@@ -14081,7 +14081,7 @@
         },
         {
             "name": "the-turk/flarum-diff",
-            "version": "dev-dev-test",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/the-turk/flarum-diff",
@@ -14156,7 +14156,7 @@
         },
         {
             "name": "the-turk/flarum-mathren",
-            "version": "dev-dev-test",
+            "version": "dev-main",
             "dist": {
                 "type": "path",
                 "url": "packages/the-turk/flarum-mathren",

@@ -1,4 +1,6 @@
-FROM php:8.2-fpm-alpine
+FROM nginx:1.30.1-alpine3.23 AS nginx-packages
+
+FROM php:8.5-fpm-alpine
 
 #
 # flarum production config
@@ -6,29 +8,39 @@ FROM php:8.2-fpm-alpine
 ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
-    COMPOSER_ALLOW_SUPERUSER=1
+    COMPOSER_ALLOW_SUPERUSER=1 \
+    NGINX_VERSION=1.30.1
+
+COPY --from=nginx-packages /etc/apk/keys/nginx_signing.rsa.pub /etc/apk/keys/nginx_signing.rsa.pub
 
 RUN \
     # China mainland mirrors
     # sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
     # && echo "Asia/Shanghai" > /etc/timezone && \
     # php extensions
-    apk add \
+    apk add --no-cache \
+        ca-certificates \
+        curl \
         freetype \
-        freetype-dev \
+        gmp \
         libpng \
-        libpng-dev \
-        gmp-dev \
-        oniguruma-dev \
         libjpeg-turbo \
-        libjpeg-turbo-dev \
         patch \
+        rsync \
+        redis \
         supervisor \
+    && apk add --no-cache \
+        -X "https://nginx.org/packages/alpine/v$(egrep -o '^[0-9]+\.[0-9]+' /etc/alpine-release)/main" \
+        nginx=${NGINX_VERSION}-r1 \
+    && apk add --no-cache --virtual .build-deps \
         $PHPIZE_DEPS \
+        freetype-dev \
+        gmp-dev \
+        libjpeg-turbo-dev \
+        libpng-dev \
+        oniguruma-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) gd gmp pdo_mysql exif opcache \
-    # complier & shadow & rsync & redis & nginx
-    && apk add autoconf automake make gcc g++ libtool pkgconfig shadow rsync redis nginx \
+    && docker-php-ext-install -j$(nproc) gd gmp pdo_mysql exif \
     # APCu
     && pecl install apcu \
     && docker-php-ext-enable apcu --ini-name 10-docker-php-ext-apcu.ini \
@@ -36,12 +48,8 @@ RUN \
     && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     # clean
-    && apk del autoconf automake make gcc g++ libtool pkgconfig shadow \
-        freetype-dev \
-        libpng-dev \
-        libjpeg-turbo-dev \
-        $PHPIZE_DEPS \
-    && rm /var/cache/apk/* \
+    && apk del .build-deps \
+    && rm -rf /tmp/pear ~/.pearrc \
     # nginx log
     && mkdir -p /data/log/nginx \
     && chown -R nginx:nginx /data/log/nginx

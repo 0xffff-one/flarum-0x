@@ -108,7 +108,28 @@
             ],
             "fof/sitemap": {
                 "Remove User in Sitemap": "patches/fof-sitemap-1.patch"
-            }
+            },
+            "illuminate/support": [
+                "patches/illuminate-support-php85-nullable-params.patch"
+            ],
+            "illuminate/collections": [
+                "patches/illuminate-collections-php85-nullable-params.patch"
+            ],
+            "illuminate/container": [
+                "patches/illuminate-container-php85-nullable-params.patch"
+            ],
+            "illuminate/contracts": [
+                "patches/illuminate-contracts-php85-nullable-params.patch"
+            ],
+            "illuminate/events": [
+                "patches/illuminate-events-php85-nullable-params.patch"
+            ],
+            "charescape/serialize-closure": [
+                "patches/charescape-serialize-closure-php85-nullable-params.patch"
+            ],
+            "fof/nightmode": [
+                "patches/fof-nightmode-php85-nullable-params.patch"
+            ]
         }
     },
     "scripts": {
