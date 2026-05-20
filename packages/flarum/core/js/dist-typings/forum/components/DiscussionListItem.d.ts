@@ -7,6 +7,7 @@ import type { DiscussionListParams } from '../states/DiscussionListState';
 export interface IDiscussionListItemAttrs extends ComponentAttrs {
     discussion: Discussion;
     params: DiscussionListParams;
+    slidable?: boolean;
 }
 /**
  * The `DiscussionListItem` component shows a single discussion in the
@@ -34,6 +35,7 @@ export default class DiscussionListItem<CustomAttrs extends IDiscussionListItemA
     mainView(): Mithril.Children;
     mainItems(): ItemList<Mithril.Children>;
     getJumpTo(): number;
+    protected isSlidableEnabled(): boolean;
     oncreate(vnode: Mithril.VnodeDOM<CustomAttrs, this>): void;
     onbeforeupdate(vnode: Mithril.VnodeDOM<CustomAttrs, this>): boolean;
     /**

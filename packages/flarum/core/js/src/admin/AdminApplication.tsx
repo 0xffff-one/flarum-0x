@@ -32,6 +32,7 @@ export type Extension = {
       title: string;
     };
   };
+  abandoned?: boolean | string;
 };
 
 export interface AdminApplicationData extends ApplicationData {
@@ -41,6 +42,7 @@ export interface AdminApplicationData extends ApplicationData {
   displayNameDrivers: string[];
   slugDrivers: Record<string, string[]>;
   permissions: Record<string, string[]>;
+  announcementsDisabled: boolean;
 }
 
 export default class AdminApplication extends Application {
@@ -49,6 +51,7 @@ export default class AdminApplication extends Application {
   extensionCategories = {
     feature: 30,
     theme: 20,
+    'forum-widget': 15,
     language: 10,
   };
 

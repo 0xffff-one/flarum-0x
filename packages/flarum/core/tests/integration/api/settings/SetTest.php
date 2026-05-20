@@ -82,4 +82,63 @@ class SetTest extends TestCase
 
         $this->assertEquals(422, $response->getStatusCode());
     }
+
+    /**
+     * @test
+     */
+    public function theme_primary_color_rejects_less_import()
+    {
+        $response = $this->send(
+            $this->request('POST', '/api/settings', [
+                'authenticatedAs' => 1,
+                'json' => [
+                    'theme_primary_color' => "#4D698E;@import (inline) '/etc/passwd';",
+                ],
+            ])
+        );
+
+        $this->assertEquals(422, $response->getStatusCode());
+        $this->assertNotEquals(
+            "#4D698E;@import (inline) '/etc/passwd';",
+            $this->app->getContainer()->make('flarum.settings')->get('theme_primary_color')
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function theme_secondary_color_rejects_less_import()
+    {
+        $response = $this->send(
+            $this->request('POST', '/api/settings', [
+                'authenticatedAs' => 1,
+                'json' => [
+                    'theme_secondary_color' => "#4D698E;@import (inline) '/etc/passwd';",
+                ],
+            ])
+        );
+
+        $this->assertEquals(422, $response->getStatusCode());
+        $this->assertNotEquals(
+            "#4D698E;@import (inline) '/etc/passwd';",
+            $this->app->getContainer()->make('flarum.settings')->get('theme_secondary_color')
+        );
+    }
+
+    /**
+     * @test
+     */
+    public function theme_primary_color_rejects_data_uri()
+    {
+        $response = $this->send(
+            $this->request('POST', '/api/settings', [
+                'authenticatedAs' => 1,
+                'json' => [
+                    'theme_primary_color' => "#4D698E;background:data-uri('/etc/passwd');",
+                ],
+            ])
+        );
+
+        $this->assertEquals(422, $response->getStatusCode());
+    }
 }

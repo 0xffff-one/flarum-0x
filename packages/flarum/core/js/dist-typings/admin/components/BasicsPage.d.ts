@@ -3,7 +3,7 @@ import ItemList from '../../common/utils/ItemList';
 import AdminPage from './AdminPage';
 import type { IPageAttrs } from '../../common/components/Page';
 import Mithril from 'mithril';
-export declare type HomePageItem = {
+export type HomePageItem = {
     path: string;
     label: Mithril.Children;
 };
@@ -11,6 +11,8 @@ export default class BasicsPage<CustomAttrs extends IPageAttrs = IPageAttrs> ext
     localeOptions: Record<string, string>;
     displayNameOptions: Record<string, string>;
     slugDriverOptions: Record<string, Record<string, string>>;
+    abandonedSyncing: boolean;
+    abandonedSyncMessage: Mithril.Children;
     oninit(vnode: Mithril.Vnode<CustomAttrs, this>): void;
     headerInfo(): {
         className: string;
@@ -24,5 +26,6 @@ export default class BasicsPage<CustomAttrs extends IPageAttrs = IPageAttrs> ext
      * object with `path` and `label` properties.
      */
     homePageItems(): ItemList<HomePageItem>;
+    syncAbandoned(): void;
     contentItems(): ItemList<Mithril.Children>;
 }

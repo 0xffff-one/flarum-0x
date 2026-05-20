@@ -22,7 +22,7 @@ export interface AdminHeaderOptions {
  *
  * @see https://github.com/flarum/core/issues/3039
  */
-export declare type HTMLInputTypes = 'button' | 'checkbox' | 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'radio' | 'range' | 'reset' | 'search' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week';
+export type HTMLInputTypes = 'button' | 'checkbox' | 'color' | 'date' | 'datetime-local' | 'email' | 'file' | 'hidden' | 'image' | 'month' | 'number' | 'password' | 'radio' | 'range' | 'reset' | 'search' | 'submit' | 'tel' | 'text' | 'time' | 'url' | 'week';
 export interface CommonSettingsItemOptions extends Mithril.Attributes {
     setting: string;
     label?: Mithril.Children;
@@ -46,13 +46,13 @@ declare const ColorPreviewSettingType: "color-preview";
  * Valid options for the setting component builder to generate a Switch.
  */
 export interface SwitchSettingComponentOptions extends CommonSettingsItemOptions {
-    type: typeof BooleanSettingTypes[number];
+    type: (typeof BooleanSettingTypes)[number];
 }
 /**
  * Valid options for the setting component builder to generate a Select dropdown.
  */
 export interface SelectSettingComponentOptions extends CommonSettingsItemOptions {
-    type: typeof SelectSettingTypes[number];
+    type: (typeof SelectSettingTypes)[number];
     /**
      * Map of values to their labels
      */
@@ -65,7 +65,7 @@ export interface SelectSettingComponentOptions extends CommonSettingsItemOptions
  * Valid options for the setting component builder to generate a Textarea.
  */
 export interface TextareaSettingComponentOptions extends CommonSettingsItemOptions {
-    type: typeof TextareaSettingTypes[number];
+    type: (typeof TextareaSettingTypes)[number];
 }
 /**
  * Valid options for the setting component builder to generate a ColorPreviewInput.
@@ -80,14 +80,14 @@ export interface CustomSettingComponentOptions extends CommonSettingsItemOptions
 /**
  * All valid options for the setting component builder.
  */
-export declare type SettingsComponentOptions = HTMLInputSettingsComponentOptions | SwitchSettingComponentOptions | SelectSettingComponentOptions | TextareaSettingComponentOptions | ColorPreviewSettingComponentOptions | CustomSettingComponentOptions;
+export type SettingsComponentOptions = HTMLInputSettingsComponentOptions | SwitchSettingComponentOptions | SelectSettingComponentOptions | TextareaSettingComponentOptions | ColorPreviewSettingComponentOptions | CustomSettingComponentOptions;
 /**
  * Valid attrs that can be returned by the `headerInfo` function
  */
-export declare type AdminHeaderAttrs = AdminHeaderOptions & Partial<Omit<Mithril.Attributes, 'class'>>;
-export declare type SettingValue = string;
-export declare type MutableSettings = Record<string, Stream<SettingValue>>;
-export declare type SaveSubmitEvent = SubmitEvent & {
+export type AdminHeaderAttrs = AdminHeaderOptions & Partial<Omit<Mithril.Attributes, 'class'>>;
+export type SettingValue = string;
+export type MutableSettings = Record<string, Stream<SettingValue>>;
+export type SaveSubmitEvent = SubmitEvent & {
     redraw: boolean;
 };
 export default abstract class AdminPage<CustomAttrs extends IPageAttrs = IPageAttrs> extends Page<CustomAttrs> {

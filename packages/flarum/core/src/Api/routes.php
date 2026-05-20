@@ -356,6 +356,13 @@ return function (RouteCollection $map, RouteHandlerFactory $route) {
         $route->toController(Controller\ClearCacheController::class)
     );
 
+    // Get system info
+    $map->get(
+        '/info',
+        'info.show',
+        $route->toController(Controller\ShowInfoController::class)
+    );
+
     // List available mail drivers, available fields and validation status
     $map->get(
         '/mail/settings',
@@ -368,5 +375,19 @@ return function (RouteCollection $map, RouteHandlerFactory $route) {
         '/mail/test',
         'mailTest',
         $route->toController(Controller\SendTestMailController::class)
+    );
+
+    // Trigger a sync of the abandoned extensions list
+    $map->post(
+        '/extensions/abandoned/sync',
+        'extensions.abandoned.sync',
+        $route->toController(Controller\SyncAbandonedExtensionsController::class)
+    );
+
+    // List Flarum community announcements from discuss.flarum.org
+    $map->get(
+        '/flarum/announcements',
+        'announcements.list',
+        $route->toController(Controller\ListAnnouncementsController::class)
     );
 };

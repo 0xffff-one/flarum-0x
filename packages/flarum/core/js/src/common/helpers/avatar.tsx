@@ -30,18 +30,36 @@ export default function avatar(user: User | null, attrs: ComponentAttrs = {}): M
     const avatarUrl = user.avatarUrl();
 
     if (hasTitle) attrs.title = attrs.title || username;
-    
+
+    // Alt text logic:
+    // If the `alt` attribute is set to null or false, we don't want to give the
+    // avatar an alt description. If it hasn't been provided, we'll default it to
+    // the user's display name *when rendering an <img>* so screen readers have context.
+    const hasAlt: boolean | string = attrs.alt === 'undefined' || attrs.alt;
+    if (!hasAlt) delete attrs.alt;
+
     if (avatarUrl) {
-      // add cors support
-      if (avatarUrl?.indexOf('cors=1')) {
+      // Default alt to username unless explicitly overridden.
+      if (attrs.alt === undefined) {
+        attrs.alt = username;
+      }
+
+      if (avatarUrl.includes('cors=1')) {
         attrs.crossOrigin = 'anonymous';
       }
-      return <img {...attrs} src={avatarUrl} alt="" />;
+
+      return <img {...attrs} src={avatarUrl} />;
     }
 
     content = username.charAt(0).toUpperCase();
     attrs.style = { '--avatar-bg': user.color() };
+
+    delete attrs.loading;
+    attrs.role = 'img';
+    attrs['aria-label'] = username;
   }
 
+  // Note: We intentionally do NOT set `alt` when rendering the fallback <span>,
+  // as `alt` is only valid for certain elements (e.g., <img>, <area>, <input type="image">).
   return <span {...attrs}>{content}</span>;
 }
