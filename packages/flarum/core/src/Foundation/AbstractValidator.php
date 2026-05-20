@@ -20,6 +20,8 @@ abstract class AbstractValidator
     use ExtensionIdTrait;
 
     /**
+     * @deprecated This constant is no longer used internally and will be removed in a future release.
+     *             Use dynamic cache keys based on class and locale instead.
      * @var string
      */
     public static $CORE_VALIDATION_CACHE_KEY = 'core.validation.extension_id_class_names';
@@ -96,19 +98,21 @@ abstract class AbstractValidator
     {
         $cache = resolve(Cache::class);
 
-        if ($cache->get(self::$CORE_VALIDATION_CACHE_KEY) !== null) {
-            return $cache->get(self::$CORE_VALIDATION_CACHE_KEY);
+        $cacheKey = 'core.validation.attributes.' . $this->translator->getLocale() . '.' . static::class;
+
+        if ($cached = $cache->get($cacheKey)) {
+            return $cached;
         }
 
         $extId = $this->getClassExtensionId();
         $attributeNames = [];
 
-        foreach (array_keys($this->rules) as $attribute) {
+        foreach (array_keys($this->getRules()) as $attribute) {
             $key = $extId ? "$extId.validation.attributes.$attribute" : "validation.attributes.$attribute";
             $attributeNames[$attribute] = $this->translator->trans($key);
         }
 
-        $cache->forever(self::$CORE_VALIDATION_CACHE_KEY, $attributeNames);
+        $cache->forever($cacheKey, $attributeNames);
 
         return $attributeNames;
     }
