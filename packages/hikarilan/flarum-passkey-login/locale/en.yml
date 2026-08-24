@@ -1,0 +1,32 @@
+hikarilan-passkey-login:
+  admin:
+    settings:
+      relying_party:
+        name:
+          label: "Relying Party Name"
+          help: "The Relying Party Name is a human-readable name for your site.
+            If keep empty, the forum title will be used."
+        id:
+          label: "Relying Party ID"
+          help: "The Relying Party ID is a unique identifier for your site. It shall be the domain of the website without the scheme.
+            For example, if your website is https://example.com, the rp ID will be example.com.
+            If keep empty, the current domain will be used."
+      timeout:
+        label: "Timeout"
+        help: "The timeout of the passkey verification in seconds. Default value is 60 seconds."
+  forum:
+    login:
+      with-passkey: "Login with passkey"
+    user:
+      settings:
+        passkeys:
+          title: "Passkey"
+          label: "Passkey are a password replacement that validates your identity using touch, facial recognition, a device password, or a PIN."
+          add-new-passkey: "Add a passkey"
+          error: "An internal error occurred. Please try again later."
+        alias-modal:
+          title: "Passkey registered!"
+          label: "And now, let's give your passkey an alias."
+        item:
+          revoke: "=> core.forum.security.revoke_access_token"
+          revoke_success: "Passkey revoked successfully."

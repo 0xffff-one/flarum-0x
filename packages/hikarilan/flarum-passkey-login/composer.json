@@ -1,0 +1,64 @@
+{
+  "name": "hikarilan/flarum-passkey-login",
+  "description": "Login to Flarum with passkey",
+  "keywords": [
+    "flarum",
+    "passkey",
+    "webauthn",
+    "security",
+    "login"
+  ],
+  "type": "flarum-extension",
+  "license": "Apache-2.0",
+  "require": {
+      "flarum/core": "^1.8.5",
+    "web-auth/webauthn-lib": "^4.9"
+  },
+  "authors": [
+    {
+      "name": "HikariLan",
+      "email": "hikarilan@minecraft.kim",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "source": "https://github.com/shaokeyibb/flarum-passkey-login",
+    "issues": "https://github.com/shaokeyibb/flarum-passkey-login/issues"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hikarilan\\FlarumPasskeyLogin\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Passkey Login",
+      "category": "feature",
+      "icon": {
+        "name": "fas fa-key",
+        "color": "#fff",
+        "backgroundColor": "#61964e"
+      }
+    },
+    "flarum-cli": {
+      "modules": {
+        "admin": true,
+        "forum": true,
+        "js": true,
+        "jsCommon": true,
+        "css": true,
+        "locale": true,
+        "gitConf": true,
+        "githubActions": true,
+        "prettier": true,
+        "typescript": true,
+        "bundlewatch": true,
+        "backendTesting": false,
+        "editorConfig": true,
+        "styleci": true
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

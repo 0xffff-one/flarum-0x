@@ -1,0 +1,31 @@
+hikarilan-passkey-login:
+  admin:
+    settings:
+      relying_party:
+        name:
+          label: "信赖方名称（Relying Party Name）"
+          help: "信赖方名称是您网站的人类可读名称。如果该项保持为空，则使用论坛名称。"
+        id:
+          label: "信赖方 ID（Relying Party ID）"
+          help: "信赖方 ID 是您网站的唯一标识符。它应该是不包括协议头的网站域名。
+            例如，如果您的网站是 https://example.com，那么 rp ID 将是 example.com。
+            如果该项保持为空，则使用当前域名。"
+      timeout:
+        label: "超时时间"
+        help: "Passkey 验证的超时时间，单位为秒。默认值为 60 秒。"
+  forum:
+    login:
+      with-passkey: "使用 passkey 登录"
+    user:
+      settings:
+        passkeys:
+          title: "Passkey"
+          label: "Passkey 是一种密码替代方案，它使用指纹、面部识别、设备密码或 PIN 来验证您的身份。"
+          add-new-passkey: "添加一个 passkey"
+          error: "发生内部错误。请稍后再试。"
+        alias-modal:
+          title: "Passkey 创建成功！"
+          label: "现在，让我们为您的 passkey 创建一个别名。"
+        item:
+          revoke: "=> core.forum.security.revoke_access_token"
+          revoke_success: "已成功撤销 passkey。"

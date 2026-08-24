@@ -1,0 +1,18 @@
+name: Flarum Passkey Login JS
+
+on: [workflow_dispatch, push, pull_request]
+
+jobs:
+  run:
+    uses: flarum/framework/.github/workflows/REUSABLE_frontend.yml@main
+    with:
+      enable_bundlewatch: true
+      enable_prettier: true
+      enable_typescript: true
+
+      frontend_directory: ./js
+      backend_directory: .
+      js_package_manager: yarn
+      main_git_branch: main
+    secrets:
+      bundlewatch_github_token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
