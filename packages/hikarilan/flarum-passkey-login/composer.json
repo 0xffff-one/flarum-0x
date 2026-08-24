@@ -12,7 +12,7 @@
   "license": "Apache-2.0",
   "require": {
       "flarum/core": "^1.8.5",
-    "web-auth/webauthn-lib": "^4.9"
+    "web-auth/webauthn-lib": "^5.3.5"
   },
   "authors": [
     {

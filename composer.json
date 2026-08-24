@@ -90,6 +90,13 @@
     "repositories": [
         {
             "type": "path",
+            "url": "packages/hikarilan/flarum-passkey-login",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
             "url": "packages/*/*"
         },
         {

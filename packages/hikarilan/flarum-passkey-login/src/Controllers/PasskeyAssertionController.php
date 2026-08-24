@@ -5,10 +5,10 @@ namespace Hikarilan\FlarumPasskeyLogin\Controllers;
 use Flarum\Http\RememberAccessToken;
 use Flarum\Http\RequestUtil;
 use Flarum\Http\SessionAuthenticator;
-use Flarum\Settings\SettingsRepositoryInterface;
 use Flarum\User\Event\LoggedIn;
 use Flarum\User\User;
 use Flarum\User\UserRepository;
+use Hikarilan\FlarumPasskeyLogin\PasskeyWebauthn;
 use Hikarilan\FlarumPasskeyLogin\Models\Passkey;
 use Illuminate\Contracts\Cache;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -19,32 +19,25 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Throwable;
+use Paragonie\ConstantTime\Base64UrlSafe;
 use Webauthn\AuthenticatorAssertionResponse;
-use Webauthn\AuthenticatorAssertionResponseValidator;
 use Webauthn\Exception\InvalidDataException;
-use Webauthn\PublicKeyCredentialLoader;
 use Webauthn\PublicKeyCredentialRequestOptions;
-use Webauthn\PublicKeyCredentialSource;
 
 class PasskeyAssertionController implements RequestHandlerInterface
 {
 
     protected Cache\Store $cache;
-    protected SettingsRepositoryInterface $settings;
 
-    protected PublicKeyCredentialLoader $publicKeyCredentialLoader;
+    protected PasskeyWebauthn $webauthn;
     protected UserRepository $users;
     protected SessionAuthenticator $authenticator;
     protected Dispatcher $events;
-    private AuthenticatorAssertionResponseValidator $authenticatorAssertionResponseValidator;
 
-    public function __construct(SettingsRepositoryInterface $settings, Cache\Store $cache, PublicKeyCredentialLoader $publicKeyCredentialLoader, AuthenticatorAssertionResponseValidator $authenticatorAssertionResponseValidator, UserRepository $users, SessionAuthenticator $authenticator, Dispatcher $events)
+    public function __construct(Cache\Store $cache, PasskeyWebauthn $webauthn, UserRepository $users, SessionAuthenticator $authenticator, Dispatcher $events)
     {
         $this->cache = $cache;
-        $this->settings = $settings;
-
-        $this->publicKeyCredentialLoader = $publicKeyCredentialLoader;
-        $this->authenticatorAssertionResponseValidator = $authenticatorAssertionResponseValidator;
+        $this->webauthn = $webauthn;
 
         $this->users = $users;
         $this->authenticator = $authenticator;
@@ -64,21 +57,33 @@ class PasskeyAssertionController implements RequestHandlerInterface
             return new EmptyResponse();
         }
 
+        /** @var Session\Store $session */
+        $session = $request->getAttribute('session');
+
+        $timeout = $this->webauthn->getTimeout();
+        if (!$this->cache->add("passkey_assertion_consumed_{$session->getId()}", true, $timeout)) {
+            return new JsonResponse(['error_msg' => 'Passkey assertion challenge was already used.'], 400);
+        }
+
+        /** @var PublicKeyCredentialRequestOptions $publicKeyCredentialRequestOptions */
+        $publicKeyCredentialRequestOptions = $this->cache->get("passkey_assertion_options_{$session->getId()}");
+        if (!$publicKeyCredentialRequestOptions instanceof PublicKeyCredentialRequestOptions) {
+            return new JsonResponse(['error_msg' => 'Passkey assertion challenge is missing or expired.'], 400);
+        }
+
         $data = (string)$request->getBody();
-
-        $publicKeyCredential = $this->publicKeyCredentialLoader->load($data);
-
+        $publicKeyCredential = $this->webauthn->loadCredential($data);
         $authenticatorAssertionResponse = $publicKeyCredential->response;
         if (!$authenticatorAssertionResponse instanceof AuthenticatorAssertionResponse) {
             return new JsonResponse([
-                "error_msg" => "The public key credential you requested not a AuthenticatorAssertionResponse"
+                'error_msg' => 'The public key credential is not an assertion response.'
             ], 400);
         }
 
         /** @var Passkey|null $passkey
          */
         $passkey = Passkey::query()->where([
-            'raw_id' => $publicKeyCredential->id
+            'raw_id' => Base64UrlSafe::encodeUnpadded($publicKeyCredential->rawId)
         ])->first();
         if (!$passkey) {
             return new JsonResponse([
@@ -86,28 +91,18 @@ class PasskeyAssertionController implements RequestHandlerInterface
             ], 400);
         }
 
-        $publicKeyCredentialSource = PublicKeyCredentialSource::createFromArray(json_decode($passkey->passkey, true));
+        $credentialRecord = $this->webauthn->loadStoredCredential($passkey->passkey);
 
-        /** @var Session\Store $session */
-        $session = $request->getAttribute('session');
-
-        /** @var PublicKeyCredentialRequestOptions $publicKeyCredentialRequestOptions */
-        $publicKeyCredentialRequestOptions = $this->cache->get("passkey_assertion_options_{$session->getId()}");
-
-        $_rpId = $this->settings->get('hikarilan-passkey-login.relying_party.id');
-        $rpId = empty($_rpId) ? $request->getUri()->getHost() : $_rpId;
-
-        $publicKeyCredentialSource = $this->authenticatorAssertionResponseValidator->check(
-            $publicKeyCredentialSource,
+        $credentialRecord = $this->webauthn->assertionValidator($request)->check(
+            $credentialRecord,
             $authenticatorAssertionResponse,
             $publicKeyCredentialRequestOptions,
-            $data,
-            null,
-            [$rpId]
+            $this->webauthn->getRelyingPartyId(),
+            null
         );
 
         $passkey->update([
-            'passkey' => json_encode($publicKeyCredentialSource)
+            'passkey' => $this->webauthn->serializeCredential($credentialRecord)
         ]);
 
         $this->cache->forget("passkey_assertion_options_{$session->getId()}");

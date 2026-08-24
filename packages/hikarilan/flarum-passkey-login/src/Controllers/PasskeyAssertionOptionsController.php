@@ -3,7 +3,7 @@
 namespace Hikarilan\FlarumPasskeyLogin\Controllers;
 
 use Exception;
-use Flarum\Settings\SettingsRepositoryInterface;
+use Hikarilan\FlarumPasskeyLogin\PasskeyWebauthn;
 use Illuminate\Contracts\Cache;
 use Illuminate\Session;
 use Laminas\Diactoros\Response\JsonResponse;
@@ -16,11 +16,11 @@ class PasskeyAssertionOptionsController implements RequestHandlerInterface
 {
 
     protected Cache\Store $cache;
-    protected SettingsRepositoryInterface $settings;
+    protected PasskeyWebauthn $webauthn;
 
-    public function __construct(SettingsRepositoryInterface $settings, Cache\Store $cache)
+    public function __construct(PasskeyWebauthn $webauthn, Cache\Store $cache)
     {
-        $this->settings = $settings;
+        $this->webauthn = $webauthn;
         $this->cache = $cache;
     }
 
@@ -29,10 +29,8 @@ class PasskeyAssertionOptionsController implements RequestHandlerInterface
      */
     public function handle(ServerRequestInterface $request): ResponseInterface
     {
-        $_rpId = $this->settings->get('hikarilan-passkey-login.relying_party.id');
-        $rpId = empty($_rpId) ? $request->getUri()->getHost() : $_rpId;
-
-        $timeout = $this->settings->get('hikarilan-passkey-login.timeout', 60);
+        $rpId = $this->webauthn->getRelyingPartyId();
+        $timeout = $this->webauthn->getTimeout();
 
         $publicKeyCredentialRequestOptions = PublicKeyCredentialRequestOptions::create(
             random_bytes(32),
@@ -45,7 +43,8 @@ class PasskeyAssertionOptionsController implements RequestHandlerInterface
         $session = $request->getAttribute('session');
 
         $this->cache->put("passkey_assertion_options_{$session->getId()}", $publicKeyCredentialRequestOptions, $timeout);
+        $this->cache->forget("passkey_assertion_consumed_{$session->getId()}");
 
-        return new JsonResponse($publicKeyCredentialRequestOptions);
+        return new JsonResponse($this->webauthn->normalize($publicKeyCredentialRequestOptions));
     }
 }

@@ -41,8 +41,7 @@ class ErrorHandler implements MiddlewareInterface
             return $handler->handle($request);
         } catch (Throwable $e) {
             return new JsonResponse([
-                'error_msg' => $e->getMessage(),
-                'stacktrace' => $e->getTraceAsString(),
+                'error_msg' => 'Passkey request failed.',
             ], 500);
         }
     }

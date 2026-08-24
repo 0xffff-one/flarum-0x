@@ -4,8 +4,8 @@ namespace Hikarilan\FlarumPasskeyLogin\Controllers;
 
 use Exception;
 use Flarum\Http\RequestUtil;
-use Flarum\Settings\SettingsRepositoryInterface;
 use Flarum\User\Exception\NotAuthenticatedException;
+use Hikarilan\FlarumPasskeyLogin\PasskeyWebauthn;
 use Illuminate\Contracts\Cache;
 use Illuminate\Session;
 use Laminas\Diactoros\Response\JsonResponse;
@@ -14,6 +14,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use Webauthn\AuthenticatorSelectionCriteria;
 use Webauthn\PublicKeyCredentialCreationOptions;
+use Webauthn\PublicKeyCredentialParameters;
 use Webauthn\PublicKeyCredentialRpEntity;
 use Webauthn\PublicKeyCredentialUserEntity;
 
@@ -21,11 +22,11 @@ class PasskeyRegistrationOptionsController implements RequestHandlerInterface
 {
 
     protected Cache\Store $cache;
-    protected SettingsRepositoryInterface $settings;
+    protected PasskeyWebauthn $webauthn;
 
-    public function __construct(SettingsRepositoryInterface $settings, Cache\Store $cache)
+    public function __construct(PasskeyWebauthn $webauthn, Cache\Store $cache)
     {
-        $this->settings = $settings;
+        $this->webauthn = $webauthn;
         $this->cache = $cache;
     }
 
@@ -39,13 +40,9 @@ class PasskeyRegistrationOptionsController implements RequestHandlerInterface
 
         $actor->assertRegistered();
 
-        $_rpName = $this->settings->get('hikarilan-passkey-login.relying_party.name');
-        $rpName = empty($_rpName) ? $this->settings->get('forum_title', 'Flarum Forum') : $_rpName;
-
-        $_rpId = $this->settings->get('hikarilan-passkey-login.relying_party.id');
-        $rpId = empty($_rpId) ? $request->getUri()->getHost() : $_rpId;
-
-        $timeout = $this->settings->get('hikarilan-passkey-login.timeout', 60);
+        $rpName = $this->webauthn->getRelyingPartyName();
+        $rpId = $this->webauthn->getRelyingPartyId();
+        $timeout = $this->webauthn->getTimeout();
 
         $rpEntity = PublicKeyCredentialRpEntity::create($rpName, $rpId);
 
@@ -65,6 +62,10 @@ class PasskeyRegistrationOptionsController implements RequestHandlerInterface
             $rpEntity,
             $userEntity,
             random_bytes(16),
+            [
+                PublicKeyCredentialParameters::createPk(-7), // ES256
+                PublicKeyCredentialParameters::createPk(-257), // RS256
+            ],
             authenticatorSelection: $authenticatorSelectionCriteria,
             timeout: $timeout * 1000,
         );
@@ -74,7 +75,8 @@ class PasskeyRegistrationOptionsController implements RequestHandlerInterface
 
         $this->cache->put("passkey_registration_user_entity_{$session->getId()}", $userEntity, $timeout);
         $this->cache->put("passkey_registration_options_{$session->getId()}", $publicKeyCredentialCreationOptions, $timeout);
+        $this->cache->forget("passkey_registration_consumed_{$session->getId()}");
 
-        return new JsonResponse($publicKeyCredentialCreationOptions);
+        return new JsonResponse($this->webauthn->normalize($publicKeyCredentialCreationOptions));
     }
 }
