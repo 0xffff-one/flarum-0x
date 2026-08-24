@@ -4,15 +4,78 @@ on: [workflow_dispatch, push, pull_request]
 
 jobs:
   run:
-    uses: flarum/framework/.github/workflows/REUSABLE_frontend.yml@main
-    with:
-      enable_bundlewatch: true
-      enable_prettier: true
-      enable_typescript: true
+    name: Checks & Build
+    runs-on: ubuntu-latest
 
-      frontend_directory: ./js
-      backend_directory: .
-      js_package_manager: yarn
-      main_git_branch: main
-    secrets:
-      bundlewatch_github_token: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
+    env:
+      BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
+
+    permissions:
+      contents: write
+
+    if: >-
+      ((github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) || github.event_name != 'pull_request')
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.18.0
+          run_install: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: ./js/pnpm-lock.yaml
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: curl, dom, gd, gmp, json, mbstring, openssl, pdo_mysql, tokenizer, zip
+          tools: composer:v2
+
+      - name: Install Composer dependencies
+        run: composer install
+
+      - name: Install JS dependencies
+        run: pnpm install --frozen-lockfile
+        working-directory: ./js
+
+      - name: Check formatting
+        run: pnpm run format-check
+        working-directory: ./js
+
+      - name: Check typings
+        run: pnpm run check-typings
+        working-directory: ./js
+
+      - name: Check type coverage
+        run: pnpm run check-typings-coverage
+        working-directory: ./js
+
+      - name: Build JavaScript and typings
+        run: pnpm run build && pnpm run build-typings
+        working-directory: ./js
+
+      - name: Commit generated assets
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          git add js/dist js/dist-typings
+          git diff --cached --quiet && exit 0
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "chore: build frontend assets"
+          git push
+
+      - name: Check bundle size change
+        if: env.BUNDLEWATCH_GITHUB_TOKEN != ''
+        run: pnpm exec bundlewatch --config .bundlewatch.config.json
+        working-directory: ./js
+        env:
+          CI_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
