@@ -18,6 +18,18 @@
     "paths": {
       "flarum/*": [
         "../vendor/flarum/core/js/dist-typings/*"
+      ],
+      "mithril": [
+        "node_modules/@types/mithril"
+      ],
+      "mithril/*": [
+        "node_modules/@types/mithril/*"
+      ],
+      "dayjs": [
+        "node_modules/dayjs"
+      ],
+      "focus-trap": [
+        "node_modules/focus-trap"
       ]
       // <CUSTOM-2>
       // </CUSTOM-2>

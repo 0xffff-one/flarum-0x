@@ -23,12 +23,33 @@ importers:
       '@flarum/prettier-config':
         specifier: ^1.0.0
         version: 1.0.0
+      '@simplewebauthn/typescript-types':
+        specifier: ^8.3.4
+        version: 8.3.4
+      '@types/jquery':
+        specifier: ^3.5.10
+        version: 3.5.27
+      '@types/mithril':
+        specifier: ^2.0.8
+        version: 2.2.4
+      dayjs:
+        specifier: ^1.10.7
+        version: 1.11.10
       flarum-tsconfig:
         specifier: ^1.0.2
         version: 1.0.2
       flarum-webpack-config:
         specifier: ^2.0.0
         version: 2.0.2(supports-color@8.1.1)(webpack@5.89.0)
+      focus-trap:
+        specifier: ^6.7.1
+        version: 6.9.4
+      jquery:
+        specifier: ^3.6.0
+        version: 3.7.1
+      mithril:
+        specifier: ~2.0.4
+        version: 2.0.4
       prettier:
         specifier: ^2.5.1
         version: 2.8.8
@@ -1241,6 +1262,9 @@ packages:
     resolution: {integrity: sha512-b6suED+5/3rTpUBdG1gupIl8MPFCAMA0QXwmljLhvCUKcUvdE4gWky9zpuGCcXHOsz4J9wPGNWq6OKpmIzz3hQ==}
     hasBin: true
 
+  focus-trap@6.9.4:
+    resolution: {integrity: sha512-v2NTsZe2FF59Y+sDykKY+XjqZ0cPfhq/hikWVL88BqLivnNiEffAsac6rP6H45ff9wG9LL5ToiDqrLEP9GX9mw==}
+
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
 
@@ -1381,6 +1405,9 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
 
+  jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
+
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -1465,6 +1492,10 @@ packages:
   minimatch@9.0.3:
     resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
     engines: {node: '>=16 || 14 >=14.17'}
+
+  mithril@2.0.4:
+    resolution: {integrity: sha512-mgw+DMZlhMS4PpprF6dl7ZoeZq5GGcAuWnrg5e12MvaGauc4jzWsDZtVGRCktsiQczOEUr2K5teKbE5k44RlOg==}
+    hasBin: true
 
   mrmime@1.0.1:
     resolution: {integrity: sha512-hzzEagAgDyoU1Q6yg5uI+AorQgdvMCur3FcKf7NhMKWsaYg+RnbTyHRa/9IlLF9rf455MOCtcqqrQQ83pPP7Uw==}
@@ -1727,6 +1758,9 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  tabbable@5.3.3:
+    resolution: {integrity: sha512-QD9qKY3StfbZqWOPLp0++pOrAVb/HbUi5xCc8cUo4XjP19808oaMiDzn0leBY5mCespIBM0CIZePzZjgzR83kA==}
 
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -3275,6 +3309,10 @@ snapshots:
 
   flat@5.0.2: {}
 
+  focus-trap@6.9.4:
+    dependencies:
+      tabbable: 5.3.3
+
   fs.realpath@1.0.0: {}
 
   function-bind@1.1.2: {}
@@ -3399,6 +3437,8 @@ snapshots:
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
+  jquery@3.7.1: {}
+
   js-tokens@4.0.0: {}
 
   jsesc@0.5.0: {}
@@ -3465,6 +3505,8 @@ snapshots:
   minimatch@9.0.3:
     dependencies:
       brace-expansion: 1.1.18
+
+  mithril@2.0.4: {}
 
   mrmime@1.0.1: {}
 
@@ -3728,6 +3770,8 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
+  tabbable@5.3.3: {}
+
   tapable@2.2.1: {}
 
   terser-webpack-plugin@5.3.9(webpack@5.89.0):
@@ -3839,7 +3883,7 @@ snapshots:
       html-escaper: 2.0.2
       is-plain-object: 5.0.0
       opener: 1.5.2
-      picocolors: 1.0.0
+      picocolors: 1.1.1
       sirv: 2.0.3
       ws: 7.5.13
     transitivePeerDependencies:
