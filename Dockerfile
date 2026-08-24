@@ -9,7 +9,7 @@ ENV LANG=en_US.UTF-8 \
     LANGUAGE=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
     COMPOSER_ALLOW_SUPERUSER=1 \
-    NGINX_VERSION=1.30.1
+    NGINX_VERSION=1.30.4
 
 COPY --from=nginx-packages /etc/apk/keys/nginx_signing.rsa.pub /etc/apk/keys/nginx_signing.rsa.pub
 
