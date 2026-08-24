@@ -55,7 +55,6 @@ class PasskeyRegistrationOptionsController implements RequestHandlerInterface
         $authenticatorSelectionCriteria = AuthenticatorSelectionCriteria::create(
             userVerification: AuthenticatorSelectionCriteria::USER_VERIFICATION_REQUIREMENT_REQUIRED,
             residentKey: AuthenticatorSelectionCriteria::RESIDENT_KEY_REQUIREMENT_REQUIRED,
-            requireResidentKey: null
         );
 
         $publicKeyCredentialCreationOptions = PublicKeyCredentialCreationOptions::create(
