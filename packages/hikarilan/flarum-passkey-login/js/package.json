@@ -8,6 +8,7 @@
         "@simplewebauthn/typescript-types": "^8.3.4",
         "@types/jquery": "^3.5.10",
         "@types/mithril": "^2.0.8",
+        "bundlewatch": "^0.3.2",
         "dayjs": "^1.10.7",
         "flarum-tsconfig": "^1.0.2",
         "flarum-webpack-config": "^2.0.0",

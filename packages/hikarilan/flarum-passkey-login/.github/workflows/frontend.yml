@@ -7,6 +7,9 @@ jobs:
     name: Checks & Build
     runs-on: ubuntu-latest
 
+    env:
+      BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
+
     permissions:
       contents: write
 
@@ -71,8 +74,8 @@ jobs:
           git push
 
       - name: Check bundle size change
+        if: env.BUNDLEWATCH_GITHUB_TOKEN != ''
         run: pnpm exec bundlewatch --config .bundlewatch.config.json
         working-directory: ./js
         env:
-          BUNDLEWATCH_GITHUB_TOKEN: ${{ secrets.BUNDLEWATCH_GITHUB_TOKEN }}
           CI_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
