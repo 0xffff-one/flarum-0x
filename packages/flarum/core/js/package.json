@@ -3,6 +3,7 @@
     "name": "@flarum/core",
     "version": "0.0.0",
     "type": "module",
+    "packageManager": "pnpm@11.18.0",
     "prettier": "@flarum/prettier-config",
     "dependencies": {
         "@askvortsov/rich-icu-message-formatter": "^0.2.4",
@@ -16,7 +17,7 @@
         "jquery": "^3.7.1",
         "jquery.hotkeys": "^0.1.0",
         "mithril": "~2.0.4",
-        "nanoid": "^3.3.12",
+        "nanoid": "^3.3.18",
         "punycode": "^2.3.1",
         "textarea-caret": "^3.1.0",
         "throttle-debounce": "^3.0.1",
@@ -48,33 +49,14 @@
         "build": "webpack --mode production && pnpm run copy-xslt-polyfill",
         "copy-xslt-polyfill": "rm -rf dist/xslt-polyfill && mkdir -p dist/xslt-polyfill/dist && SRC=$(node -e \"console.log(require('path').dirname(require.resolve('xslt-polyfill/package.json')))\") && cp $SRC/xslt-polyfill.min.js dist/xslt-polyfill/ && cp $SRC/dist/xslt-wasm.js dist/xslt-polyfill/dist/ && cp $SRC/package.json dist/xslt-polyfill/",
         "build-0x": "pnpm run build && mkdir -p ../../../../js && rm -rf ../../../../js/dist-core && cp -r dist ../../../../js/dist-core",
-        "analyze": "cross-env ANALYZER=true yarn run build",
+        "analyze": "cross-env ANALYZER=true pnpm run build",
         "format": "prettier --write src",
         "format-check": "prettier --check src",
-        "clean-typings": "npx rimraf dist-typings && mkdir dist-typings",
-        "build-typings": "yarn run clean-typings && ([ -e src/@types ] && cp -r src/@types dist-typings/@types || true) && tsc && yarn run post-build-typings",
+        "clean-typings": "pnpm exec rimraf dist-typings && mkdir dist-typings",
+        "build-typings": "pnpm run clean-typings && ([ -e src/@types ] && cp -r src/@types dist-typings/@types || true) && tsc && pnpm run post-build-typings",
         "post-build-typings": "find dist-typings -type f -name '*.d.ts' -print0 | xargs -0 sed -i 's,../src/@types,@types,g'",
         "check-typings": "tsc --noEmit --emitDeclarationOnly false",
         "check-typings-coverage": "typescript-coverage-report",
-        "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
-    },
-    "pnpm": {
-        "overrides": {
-            "@babel/helpers": "7.29.4",
-            "@babel/plugin-transform-modules-systemjs": "7.29.4",
-            "@babel/runtime": "7.29.4",
-            "@tootallnate/once": "3.0.1",
-            "axios": "0.31.1",
-            "brace-expansion@>=1.0.0 <2.0.0": "1.1.12",
-            "brace-expansion@>=2.0.0 <3.0.0": "2.0.2",
-            "follow-redirects": "1.15.12",
-            "form-data": "4.0.4",
-            "lodash": "4.18.1",
-            "minimatch@>=3.0.0 <4.0.0": "3.1.5",
-            "minimatch@>=5.0.0 <6.0.0": "5.1.9",
-            "minimatch@>=10.0.0 <11.0.0": "10.2.5",
-            "picomatch": "2.3.2",
-            "ws": "8.20.1"
-        }
+        "test": "pnpm exec node --experimental-vm-modules ./node_modules/.bin/jest"
     }
 }
