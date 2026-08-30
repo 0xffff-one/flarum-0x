@@ -105,6 +105,7 @@
         }
     ],
     "extra": {
+        "composer-exit-on-patch-failure": true,
         "patches": {
             "fof/upload": [
                 "patches/fof-upload-src-templates-markdownimagetemplate-php.patch",
@@ -115,6 +116,9 @@
             ],
             "fof/sitemap": {
                 "Remove User in Sitemap": "patches/fof-sitemap-1.patch"
+            },
+            "v17development/flarum-seo": {
+                "Keep object_type indexable on MySQL 5.7": "patches/v17development-seo-mysql57-object-type-index.patch"
             },
             "illuminate/support": [
                 "patches/illuminate-support-php85-nullable-params.patch"
