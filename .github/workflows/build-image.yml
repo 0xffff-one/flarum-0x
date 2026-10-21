@@ -3,6 +3,11 @@ name: Build Flarum Deploy Image
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: build-deploy-image
+  cancel-in-progress: false
 
 env:
   REGISTRY: ghcr.io
