@@ -1,0 +1,9 @@
+diff --git a/migrations/2023_02_01_create_seo_meta_table.php b/migrations/2023_02_01_create_seo_meta_table.php
+--- a/migrations/2023_02_01_create_seo_meta_table.php
++++ b/migrations/2023_02_01_create_seo_meta_table.php
+@@ -13,2 +13,4 @@ return [
+                 $table->integer('object_id');
+-                $table->string('object_type', 65535);
++                // Keep this column within MySQL's indexable VARCHAR range. This
++                // matches the upstream FoF/seo clean-install fix from 3.0.x.
++                $table->string('object_type', 150);
