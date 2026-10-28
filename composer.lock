@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5e2b0a070ba7415affeb5768dc2ddf3",
+    "content-hash": "8c3fbc1f72c7d88e5ce09f93e5476825",
     "packages": [
         {
             "name": "afrux/forum-widgets-core",
@@ -4047,16 +4047,16 @@
         },
         {
             "name": "fof/oauth",
-            "version": "1.7.3",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfFlarum/oauth.git",
-                "reference": "6daa88a0101ff6336f842193f446dd0f51317b86"
+                "reference": "79be5861b404e31df49a38b095f1d5e3814a3e3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfFlarum/oauth/zipball/6daa88a0101ff6336f842193f446dd0f51317b86",
-                "reference": "6daa88a0101ff6336f842193f446dd0f51317b86",
+                "url": "https://api.github.com/repos/FriendsOfFlarum/oauth/zipball/79be5861b404e31df49a38b095f1d5e3814a3e3c",
+                "reference": "79be5861b404e31df49a38b095f1d5e3814a3e3c",
                 "shasum": ""
             },
             "require": {
@@ -4153,7 +4153,7 @@
                     "type": "website"
                 }
             ],
-            "time": "2025-12-17T08:23:59+00:00"
+            "time": "2026-08-10T20:14:35+00:00"
         },
         {
             "name": "fof/pages",
@@ -7953,16 +7953,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.9.0",
+            "version": "2.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "5703d83ba3da3b2e356a5fedc848ed6d8ffb6529"
+                "reference": "6efbd9c472b91db0a3350fcd601c8332c2382e1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/5703d83ba3da3b2e356a5fedc848ed6d8ffb6529",
-                "reference": "5703d83ba3da3b2e356a5fedc848ed6d8ffb6529",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/6efbd9c472b91db0a3350fcd601c8332c2382e1f",
+                "reference": "6efbd9c472b91db0a3350fcd601c8332c2382e1f",
                 "shasum": ""
             },
             "require": {
@@ -7999,7 +7999,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.10-dev"
+                    "dev-main": "2.11-dev"
                 }
             },
             "autoload": {
@@ -8056,7 +8056,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-08-03T13:42:31+00:00"
+            "time": "2026-09-21T13:07:34+00:00"
         },
         {
             "name": "league/config",
